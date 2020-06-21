@@ -1,5 +1,32 @@
 ---
 layout: default
-title: Rohit Davas <img align = "right" width = "224" height = "224" src="/Images/Rohit.jpeg" alt="Rohit"/> 
+title: Rohit Davas <img align = "right" width = "260" height = "260" src="/Images/Rohit.jpeg" alt="Rohit"/> 
 description: About Me 
----
+--- 
+
+## Introduction
+
+I am a 3rd year student of B.Tech in Computer Science with Departmental Specilization in AI, batch 2017-21 at [IIT Jammu](https://iitjammu.ac.in/).\\
+Most of my work is centred around the AI and it's applications in Computer Vision, Natural Language Processing, applications in medicine. With time, I am getting more interested in Neuroscience, but haven't done much in this yet. 
+
+## Internships
+
+1. I am an Intern in Computer Vision and Deep Learning at [ The Captury, Germany ](http://thecaptury.com/), Summer'20
+1. I was a research Intern at [IIT Bombay](http://www.iitb.ac.in/) under [Prof. Virendra Singh], Summer'19 
+
+## Online Courses
+
+### Machine Learning
+
+1. Deeplearning.ai DeepLearning Specialisation
+   - Course 1 : Neural Networks & Deep Learning
+   - Course 2 : Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization
+   - Course 3 : Structuring Machine Learning Projects
+   - Course 4 : Convolutional Neural Networks
+   - Course 5 : Sequence Models
+
+### Developement
+
+## Projects
+
+## Blogs
