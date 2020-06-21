@@ -1,4 +1,4 @@
-<img align = "left" width = "100" height = "100"  src="Images/RohitDavas.jpg" alt="hi" class="inline"/>
+<img align = "left"  src="Images/Rohit.jpeg" alt="hi" class="inline"/>
 
 
 <!-- ## Welcome to GitHub Pages
