@@ -11,7 +11,7 @@ Most of my work is centred around the AI and it's applications in Computer Visio
 
 ## Internships
 
-1. I am an Intern in Computer Vision and Deep Learning at [ The Captury, Germany ](http://thecaptury.com/), Summer'20
+1. I am an Intern in Computer Vision and Deep Learning at [The Captury, Germany](http://thecaptury.com/), Summer'20
 1. I was a research Intern at [IIT Bombay](http://www.iitb.ac.in/) under [Prof. Virendra Singh], Summer'19 
 
 ## Online Courses
@@ -24,6 +24,9 @@ Most of my work is centred around the AI and it's applications in Computer Visio
    - Course 3 : Structuring Machine Learning Projects
    - Course 4 : Convolutional Neural Networks
    - Course 5 : Sequence Models
+
+1. Audited [cs230 - Deep Learning](https://cs230.stanford.edu/) online taught by Kian Katanforoosh and Andrew Ng
+1. Audited cs229 - Machine Learning taught by Andrew Ng 
 
 ### Developement
 
