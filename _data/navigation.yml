@@ -1,0 +1,11 @@
+- name: Home
+  link: /
+
+- name: Self Learning
+  link: /Self_learning
+
+- name : depth1 
+  link: /depth1
+  
+- name: depth2
+  link: /depth2
