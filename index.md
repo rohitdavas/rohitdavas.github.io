@@ -1,1 +1,1 @@
-<img align = "left" width = "120" height = "120" src="Images/Rohit.jpeg" alt="hi" class="inline"/>
+<img align = "left" width = "160" height = "160" src="Images/Rohit.jpeg" alt="hi" class="inline"/>
