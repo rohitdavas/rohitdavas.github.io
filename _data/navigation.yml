@@ -1,11 +1,8 @@
 - name: Home
   link: /
 
-- name: Self Learning
-  link: /Self_learning
-
-- name : depth1 
-  link: /depth1
+- name : NLP 
+  link: /
   
-- name: depth2
-  link: /depth2
+- name: Computer Vision
+  link: /
