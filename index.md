@@ -18,7 +18,7 @@ Most of my work is centred around the AI and it's applications in Computer Visio
 
 ### Machine Learning
 
-1. Deeplearning.ai DeepLearning Specialisation[certificate][https://github.com/rohitdavas/Certificates/blob/master/Deeplearning%20Specilisation%20Certificate.pdf]
+1. Deeplearning.ai DeepLearning Specialisation : [certificate](https://github.com/rohitdavas/Certificates/blob/master/Deeplearning%20Specilisation%20Certificate.pdf)
    - Course 1 : Neural Networks & Deep Learning
    - Course 2 : Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization
    - Course 3 : Structuring Machine Learning Projects
@@ -30,7 +30,7 @@ Most of my work is centred around the AI and it's applications in Computer Visio
 
 ### Self-Improvement
 
-1. Learning how to learn, UC SanDiego [certificate](https://github.com/rohitdavas/Certificates/blob/master/Certificate_Learning_How_To_Learn.pdf)
+1. Learning how to learn, UC SanDiego : [certificate](https://github.com/rohitdavas/Certificates/blob/master/Certificate_Learning_How_To_Learn.pdf)
 
 ## Projects
 
