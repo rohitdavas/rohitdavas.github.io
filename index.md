@@ -27,7 +27,6 @@ Paper 1: Smart data agent for preserving location privacy accepted for publicati
 ## Side Projects and Achievements
 
 - **Optimization** : Silver in Bosch’s Route Optimization problem in Inter-IIT Tech Meet’19 
-
 - **Sentiment Analysis** 3rd Rank among 20 teams in *Innovate for IIT Hackathon* organized by PRITHVI.AI ( Nov’19 ) 
 - **Robotics** Rank in Mazex- maze solving bot during Technunctus’19, IIT Jammu.
 - **Drones** 9th among 23 IIT's in PlutoX hackathon in Inter-IIT Tech Meet’18  
