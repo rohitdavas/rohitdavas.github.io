@@ -1,6 +1,6 @@
 ---
 layout: default
- title: Rohit Davas <img align = "right" width = "260" height = "260" src="/Images/Rohit.jpeg" alt="Rohit"/> 
+title: Rohit Davas <img align = "right" width = "260" height = "260" src="/Images/Rohit.jpeg" alt="Rohit"/> 
 
 description: About Me 
 --- 
