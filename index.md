@@ -5,13 +5,13 @@ title: Rohit Davas
 # description: 
 --- 
 <!-- ## Introduction -->
-I am a Final year student of BTech in Computer Science And Engineering ( 2017-21 ) at [IIT Jammu](https://iitjammu.ac.in/).\\
+I am a Final year student of BTech in Computer Science And Engineering ( 2017-21 ) at [IIT Jammu](https://iitjammu.ac.in/).
 Most of my work is centered around the AI and it's applications in Computer Vision, Natural Language Processing, applications in medicine. With time, I am getting more and more interested in Neuroscience, but haven't done much in this yet. 
 
-## Internships
+## Experience
 
-1. I am an Intern in Computer Vision and Deep Learning at [The Captury, Germany](http://thecaptury.com/), Summer'20
-1. I was a research Intern at [IIT Bombay](http://www.iitb.ac.in/) under [Prof. Virendra Singh](https://www.ee.iitb.ac.in/~viren/), Summer'19 
+1. Intern in Computer Vision and Deep Learning at [The Captury, Germany](http://thecaptury.com/), Summer'20
+1. Research Intern at [IIT Bombay](http://www.iitb.ac.in/) under [Prof. Virendra Singh](https://www.ee.iitb.ac.in/~viren/), Summer'19 
 
 ## Research Paper
 
@@ -21,7 +21,7 @@ Paper 1: Smart data agent for preserving location privacy accepted for publicati
 
 - Working on developing a deep learning model for Fast Background Subtraction. 
 - Developed Automatic 3D human face landmarks annotation pipeline for [The Captury](https://captury.com/)
-- Developed a deep learning model Face Expression Transfer via shape key/ morph key prediction  for [The Captury](https://captury.com/)
+- Developed a deep learning model for Face Expression Transfer via shape key/ morph key prediction  for [The Captury](https://captury.com/)
   - Classical approach results can be seen [here](https://drive.google.com/file/d/1-uA78oCkMkEz8hkRawuLq6v3ygjMEkBF/view) 
 
 ## Side Projects and Achievements
