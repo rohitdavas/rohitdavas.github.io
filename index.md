@@ -11,6 +11,7 @@ I am a Final year student of BTech in Computer Science And Engineering ( 2017-21
 Most of my work is centered around the AI and it's applications in Computer Vision, Natural Language Processing, applications in medicine. With time, I am getting more and more interested in Neuroscience, but haven't done much in this yet. 
 
 [Resume](./resume/Rohit_Kumar.pdf)
+Email : davasrohit@gmail.com 
 
 ## Internships
 
