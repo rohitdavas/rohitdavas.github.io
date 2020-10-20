@@ -37,11 +37,11 @@ Paper 1: Smart data agent for preserving location privacy accepted for publicati
 
 ## Education
 
-#### Undergraduate Coursework 
+### Undergraduate Coursework 
 
 ( major courses ) AI; NLP; Computer Vision; Parallel & distributed programming; Engineering; Adaptive Software; Operating Systems; Databases; Data structures & Algorithms; Programming Languages; Comp. Architecture; Comp. Networks
 
-#### **Self-learning**
+### **Self-learning**
 
 **Machine Learning**  Deeplearning.ai  Deep Learning Specialization : [certificate](https://github.com/rohitdavas/Certificates/blob/master/Deeplearning%20Specilisation%20Certificate.pdf) ; Neural Networks & Deep Learning; Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization; Structuring Machine Learning Projects; Convolutional Neural Networks; Sequence Models; Audited [cs230 - Deep Learning](https://cs230.stanford.edu/) online taught by Kian Katanforoosh and Andrew Ng; Audited cs229 - Machine Learning taught by Andrew Ng 
 
