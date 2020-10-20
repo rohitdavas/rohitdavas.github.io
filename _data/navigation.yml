@@ -1,2 +1,5 @@
-- name: Home
-  link: /
+- name: Resume
+  link: ./resume/Rohit_Kumar.pdf 
+
+- name: Gmail@davasrohit 
+  link: / 
