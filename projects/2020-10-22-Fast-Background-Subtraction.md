@@ -3,8 +3,12 @@ layout: default
 title: Fast Background Subtraction 
 date: 2020-10-22 18:20:30 -0000
 categories: CV DL 
-# description: A project on building a fast background subtraction model
+description: A project on building a fast background subtraction model
 ---
+
+# Project
+
+Build a fast background  subtraction model. 
 
 # Description
 
@@ -58,3 +62,4 @@ The need for background subtraction and making it's extremely fast is inherent f
 
 - A custom data pipeline in PyTorch. This [blog](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html) is a great resource to start with. 
 
+------------ incomplete----------------------------------------
