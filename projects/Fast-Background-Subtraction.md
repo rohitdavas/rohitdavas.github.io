@@ -84,5 +84,5 @@ The need for background subtraction and making it's extremely fast is inherent f
 
 ### End
 
-[Home](https://rohitdavas.github.io/) [top](#Project)
+[Home](https://rohitdavas.github.io/)  [Resume](https://rohitdavas.github.io/resume/Rohit_Kumar.pdf) [top](#Project)
 
