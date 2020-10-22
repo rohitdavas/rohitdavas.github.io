@@ -8,7 +8,7 @@ description: A project on building a fast background subtraction model
 
 [TOC]
 
-### Project
+### <u>Project</u>
 
 ------
 
@@ -16,7 +16,7 @@ Build a fast background  subtraction model.
 
 
 
-### Description
+### <u>Description</u>
 
 ------
 
@@ -26,7 +26,7 @@ The need for background subtraction and making it's extremely fast is inherent f
 
 ( more to be added )
 
-### Literature Survey
+### <u>Literature Survey</u>
 
 ------
 
@@ -60,7 +60,7 @@ The need for background subtraction and making it's extremely fast is inherent f
 
     
 
-### Implementation
+### <u>Implementation</u>
 
 ------
 
@@ -68,11 +68,17 @@ The need for background subtraction and making it's extremely fast is inherent f
 
 - I will be writing code in PyTorch.
 
-#### Data Pipeline
+#### <u>Data Pipeline</u>
 
 ------
 
 - A custom data pipeline in PyTorch. This [blog](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html) is a great resource to start with. 
+
+
+
+
+
+
 
 
 
