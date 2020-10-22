@@ -82,5 +82,5 @@ The need for background subtraction and making it's extremely fast is inherent f
 
 ------
 
-[^]: [Home](https://rohitdavas.github.io/) [top](#Project)
+### [Home](https://rohitdavas.github.io/) [top](#Project)
 
