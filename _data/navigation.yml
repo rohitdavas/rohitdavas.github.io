@@ -1,8 +1,8 @@
 - name: Resume
-  link: ./resume/Rohit_Kumar.pdf 
+  link: resume/Rohit_Kumar.pdf
 
 - name: Gmail@davasrohit 
-  # link: / 
+  link: https://mail.google.com/mail/u/0/?view=cm&fs=1&to=davasrohit@gmail.com&tf=1
 
 - name: Fast Background Subtraction(ongoing)
-  link: blogs/Fast-Background-Subtraction.md
+  link: projects/Fast-Background-Subtraction.md
