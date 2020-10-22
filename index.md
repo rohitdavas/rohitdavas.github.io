@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Rohit Davas 
-# <img align = "right" width = "260" height = "260" src="/Images/Rohit.jpeg" alt="Rohit"/> 
+
+# <img align = "right" width = "260" height = "260" src="/Images/Rohit.jpeg" alt="Rohit"/>  
 # description: 
---- 
+---
 <!-- ## Introduction -->
 I am a Final year student of BTech in Computer Science And Engineering ( 2017-21 ) at [IIT Jammu](https://iitjammu.ac.in/).
 Most of my work is centered around the AI and it's applications in Computer Vision, Natural Language Processing, applications in medicine. With time, I am getting more and more interested in Neuroscience, but haven't done much in this yet. 
