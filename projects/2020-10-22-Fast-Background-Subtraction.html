@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>Fast Background Subtraction</title><link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+<title>Fast Background Subtraction</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
 iframe { margin: auto; }
@@ -159,72 +159,27 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 }
 
 
-@include-when-export url(https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
-@include-when-export url(https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext);
-
-:root {
-	--control-text-color: #777;
+html {
+	font-size: 19px;
 }
 
-/**
- * forked from pixyll.com
- * MIT license
- */
-
-h1,
-.h1,
-.f1 {
-	font-size: 2rem;
-	line-height: 2.5rem;
+html, body {
+	margin: auto;
+	background: #fefefe;
 }
-h2,
-.h2,
-.f2 {
-	font-size: 1.5rem;
-	line-height: 2rem;
-}
-h3,
-.h3,
-.f3 {
-	font-size: 1.25rem;
-	line-height: 1.5rem;
-}
-p,
-.p,
-.f4,
-h4,
-h5,
-h6,
-dl,
-ol,
-ul,
-pre[cid],
-div[cid],
-#typora-source {
-	font-size: 1.125rem;
-	line-height: 1.5rem;
-}
-
-h4 {
-	font-size: 1.13rem;
-}
-/*
- Pixyll
- A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
- Best served with BASSCSS (http://jxnblk.github.io/basscss)
- Crafted with <3 by John Otander (@4lpine) - ©2015 John Otander MIT License http://opensource.org/licenses/MIT
-
-*/
-
 body {
-	font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", "STSong", Serif;
-	line-height: 1.5rem;
-	font-weight: 400;
+	font-family: "Vollkorn", Palatino, Times;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
 }
 
 #write {
-	max-width: 914px;
-	color: #333;
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
+	padding-top: 40px;
 }
 
 @media only screen and (min-width: 1400px) {
@@ -233,354 +188,217 @@ body {
 	}
 }
 
-@media only screen and (min-width: 1700px) {
-	#write {
-		max-width: 1200px;
-	}
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
+h1 {
+	margin-top: 1.6em;
+	font-weight: normal;
 }
 
-img {
-	width: auto;
-	max-width: 100%;
-}
-body {
-	font-size: 1.5rem;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
+h1 {
+	font-size:3em;
 }
 
-.ty-table-edit {
-	background: #ededed;
+h2 {
+	margin-top:2em;
+	font-weight: normal;
 }
 
-table {
-	width: 100%;
-	font-size: 1.125rem;
-}
-table > thead > tr > th,
-table > thead > tr > td,
-table > tbody > tr > th,
-table > tbody > tr > td,
-table > tfoot > tr > th,
-table > tfoot > tr > td {
-	padding: 12px;
-	line-height: 1.2;
-	vertical-align: top;
-	border-top: 1px solid #333;
-}
-table > thead > tr > th {
-	vertical-align: bottom;
-	border-bottom: 2px solid #333;
-}
-table > caption + thead > tr:first-child > th,
-table > caption + thead > tr:first-child > td,
-table > colgroup + thead > tr:first-child > th,
-table > colgroup + thead > tr:first-child > td,
-table > thead:first-child > tr:first-child > th,
-table > thead:first-child > tr:first-child > td {
-	border-top: 0;
-}
-table > tbody + tbody {
-	border-top: 2px solid #333;
-}
-p {
-	font-weight: 300;
-	line-height: 1.5;
-}
-abbr {
-	border-bottom: 1px black dotted;
-	cursor: help;
-}
-pre,
-code {
-	font-family: Menlo, Monaco, "Courier New", monospace;
-}
-
-code,
-.md-fences  {
-	color: #7a7a7a;
-}
-
-.md-fences {
-	padding: 1.125em;
-	margin-bottom: 0.88em;
-	font-size: 1rem;
-	border: 1px solid #7a7a7a;
-	padding-bottom: 0.5rem;
-	padding-top: 0.5rem;
-}
-
-blockquote {
-	padding: 1.33em;
+h3 {
+	font-weight: normal;
 	font-style: italic;
-	border-left: 5px solid #7a7a7a;
-	color: #555;
-}
-blockquote em {
-	color: #000;
-}
-blockquote footer {
-	font-size: .85rem;
-	font-style: normal;
-	background-color: #fff;
-	color: #7a7a7a;
-	border-color: transparent;
-}
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-	font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
-	font-weight: bold;
-	line-height: 1.2;
-	margin: 1em 0 0.5em;
-}
-@media screen and (min-width: 48em) {
-	.h1,
-	h1 {
-		font-size: 3.250rem;
-	}
-	.h2,
-	h2 {
-		font-size: 2.298rem;
-	}
-	.h3,
-	h3 {
-		font-size: 1.625rem;
-	}
-	.h4,
-	h4 {
-		font-size: 1.3rem;
-	}
-	#write>h4.md-focus:before,
-	#write>h5.md-focus:before,
-	#write>h6.md-focus:before{
-		top: 1px;
-	}
-	.p,
-	p,
-	li {
-		font-size: 1.25rem;
-		line-height: 1.8;
-	}
-	table {
-		font-size: 1.25rem;
-	}
-}
-@media (max-width: 48em) {
-	blockquote {
-		margin-left: 1rem;
-		margin-right: 0;
-		padding: 0.5em;
-	}
-	.h1,
-	h1 {
-		font-size: 2.827rem;
-	}
-	.h2,
-	h2 {
-		font-size: 1.999rem;
-	}
-	.h3,
-	h3 {
-		font-size: 1.413rem;
-	}
-	.h4,
-	h4 {
-		font-size: 1.3rem;
-	}
-}
-@media screen and (min-width: 64em) {
-	.h1,
-	h1 {
-		font-size: 4.498rem;
-	}
-	.h2,
-	h2 {
-		font-size: 2.29rem;
-	}
-	.h3,
-	h3 {
-		font-size: 1.9rem;
-	}
-	.h4,
-	h4 {
-		font-size: 1.591rem;
-	}
-	#write>h4.md-focus:before{
-		top:4px;
-	}
-}
-a {
-	color: #463F5C;
-	text-decoration: underline;
+	margin-top: 3em;
 }
 
-#write {
-	padding-top: 2rem;
+h1, 
+h2, 
+h3{
+	text-align: center;
 }
 
-#write pre.md-meta-block {
-	min-height: 35px;
-	padding: 0.5em 1em;
-	white-space: pre;
-	border: 0px;
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+}
 
-	border-left: 30px #f8f8f8 solid;
-	border-right: 30px #f8f8f8 solid;
-	width: 100vw;
-	max-width: calc(100% + 60px);
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
+}
 
-	margin-left: -30px;
-	margin-bottom: 2em;
-	margin-top: -2010px;
-	padding-top: 2000px;
-	padding-bottom: 10px;
-	line-height: 1.5em;
-	color: #7a7a7a;
-	background-color: #fafafa;
-	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
-	font-weight: 300;
-	clear: both;
-	padding-left: 0;
-	font-size:1.125rem;
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
 }
-.md-image>.md-meta {
-	color: #463F5C
+ul {
+	list-style: square;
+	padding-left: 1.2em;
 }
-.footnotes {
-	font-size:1.1rem;
+ol {
+	padding-left: 1.2em;
 }
-.md-tag {
-	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+blockquote {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
 }
-.code-tooltip {
+code,
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
 	background: white;
 }
-.code-tooltip-content {
-	font-size: 1.1rem;
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.ty-table-edit {
+	background: #ededed;
+    padding-top: 4px;
+}
+table {
+	margin-bottom: 1.333333rem
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
 }
 
 .task-list{
-	padding-left: 0;
+	padding:0;
 }
 
 .md-task-list-item {
-	padding-left:34px;
+	padding-left: 1.6rem;
 }
 
-.md-task-list-item > input{
-	width: 1.25rem;
-	height: 1.25rem;
-	display: block;
-	-webkit-appearance: initial;
-	top: -0.2rem;
-	margin-left: -1.6em;
-	margin-top: calc(1rem - 7px);
-	border: none;
-}
-
-.md-task-list-item > input:focus{
-	outline: none;
-	box-shadow: none;
-}
-
-.md-task-list-item > input:before{
-	border: 1px solid #555;
-	border-radius: 1.5rem;
-	width: 1.5rem;
-	height: 1.5rem;
-	background: #fff;
-	content: ' ';
-	transition: background-color 200ms ease-in-out;
-	display: block;
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
 }
 
 .md-task-list-item > input:checked:before,
 .md-task-list-item > input[checked]:before{
-	background: #333;
-	border-width: 2px;
-	display:inline-block;
-	transition: background-color 200ms ease-in-out;
+	color: inherit;
 }
-
-.md-task-list-item > input:checked:after,
-.md-task-list-item > input[checked]:after {
-	opacity: 1;
-}
-
-.md-task-list-item > input:after {
-	opacity: 1;
-	-webkit-transition: opacity 0.05s ease-in-out;
-	-moz-transition: opacity 0.05s ease-in-out;
-	transition: opacity 0.05s ease-in-out;
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-	position: absolute;
-	top: 0.4375rem;
-	left: 0.28125rem;
-	width: 0.9375rem;
-	height: 0.5rem;
-	border: 3px solid #fff;
-	border-top: 0;
-	border-right: 0;
-	content: ' ';
-	opacity: 0;
-}
-
 .md-tag {
-	color:inherit;
+	color: inherit;
+	font: inherit;
+}
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+}
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
+}
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
+}
+#write>h5.md-focus:before {
+	top: 2px;
 }
 
-.md-toc:focus .md-toc-content{
-	margin-top: 19px;
+.md-toc {
+	margin-top: 40px;
 }
 
-#typora-sidebar {
-	font-size:1rem !important;
-}
-
-.html-for-mac #typora-sidebar {
-	background-color:white;
-}
-
-.outline-content li, .outline-content ul {
-	font-size:1rem !important;
-}
-
-.outline-title {
-	line-height: inherit;
-	margin-top: 10px;
-}
-
-.outline-expander {
-	width: 18px;
+.md-toc-content {
+	padding-bottom: 20px;
 }
 
 .outline-expander:before {
- 	content: "+";
-	font-family: inherit;
-	color: rgb(108, 108, 108); 
-  	font-size: 1.5rem;
- 	top: 0.1rem;
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
 }
 
-.outline-expander:hover:before {
-	content: "+";
-}
-
-.outline-item-open>.outline-item>.outline-expander:before{
-	content: "-";
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
 }
 
 /** source code mode */
@@ -589,8 +407,9 @@ a {
     color: #6A6A6A;
 }
 
-.os-windows #typora-source {
-	font-family: inherit;
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
 .cm-s-typora-default .cm-header, 
@@ -603,19 +422,23 @@ a {
 	color: #777777;
 }
 
-.md-diagram-panel {
-	margin-top: 24px;
-	margin-left: -1.2em;
+.typora-node .file-list-item-parent-loc, 
+.typora-node .file-list-item-time, 
+.typora-node .file-list-item-summary {
+	font-family: arial, sans-serif;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: calc(1rem - 12px);
 }
 
 .md-mathjax-midline {
 	background: #fafafa;
 }
 
-.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
-.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
-.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
-    bottom: -3.4em;
+.md-fences .code-tooltip {
+	bottom: -2em !important;
 }
 
 .dropdown-menu .divider {
@@ -626,6 +449,6 @@ a {
 </style>
 </head>
 <body class='typora-export os-windows'>
-<div id='write'  class=' first-line-indent'><h1><a name="project" class="md-header-anchor"></a><span>Project</span></h1><p><span>Build a fast background  subtraction model. </span></p><h1><a name="description" class="md-header-anchor"></a><span>Description</span></h1><p><span>The need for background subtraction and making it&#39;s extremely fast is inherent for many applications.</span></p><p><strong><span>Target:</span></strong><span> Run 200fps with a batch of 10  </span></p><p><span>( more to be added )</span></p><h1><a name="literature-survey" class="md-header-anchor"></a><span>Literature Survey</span></h1><ul><li><p><span>An excellent resource of the field is this </span><a href='https://sites.google.com/site/backgroundsubtraction/Home?authuser=0'><span>website</span></a><span> </span></p></li><li><p><span>Book : The same website has this book : </span><em><span>Background modeling and Foreground Detection for video surveillance:  Traditional and Recent Approaches, Benchmarking and Evaluation</span></em><span> </span></p><p><img src="Fast-Background%20Subtraction.assets/UFZH9xWn9jnoPB7pAeaZmvQnBEgC-jvO0Yf1Un3skphQZ695pxQm-XO_ZASVNMFWOxMBSRkLfXwVXK9HaiwKvdErt8zcyvqryaD6TYJGHvupSeuanA=w1280" referrerpolicy="no-referrer" alt="img"></p></li><li><p><span>A list of top researches</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>Top Researches</span></th><th style='text-align:center;' ><span>Paper link</span></th><th style='text-align:center;' ><span>Source Code</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>FgSegNet</span></td><td style='text-align:center;' ><a href='https://www.sciencedirect.com/science/article/abs/pii/S0167865518303702'><span>Paper</span></a></td><td style='text-align:center;' ><a href='https://github.com/lim-anggun/FgSegNet'><span>Github</span></a></td></tr><tr><td style='text-align:center;' ><span>FgSegNetV2</span></td><td style='text-align:center;' ><a href='https://arxiv.org/abs/1808.01477'><span>Paper</span></a></td><td style='text-align:center;' ><a href='https://github.com/lim-anggun/FgSegNet_v2'><span>Github</span></a></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td></tr></tbody></table></figure></li><li><p><strong><span>Datasets - Human Activities</span></strong><span> </span></p><ul><li><span>There are nearly 31 datasets available for background subtraction divided into three categories - Article, Conference, Project. A list of those can be found </span><a href='https://sites.google.com/site/backgroundsubtraction/test-sequences/human-activities?authuser=0'><span>here</span></a></li><li><span>There are datasets also available for animal activities</span></li></ul></li><li><p><strong><span>Available Implementations : Deep learning based</span></strong></p><ul><li><span>A list of those can be found </span><a href='https://sites.google.com/site/backgroundsubtraction/test-sequences/human-activities?authuser=0'><span>here</span></a><span>  </span></li></ul></li><li><p><span>Others</span></p><ul><li><p><a href='https://github.com/murari023/awesome-background-subtraction/blob/master/README.md'><span>Awesome Background Subtraction Githhub</span></a><span> </span></p></li><li><p><span>A basic tutorial from </span><a href='https://github.com/murari023/awesome-background-subtraction/blob/master/README.md'><span>OpenCv-1</span></a><span> , </span><a href='https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_video/py_bg_subtraction/py_bg_subtraction.html'><span>OpenCv-2</span></a><span> </span></p><p>&nbsp;</p></li></ul></li></ul><hr /><h1><a name="implementation" class="md-header-anchor"></a><span>Implementation</span></h1><ul><li><span>After literature survey, I found a dataset from the dataset list to start with and that suits my need. It was the </span><a href='http://www.cs.cmu.edu/~yaser/new_backgroundsubtraction.htm'><span>GroundTruthSequence dataset of 500 images</span></a><span> </span></li><li><span>I will be writing code in PyTorch.</span></li></ul><h2><a name="data-pipeline" class="md-header-anchor"></a><span>Data Pipeline</span></h2><ul><li><span>A custom data pipeline in PyTorch. This </span><a href='https://pytorch.org/tutorials/beginner/data_loading_tutorial.html'><span>blog</span></a><span> is a great resource to start with. </span></li></ul><p><span>------------ incomplete----------------------------------------</span></p></div>
+<div id='write'  class=' first-line-indent'><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n130"><a class="md-toc-inner" href="#project">Project</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n93"><a class="md-toc-inner" href="#description">Description</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n7"><a class="md-toc-inner" href="#literature-survey">Literature Survey</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n54"><a class="md-toc-inner" href="#implementation">Implementation</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n60"><a class="md-toc-inner" href="#data-pipeline">Data Pipeline</a></span></p></div><p>&nbsp;</p><h3><a name="project" class="md-header-anchor"></a><span>Project</span></h3><p><span>Build a fast background  subtraction model. </span></p><h3><a name="description" class="md-header-anchor"></a><span>Description</span></h3><p><span>The need for background subtraction and making it&#39;s extremely fast is inherent for many applications.</span></p><p><strong><span>Target:</span></strong><span> Run 200fps with a batch of 10  </span></p><p><span>( more to be added )</span></p><h3><a name="literature-survey" class="md-header-anchor"></a><span>Literature Survey</span></h3><ul><li><p><span>An excellent resource of the field is this </span><a href='https://sites.google.com/site/backgroundsubtraction/Home?authuser=0'><span>website</span></a><span> </span></p></li><li><p><span>Book : The same website has this book : </span><em><span>Background modeling and Foreground Detection for video surveillance:  Traditional and Recent Approaches, Benchmarking and Evaluation</span></em><span> </span></p><p><img src="Fast-Background%20Subtraction.assets/UFZH9xWn9jnoPB7pAeaZmvQnBEgC-jvO0Yf1Un3skphQZ695pxQm-XO_ZASVNMFWOxMBSRkLfXwVXK9HaiwKvdErt8zcyvqryaD6TYJGHvupSeuanA=w1280" referrerpolicy="no-referrer" alt="img"></p></li><li><p><span>A list of top researches</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>Top Researches</span></th><th style='text-align:center;' ><span>Paper link</span></th><th style='text-align:center;' ><span>Source Code</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>FgSegNet</span></td><td style='text-align:center;' ><a href='https://www.sciencedirect.com/science/article/abs/pii/S0167865518303702'><span>Paper</span></a></td><td style='text-align:center;' ><a href='https://github.com/lim-anggun/FgSegNet'><span>Github</span></a></td></tr><tr><td style='text-align:center;' ><span>FgSegNetV2</span></td><td style='text-align:center;' ><a href='https://arxiv.org/abs/1808.01477'><span>Paper</span></a></td><td style='text-align:center;' ><a href='https://github.com/lim-anggun/FgSegNet_v2'><span>Github</span></a></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td></tr></tbody></table></figure></li><li><p><strong><span>Datasets - Human Activities</span></strong><span> </span></p><ul><li><span>There are nearly 31 datasets available for background subtraction divided into three categories - Article, Conference, Project. A list of those can be found </span><a href='https://sites.google.com/site/backgroundsubtraction/test-sequences/human-activities?authuser=0'><span>here</span></a></li><li><span>There are datasets also available for animal activities</span></li></ul></li><li><p><strong><span>Available Implementations : Deep learning based</span></strong></p><ul><li><span>A list of those can be found </span><a href='https://sites.google.com/site/backgroundsubtraction/test-sequences/human-activities?authuser=0'><span>here</span></a><span>  </span></li></ul></li><li><p><span>Others</span></p><ul><li><p><a href='https://github.com/murari023/awesome-background-subtraction/blob/master/README.md'><span>Awesome Background Subtraction Githhub</span></a><span> </span></p></li><li><p><span>A basic tutorial from </span><a href='https://github.com/murari023/awesome-background-subtraction/blob/master/README.md'><span>OpenCv-1</span></a><span> , </span><a href='https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_video/py_bg_subtraction/py_bg_subtraction.html'><span>OpenCv-2</span></a><span> </span></p><p>&nbsp;</p></li></ul></li></ul><hr /><h3><a name="implementation" class="md-header-anchor"></a><span>Implementation</span></h3><ul><li><span>After literature survey, I found a dataset from the dataset list to start with and that suits my need. It was the </span><a href='http://www.cs.cmu.edu/~yaser/new_backgroundsubtraction.htm'><span>GroundTruthSequence dataset of 500 images</span></a><span> </span></li><li><span>I will be writing code in PyTorch.</span></li></ul><h4><a name="data-pipeline" class="md-header-anchor"></a><span>Data Pipeline</span></h4><ul><li><span>A custom data pipeline in PyTorch. This </span><a href='https://pytorch.org/tutorials/beginner/data_loading_tutorial.html'><span>blog</span></a><span> is a great resource to start with. </span></li></ul><p><span>------------ incomplete----------------------------------------</span></p></div>
 </body>
 </html>

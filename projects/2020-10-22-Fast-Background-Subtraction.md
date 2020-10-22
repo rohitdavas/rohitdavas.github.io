@@ -6,11 +6,15 @@ categories: CV DL
 description: A project on building a fast background subtraction model
 ---
 
-# Project
+[TOC]
+
+
+
+### Project
 
 Build a fast background  subtraction model. 
 
-# Description
+### Description
 
 The need for background subtraction and making it's extremely fast is inherent for many applications.
 
@@ -19,7 +23,7 @@ The need for background subtraction and making it's extremely fast is inherent f
 ( more to be added )
 
 
-# Literature Survey
+### Literature Survey
 
 - An excellent resource of the field is this [website](https://sites.google.com/site/backgroundsubtraction/Home?authuser=0) 
 
@@ -53,12 +57,12 @@ The need for background subtraction and making it's extremely fast is inherent f
 
 ------
 
-# Implementation
+### Implementation
 
 - After literature survey, I found a dataset from the dataset list to start with and that suits my need. It was the [GroundTruthSequence dataset of 500 images](http://www.cs.cmu.edu/~yaser/new_backgroundsubtraction.htm) 
 - I will be writing code in PyTorch.
 
-## Data Pipeline
+#### Data Pipeline
 
 - A custom data pipeline in PyTorch. This [blog](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html) is a great resource to start with. 
 
