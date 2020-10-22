@@ -1,37 +1,18 @@
----
-layout: default
-title: Fast Background Subtraction 
-date: 2020-10-22 18:20:30 -0000
-categories: CV DL 
-description: A project on building a fast background subtraction model
-
----
-
-
-
-
-
 # <u>Project</u> : A Fast Background Subtraction model
 
-<u>[Home](https://rohitdavas.github.io/) 	[Resume](https://rohitdavas.github.io/resume/Rohit_Kumar.pdf)	[davarohit@gmail](https://mail.google.com/mail/u/0/?view=cm&fs=1&to=davasrohit@gmail.com&tf=1)</u>
-
-------
-
-
+<u>[Home](https://rohitdavas.github.io/) 	[Resume](https://rohitdavas.github.io/resume/Rohit_Kumar.pdf)	[davarohit@gmail](https://mail.google.com/mail/u/0/?view=cm&fs=1&to=davasrohit@gmail.com&tf=1)</u>  
 
 [TOC]
 
-
-
 ## <u>Description</u>
-
-------
 
 The need for background subtraction and making it's extremely fast is inherent for many applications.
 
 **Target:** Run 200fps with a batch of 10  
 
 ( more to be added )
+
+
 
 ## <u>Literature Survey</u>
 
@@ -49,12 +30,12 @@ The need for background subtraction and making it's extremely fast is inherent f
   | :------------: | :----------------------------------------------------------: | :-------------------------------------------------: |
   |    FgSegNet    | [Paper](https://www.sciencedirect.com/science/article/abs/pii/S0167865518303702) |  [Github](https://github.com/lim-anggun/FgSegNet)   |
   |   FgSegNetV2   |          [Paper](https://arxiv.org/abs/1808.01477)           | [Github](https://github.com/lim-anggun/FgSegNet_v2) |
-  |                |                                                              |                                                     |
-
+  
 - **Datasets - Human Activities** 
+  
   - There are nearly 31 datasets available for background subtraction divided into three categories - Article, Conference, Project. A list of those can be found [here](https://sites.google.com/site/backgroundsubtraction/test-sequences/human-activities?authuser=0)
-  - There are datasets also available for animal activities
-
+- There are datasets also available for animal activities
+  
 - **Available Implementations : Deep learning based**
 
   - A list of those can be found [here](https://sites.google.com/site/backgroundsubtraction/test-sequences/human-activities?authuser=0)  
@@ -99,5 +80,4 @@ The need for background subtraction and making it's extremely fast is inherent f
 
 # <u>End</u>
 
-[Home](https://rohitdavas.github.io/) 	[Resume](https://rohitdavas.github.io/resume/Rohit_Kumar.pdf)	[davarohit@gmail](https://mail.google.com/mail/u/0/?view=cm&fs=1&to=davasrohit@gmail.com&tf=1)	[top](#<u>Project</u> : A Fast Background Subtraction model)
-
+[Home](https://rohitdavas.github.io/) 	[Resume](https://rohitdavas.github.io/resume/Rohit_Kumar.pdf)	[davarohit@gmail](https://mail.google.com/mail/u/0/?view=cm&fs=1&to=davasrohit@gmail.com&tf=1)	[top](#<u>Project</u> : A Fast Background Subtraction model) 
