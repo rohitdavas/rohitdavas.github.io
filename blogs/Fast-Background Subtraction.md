@@ -1,16 +1,14 @@
-------
-
+---
 layout: default
-
 title: Fast Background Subtraction 
-
-------
+description: A project on building a fast background subtraction model
+---
 
 # Description
 
 The need for background subtraction and making it's extremely fast is inherent for many applications.
 
-**Target :** Run 200fps with a batch of 10  
+**Target:** Run 200fps with a batch of 10  
 
 ( more to be added )
 
