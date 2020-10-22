@@ -7,19 +7,19 @@ description: A project on building a fast background subtraction model
 
 ---
 
+
+
+
+
+# <u>Project</u> : A Fast Background Subtraction model
+
 [Home](https://rohitdavas.github.io/)  [Resume](https://rohitdavas.github.io/resume/Rohit_Kumar.pdf)
 
 [TOC]
 
-### <u>Project</u>
-
-------
-
-Build a fast background  subtraction model. 
 
 
-
-### <u>Description</u>
+## <u>Description</u>
 
 ------
 
@@ -29,7 +29,7 @@ The need for background subtraction and making it's extremely fast is inherent f
 
 ( more to be added )
 
-### <u>Literature Survey</u>
+## <u>Literature Survey</u>
 
 ------
 
@@ -63,7 +63,7 @@ The need for background subtraction and making it's extremely fast is inherent f
 
     
 
-### <u>Implementation</u>
+## <u>Implementation</u>
 
 ------
 
@@ -71,7 +71,7 @@ The need for background subtraction and making it's extremely fast is inherent f
 
 - I will be writing code in PyTorch.
 
-#### <u>Data Pipeline</u>
+### <u>Data Pipeline</u>
 
 ------
 
@@ -87,11 +87,13 @@ The need for background subtraction and making it's extremely fast is inherent f
 
 
 
-.... to be continued. 
+### .... to be continued. 
+
+
 
 ------
 
-### End
+# <u>End</u>
 
 [Home](https://rohitdavas.github.io/)  [Resume](https://rohitdavas.github.io/resume/Rohit_Kumar.pdf) [top](#Project)
 
