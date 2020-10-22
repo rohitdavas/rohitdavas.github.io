@@ -13,7 +13,6 @@ The need for background subtraction and making it's extremely fast is inherent f
 ( more to be added )
 
 
-
 # Literature Survey
 
 - An excellent resource of the field is this [website](https://sites.google.com/site/backgroundsubtraction/Home?authuser=0) 
