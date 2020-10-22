@@ -4,7 +4,10 @@ title: Fast Background Subtraction
 date: 2020-10-22 18:20:30 -0000
 categories: CV DL 
 description: A project on building a fast background subtraction model
+
 ---
+
+[Home](https://rohitdavas.github.io/)  [Resume](https://rohitdavas.github.io/resume/Rohit_Kumar.pdf)
 
 [TOC]
 
