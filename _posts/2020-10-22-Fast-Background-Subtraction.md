@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Fast Background Subtraction 
-description: A project on building a fast background subtraction model
+date: 2020-10-22 18:20:30 -0000
+categories: CV DL 
+# description: A project on building a fast background subtraction model
 ---
 
 # Description
