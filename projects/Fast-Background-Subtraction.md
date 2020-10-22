@@ -8,8 +8,6 @@ description: A project on building a fast background subtraction model
 
 [TOC]
 
-
-
 ### Project
 
 ------
@@ -81,3 +79,8 @@ The need for background subtraction and making it's extremely fast is inherent f
 
 
 .... to be continued. 
+
+------
+
+[^]: [Home](https://rohitdavas.github.io/) [top](#Project)
+
