@@ -44,7 +44,7 @@ Specifically for the case of static camera, the background is going to remain sa
   
   The above mentioned models are quite big and hence we can't expect them to be much fast. 
   
-- A list of efficient models - 
+- ==A list of efficient models== - 
 
   - since my target is to build a fast model, here is a list of papers in which model is not too deep, and results are good. The speed required varies with the use case.  
 
