@@ -6,6 +6,38 @@
 
 ## Start
 
+## Steps for analytics project
+
+1. Convert the business problem to a analytic problem - ==clarity brings mastery==
+
+2. Data exploration - ==data is your friend==
+
+   1. what is there in data, how much data you have, quality of data, mean, var, counts, max, what is important, what is waste etc. 
+
+3. Data preparation - ==fry it==
+
+   1. highly influenced by the modelling step
+   2. general : missing values fix, outliers issue, variables transformation, develop training, testing, validation data, 
+   3. missing values : identify => look for pattern and fix or ignore or impute with mean or median, or specific to cases 
+   4. outliers : 
+      1. lots of data - ignoring will not hurt
+      2. if only few outliers - fix them manually or can fix by putting 1 percentile value or 99th percentile value 
+
+4. Modelling - ==the function==
+
+5. Validation - ==know where you stand==
+
+   1. justify the results of logistic regression analysis
+      1. concordance -  ability to discriminate b/w event happening and not happening
+      2. lift - how good it is compared to random selection
+      3. confusion matrix
+
+6. Implementation and tracking - ==erosion and repairing== 
+
+   
+
+## A checklist and short codes
+
 Assuming the data is read in a pandas data-frame as **df.**
 
 Take a pen and paper and while analyzing mistakes in data, note down for fixing
@@ -92,9 +124,12 @@ Take a pen and paper and while analyzing mistakes in data, note down for fixing
 
     
 
-- [ ] 
+## Interview prep
 
-
+- [workera.ai resources for data analyst](https://workera.ai/resources/data-science-case-study-interview/) 
+- [blog on common questions](https://analyticsindiamag.com/common-analytics-interview-questions/)
+- [55 questions](https://learning.naukri.com/articles/top-20-data-analytics-interview-questions-answers/)
+- 
 
 ## End
 
