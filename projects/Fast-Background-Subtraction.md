@@ -18,12 +18,12 @@ Specifically for the case of static camera, the background is going to remain sa
 ## A checklist of challenges in Background Subtraction 
 
 - [ ] Illumination Changes  -  even in static scenes, lightning changes is a problem.
-- [ ] Dynamic background - not applicable for the case of static scenes
-- [ ] Camera Jitter 
+- [x] Dynamic background - not applicable for the case of static scenes
+- [x] Camera Jitter 
 - [ ] Camouflage -  similar colors of background and foreground 
 - [ ] Night vides - As most pixels have a similar color in a night scene, recognition of foreground objects and their contours is difficult
-- [ ] Ghost/ Intermittent Object motion -  Foreground objects that are embedded into the background scene and start moving after background initialization are the so-called ghosts.
-- [ ] Hard Shadows - Dark, moving shadows that do not fall under the illumination change category
+- [x] Ghost/ Intermittent Object motion -  Foreground objects that are embedded into the background scene and start moving after background initialization are the so-called ghosts.
+- [x] Hard Shadows - Dark, moving shadows that do not fall under the illumination change category
 
 ## <u>Literature Survey</u>
 
@@ -50,11 +50,11 @@ Specifically for the case of static camera, the background is going to remain sa
 
     
 
-  | Paper name                                                   | links                                         | source code |
-  | ------------------------------------------------------------ | --------------------------------------------- | ----------- |
-  | A Deep Convolutional Neural Network for Background Subtraction | [paper](https://arxiv.org/pdf/1702.01731.pdf) | None        |
-  |                                                              |                                               |             |
-  |                                                              |                                               |             |
+  | Paper name                                                   | links                                           | source code                                               |
+  | ------------------------------------------------------------ | ----------------------------------------------- | --------------------------------------------------------- |
+  | A Deep Convolutional Neural Network for Background Subtraction | [paper](https://arxiv.org/pdf/1702.01731.pdf)   | None                                                      |
+  | BSUV-Net: A Fully-Convolutional Neural Network for<br/>Background Subtraction of Unseen Videos | [paper](https://arxiv.org/pdf/1907.11371v2.pdf) | [inference model](https://github.com/ozantezcan/BSUV-Net) |
+  |                                                              |                                                 |                                                           |
 
   
 
@@ -81,8 +81,13 @@ Specifically for the case of static camera, the background is going to remain sa
 ------
 
 - After literature survey, I found a dataset from the dataset list to start with and that suits my need. It was the [GroundTruthSequence dataset of 500 images](http://www.cs.cmu.edu/~yaser/new_backgroundsubtraction.htm) 
-
 - I will be writing code in PyTorch.
+
+### First model
+
+- FCNN based, 5 Blocks of CNN with sigmoidal output.
+- Single block consists of Conv => ReLU => BN 
+- Loss function : smoothed IOU distance or smoothed Jaccard distance as described on [wikipedia](https://en.wikipedia.org/wiki/Jaccard_index) and [implementation](https://gist.github.com/wassname/f1452b748efcbeb4cb9b1d059dce6f96) 
 
 ### <u>Data Pipeline</u>
 
@@ -96,9 +101,11 @@ Specifically for the case of static camera, the background is going to remain sa
 
 
 
+## Other helpful resources
 
-
-
+- [Unet code ](https://github.com/spctr01/UNet/blob/master/Unet.py) , [blog](https://becominghuman.ai/implementing-unet-in-pytorch-8c7e05a121b4)
+- [building autoencoder](https://medium.com/@vaibhaw.vipul/building-autoencoder-in-pytorch-34052d1d280c) 
+- [A discussion on BN and ReLU](https://datascience.stackexchange.com/questions/20012/does-batch-normalization-make-sense-for-a-relu-activation-function)
 
 ### .... to be continued. 
 

@@ -68,9 +68,31 @@ Take a pen and paper and while analyzing mistakes in data, note down for fixing
   # some basic first steps are
   
   df.head()
+  df.info() # a very important method to see the types of data
   df.describe() 
+  # explicitly describe non-numerical data
+  df.describe ( include = ['object', 'bool'])
+  
+  # count values
+  df[col].value_counts() ; 
+  # for ratio
+  df[col].value_counts(normalize = True)
+  
   seaborn.pairplot ( df )
   df.is_null().any() ; df.is_null().sum()
+  
+  #-------------------
+  # additional methods
+  #--------------------
+  print ( df.shape )
+  print( df.columns )
+  
+  # bool to int64
+  # col : a column name
+  df[col] = df[col].astype('int64')
+  
+  # check for unique values in cols
+  df[col].unique()
   ```
 
   
@@ -128,8 +150,13 @@ Take a pen and paper and while analyzing mistakes in data, note down for fixing
 
 - [workera.ai resources for data analyst](https://workera.ai/resources/data-science-case-study-interview/) 
 - [blog on common questions](https://analyticsindiamag.com/common-analytics-interview-questions/)
-- [55 questions](https://learning.naukri.com/articles/top-20-data-analytics-interview-questions-answers/)
-- 
+- [55 questions](https://learning.naukri.com/articles/top-20-data-analytics-interview-questions-answers/) 
+- [pandas cheatsheet](https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf)
+
+### Data understanding and querying
+
+- [pandas basics](https://www.kaggle.com/rohitdavas/topic-1-exploratory-data-analysis-with-pandas/edit) 
+- [Assignment](https://www.kaggle.com/kashnitsky/a1-demo-pandas-and-uci-adult-dataset), [MySolutions](https://www.kaggle.com/rohitdavas/a1-demo-pandas-and-uci-adult-dataset?scriptVersionId=45449751)
 
 ## End
 
