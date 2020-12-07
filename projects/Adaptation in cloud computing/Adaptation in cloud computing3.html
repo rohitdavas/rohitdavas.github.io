@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title>3. Literature Survey </title>
+	<meta name="generator" content="LibreOffice 7.0.3.1 (Windows)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2020-12-07T11:10:03.880000000"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
+		h2 { margin-top: 0.14in; margin-bottom: 0.08in; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Sans", sans-serif; font-size: 16pt; font-weight: bold }
+		h2.cjk { font-family: "Microsoft YaHei"; font-size: 16pt; font-weight: bold }
+		h2.ctl { font-family: "Arial"; font-size: 16pt; font-weight: bold }
+		h3 { margin-top: 0.1in; margin-bottom: 0.08in; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Serif", serif; font-size: 14pt; font-weight: bold }
+		h3.cjk { font-family: "NSimSun"; font-size: 14pt; font-weight: bold }
+		h3.ctl { font-family: "Arial"; font-size: 14pt; font-weight: bold }
+		h1 { margin-bottom: 0.08in; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Serif", serif; font-size: 24pt; font-weight: bold }
+		h1.cjk { font-family: "NSimSun"; font-size: 24pt; font-weight: bold }
+		h1.ctl { font-family: "Arial"; font-size: 24pt; font-weight: bold }
+		a:visited { color: #800000; so-language: zxx; text-decoration: underline }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" align="center">
+<u>3. Literature Survey </u>
+</h1>
+<p align="left"><br/>
+<br/>
+
+</p>
+<p align="left" style="text-decoration: none">I reviewed the
+following three research papers. 
+</p>
+<h2 class="western">1. How to Adapt Applications for the Cloud
+Environment 
+</h2>
+<p>Summary : ( since this paper is a review of the field, only a
+brief summary is mentioned ) 
+</p>
+<ul>
+	<li><p>Presents a review of field. 
+	</p>
+	<li><p>Three layer software development model as base and studies
+	the adaptation layerwise. 
+	</p>
+	<ul>
+		<li><p>Data layer</p>
+		<li><p>Business layer</p>
+		<li><p>Presentation layer</p>
+	</ul>
+	<li><p>Addresses the research questions and open challenges with
+	respect to adaptation of each layer. 
+	</p>
+</ul>
+<h2 class="western">2. SmartScale: Automatic Application Scaling in
+Enterprise Clouds 
+</h2>
+<p>Summary ( we have already discussed the same paper in the class ) 
+</p>
+<ul>
+	<li><p>Addresses the choice of horizontal scaling and vertical
+	scaling as an optimisation problem 
+	</p>
+	<li><p>Optimisation to minimize the joint cost of horizontal scaling
+	and vertical scaling 
+	</p>
+	<li><p>Uses binary search to find the minima. 
+	</p>
+</ul>
+<h2 class="western">3. Experimental Analysis on Autonomic Strategies
+for Cloud Elasticity 
+</h2>
+<p><br/>
+<br/>
+
+</p>
+<p>There are two types of resources at out hand that can be used to
+fullfill the incoming demand for more resources. Adding more
+resoruces from infrastruture or handling using the software
+elasticity. Each of the choice presents their own issues and
+benefits.</p>
+<p>Infrastructure resoruces are limited , initiation time is
+significant to impact the service, and pricing is per instance hour. <img src="Adaptation%20in%20cloud%20computing3_html_a7d496c5533348fc.gif" name="Image3" align="left" width="285" height="237" border="0"/>
+
+</p>
+<p>Software elasticity have the inherent need to make the software
+modular and various component for the same feature by the order of
+weight. <i>However, the initiation time in SaaS is neglible compared
+to IaaS. </i>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h3 class="western">Benefits of complementary usage of IaaS and SaaS
+elasticities</h3>
+<p>The very important impact of this is &ndash; SaaS elasticities
+have neglible initiation time while IaaS have significant initiation
+time. Thus during the time the IaaS resources are being prepared, the
+SaaS elasticities can handle the resource demand and thus mange to
+response to the traffic spike. 
+</p>
+<p>Others are : 
+</p>
+<ul>
+	<li><p>Alleviate the use of infrastruture resource</p>
+	<li><p>improve responsiveness of scaling</p>
+	<li><p>improve expression capabilites of elasticity. 
+	</p>
+</ul>
+<h3 class="western">Summary of possible elasticities and related
+actions. 
+</h3>
+<p style="margin-bottom: 0in; line-height: 100%"><img src="Adaptation%20in%20cloud%20computing3_html_8a7e37ffecc25cb9.png" name="Image4" width="700" height="152" border="0"/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h3 class="western">Paper approach 
+</h3>
+<p><br/>
+<br/>
+
+</p>
+<p><b>Model Introduction </b>
+</p>
+<p>The paper formulates a autoscaling service that uses the
+previously defined elasticities to handle the resource demand. The
+model presented is based on well known  MAPE-K formalism. The
+interacts with the managed system , the cloud resources graph  using
+sensors and actuators, thus taking the resource management to a new
+level of abstaction, separate from the resource system itself. 
+</p>
+<p><img src="Adaptation%20in%20cloud%20computing3_html_734c5dea624ab8dd.gif" name="Image5" align="left" width="310" height="256" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><b>Managed system</b></p>
+<p>The managed system taken is a n-tier web applications. Each tier
+is hosted on a VM and VM&rsquo;s are hosted on a set of physical
+machines.</p>
+<p> 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><img src="Adaptation%20in%20cloud%20computing3_html_af479c88a5474ca8.png" name="Image6" align="bottom" width="364" height="210" border="0"/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><b>Monitor : Events </b>
+</p>
+<p><span style="font-weight: normal">Each cloud resource has a set of
+metrics indicating it&rsquo;s health. The monitor phase collect and
+aggregate multiple sensor values over time. This helps system ot make
+timely relevant information about the system health in form of
+</span><b>events</b><span style="font-weight: normal">. The event can
+be basic and complex, wich basuc representing the event handling
+resource management of a single resource. Complex are formed as a
+composition of basic events. </span>
+</p>
+<p><span style="font-weight: normal">CA ( cloud administrator ) ,
+person incharge of the cloud management, needs to detect complex
+relationships b/w events overtime by definining rules also known as
+</span><b>event patterns. </b>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><b>Execute : predefined actions </b>
+</p>
+<p><span style="font-weight: normal">There are a set of predefined
+actions defined by CA. The paper presents two types of actions :
+Basic actions and complex actions. The goal of complex actions is to
+absorb the infrastruture resoruce initiation time. </span>
+</p>
+<p><span style="font-weight: normal">An example of complex action is
+shown in the figure below. We got a request / need for more resource,
+we do two things : we scale out infrastruture resouces but since the
+initiation time will be large, so what we do is we use software
+elasticity &ndash; making software light , till the infrastruture
+resouces are initialised. Than we normalise the software to the
+normal weight. This is one complex action.</span></p>
+<p> 
+<img src="Adaptation%20in%20cloud%20computing3_html_b7b11392b3c6566b.png" name="Image7" width="338" height="107" border="0"/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><b>Analyse and Plan : Reconfiguration decision </b>
+</p>
+<p style="font-weight: normal">We have seen the M and E of MAPE.
+Bridging the gap b/w M and E is the AP. The author presented this
+step as three step decision making. 
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+ <img src="Adaptation%20in%20cloud%20computing3_html_224effbc051d1797.gif" name="Image8" align="left" width="548" height="182" border="0"/>
+
+</p>
+<ul>
+	<li><p><b>Tactic filter &ndash; </b><span style="font-weight: normal">A
+	t</span><span style="font-weight: normal">actic is acutally an
+	event-action pair defined by CA and represents a well-known IF-THEN
+	statement. The step 1 of 3 looks for tactics corresponding to the
+	event stored in Knowledge by CA. </span>
+	</p>
+	<li><p><b>Constraints Filter &ndash; </b><span style="font-weight: normal">The
+	runtime context can induce some constraints that may prevent to
+	execute eligible tactics. </span>
+	</p>
+	<li><p><b>Preferences filter &ndash; </b><span style="font-weight: normal">This
+	filter a final complex action based on CA preferences. Some examples
+	of preferences are : Cost, QoS, QoE, Elasticity time,
+	Responsiveness. </span>
+	</p>
+</ul>
+<p><b>Knowledge </b>
+</p>
+<p style="font-weight: normal">It is the data shared among all MAPE
+phases such as current cloud resources graph with associated metric
+values, runtime constraints , preferences expressed on the system
+etc. There are other defined by CA that are crucial for decision
+making like event patterns, predefined actions, tactics. 
+</p>
+<p style="font-weight: normal"><br/>
+<br/>
+
+</p>
+<h2 class="western">4. Additional papers</h2>
+<p><span style="font-variant: normal"><font color="#000000"><span style="text-decoration: none"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">A
+Survey on Cloud Computing Elasticity - </span></span></span></font></font></span></font></span><a href="https://ieeexplore.ieee.org/abstract/document/6424959?casa_token=UlT1o-JfxOkAAAAA:fd8eWme0PzZAX5OaYGqx5KvlN8ZEP1ufxdWOiwl1c1J1_vjaT_wljxgraC6k4UT7JzNC54ugnfQ61A"><span style="font-variant: normal"><font color="#000000"><span style="text-decoration: none"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal"><u><span style="font-weight: normal"><span style="background: transparent">Link</span></span></u></span></font></font></span></font></span></a></p>
+<ol>
+	<li><p style="margin-bottom: 0in; line-height: 179%; background: transparent">
+	<span style="font-variant: normal"><font color="#000000"><span style="text-decoration: none"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">Elasticity
+	in Cloud Computing: What It Is, and What It Is Not - </span></span></span></font></font></span></font></span><a href="https://www.usenix.org/system/files/conference/icac13/icac13_herbst.pdf"><span style="font-variant: normal"><font color="#000000"><span style="text-decoration: none"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal"><u><span style="font-weight: normal"><span style="background: transparent">Link</span></span></u></span></font></font></span></font></span></a></p>
+	<li><p style="margin-bottom: 0in; line-height: 179%; background: transparent">
+	<span style="font-variant: normal"><font color="#000000"><span style="text-decoration: none"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">Horizontal
+	and Vertical Scaling of Container-Based Applications Using
+	Reinforcement Learning - </span></span></span></font></font></span></font></span><a href="https://ieeexplore.ieee.org/document/8814555?denied="><span style="font-variant: normal"><font color="#000000"><span style="text-decoration: none"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal"><u><span style="font-weight: normal"><span style="background: transparent">Link</span></span></u></span></font></font></span></font></span></a></p>
+	<li><p style="margin-bottom: 0.22in; line-height: 179%; background: transparent">
+	<span style="font-variant: normal"><font color="#000000"><span style="text-decoration: none"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">Elasticity
+	in Cloud Computing: State of the Art and Research Challenges - </span></span></span></font></font></span></font></span><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=7937885"><span style="font-variant: normal"><font color="#000000"><span style="text-decoration: none"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="font-style: normal"><u><span style="font-weight: normal"><span style="background: transparent">Link</span></span></u></span></font></font></span></font></span></a></p>
+</ol>
+</body>
+</html>

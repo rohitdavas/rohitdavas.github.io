@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title>1. Preliminaries</title>
+	<meta name="generator" content="LibreOffice 7.0.3.1 (Windows)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2020-12-07T11:10:03.417000000"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
+		h1 { margin-bottom: 0.08in; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Serif", serif; font-size: 24pt; font-weight: bold }
+		h1.cjk { font-family: "NSimSun"; font-size: 24pt; font-weight: bold }
+		h1.ctl { font-family: "Arial"; font-size: 24pt; font-weight: bold }
+		a:visited { color: #800000; so-language: zxx; text-decoration: underline }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" align="center">
+<u>1. <b>Preliminaries</b></u></h1>
+<p align="center"><br/>
+<br/>
+
+</p>
+<p><font face="Arial, sans-serif"><b>Cloud elasticity</b><span style="font-weight: normal">
+is defined as the degree to which a system is able to adapt to
+workload changes by provisioning and de-provisioning resources in an
+autonomic manner, such that at each point in time the available
+resources match the current demand as closely as possible. Through
+this, Software as a service ( SaaS) provider relying on infrastruture
+as a service (IaaS) have the capability to quickly cope with highly
+and unpredictable demands by finely allocating resouces accordingly.
+Therefore meeting Service Level Agreements (SLAs) previously
+established with their customers. </span></font>
+</p>
+<p><font face="Arial, sans-serif"><b>Infrastructure Horizontal
+elasticity HS<sub>infra </sub> </b><span style="font-weight: normal">basically
+refers to the on-demand adding of a new VM. This is applicable for
+applications that have clustered architecture.Clustered architecture
+is needed as a master node is needed that distributes requests
+between the worker nodes.Cost of this depands upon the ease with
+which nodes can join or leave the cluster. </span></font>
+</p>
+<p><font face="Arial, sans-serif"><b>Infrastructure vertical
+elasticity VS<sub>infra </sub> </b><span style="font-weight: normal">refers
+to the adding / deleting RAM or CPU to/from the VM system. Modern
+hypervisiors support online VM resizing allowing one to add CPU or
+memory resource</span><span style="font-weight: normal">s to a VM
+without bringing it down. It is limited by the amount of free CPU
+Cores and memory available on the physical server hosting the virtual
+machine. Modern hypervisior also support </span><b>live migration
+</b><span style="font-weight: normal">allowing VM to be migrated from
+one physical server to another. </span></font>
+</p>
+<p><font face="Arial, sans-serif"><b>Software Elasticity </b><span style="font-weight: normal">is
+the capability of a software to adapt itself to meet demand changes
+and/ or mitigate the infrastruture resource limitiations. It can be
+done in software in two ways : remove software components on the fly
+&ndash; HS</span><sub><span style="font-weight: normal">Soft</span></sub><span style="font-weight: normal">
+and change the offering of existing components VS</span><sub><span style="font-weight: normal">soft
+. </span></sub></font>
+</p>
+<p><font face="Arial, sans-serif"><b>Multi-tier software model </b></font>
+</p>
+<p style="font-weight: normal"><font face="Arial, sans-serif">It is a
+modelling principle where software is composed of multi &ndash;
+tiers, thus make each tier independent of other in terms of
+resoruces. Three layer model of it is the most common. </font>
+</p>
+<p style="font-weight: normal"><font face="Arial, sans-serif">This
+helps us in using cloud flexibility. For e.g : Google app engine can
+be used for logic tier / layer and Amazon database service for data
+layer for the same software. </font>
+</p>
+<p style="font-weight: normal"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<img src="Adaptation%20in%20cloud%20computing1_html_37044a3fb541687c.png" name="Image1" align="bottom" width="476" height="425" border="0"/>
+
+</p>
+<p style="font-weight: normal"><br/>
+<br/>
+
+</p>
+<p> 
+</p>
+<p><font face="Arial, sans-serif"><b>Difference b/w elasticity mode
+and elasticity method</b></font></p>
+<p><font face="Arial, sans-serif"><b>Elasticity mode </b><span style="font-weight: normal">is
+the needed interactions or manner in order to perform elasticiy
+actions. It handles the problem of how the need for adaptation is
+calculated. There are various divisons in it : </span></font>
+</p>
+<ul>
+	<li><p><font face="Arial, sans-serif"><span style="font-weight: normal">Reactive
+	mode</span></font></p>
+	<ul>
+		<li><p><font face="Arial, sans-serif"><span style="font-weight: normal">Static
+		threshold</span></font></p>
+		<li><p><font face="Arial, sans-serif"><span style="font-weight: normal">Dynamic
+		threshold</span></font></p>
+	</ul>
+	<li><p><font face="Arial, sans-serif"><span style="font-weight: normal">Proactive
+	mode</span></font></p>
+	<ul>
+		<li><p><font face="Arial, sans-serif"><span style="font-weight: normal">Time
+		series analysis</span></font></p>
+		<li><p><font face="Arial, sans-serif"><span style="font-weight: normal">model
+		solving mechanisms</span></font></p>
+	</ul>
+	<li><p><font face="Arial, sans-serif"><span style="font-weight: normal">Model
+	predictive control ( MPC ) </span></font>
+	</p>
+	<ul>
+		<li><p><font face="Arial, sans-serif"><span style="font-weight: normal">Reinforcement
+		learning ( RL ) </span></font>
+		</p>
+		<li><p><font face="Arial, sans-serif"><span style="font-weight: normal">Control
+		theory </span></font>
+		</p>
+	</ul>
+</ul>
+<p><br/>
+<br/>
+
+</p>
+<p><font face="Arial, sans-serif"><b>Elasticity methods </b></font>
+</p>
+<p style="font-weight: normal"><font face="Arial, sans-serif">Once
+elasticity policy have decided for how much resources are needed,
+method handles how demanded resource is provided. </font>
+</p>
+<p style="font-weight: normal"><font face="Arial, sans-serif">To
+deploy elasticity solutions, one or hybrid of the following methods
+is implemented to meet the demand.</font></p>
+<ul>
+	<li><p style="font-weight: normal"><font face="Arial, sans-serif">Infrastructure</font></p>
+	<ul>
+		<li><p style="font-weight: normal"><font face="Arial, sans-serif">Horizontal
+		scaling</font></p>
+		<li><p style="font-weight: normal"><font face="Arial, sans-serif">vertical
+		Scaling</font></p>
+	</ul>
+	<li><p style="font-weight: normal"><font face="Arial, sans-serif">Software
+	level</font></p>
+	<ul>
+		<li><p style="font-weight: normal"><font face="Arial, sans-serif">Software
+		elasticity</font></p>
+	</ul>
+</ul>
+<p><br/>
+<br/>
+
+</p>
+</body>
+</html>

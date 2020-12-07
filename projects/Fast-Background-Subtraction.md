@@ -58,12 +58,12 @@ Specifically for the case of static camera, the background is going to remain sa
 
   
 
-- **Datasets - Human Activities** 
-  
-  - There are nearly 31 datasets available for background subtraction divided into three categories - Article, Conference, Project. A list of those can be found [here](https://sites.google.com/site/backgroundsubtraction/test-sequences/human-activities?authuser=0)
-  
+### Datasets - Human Activities 
+
+- There are nearly 31 datasets available for background subtraction divided into three categories - Article, Conference, Project. A list of those can be found [here](https://sites.google.com/site/backgroundsubtraction/test-sequences/human-activities?authuser=0)
+
 - There are datasets also available for animal activities
-  
+
 - **Available Implementations : Deep learning based**
 
   - A list of those can be found [here](https://sites.google.com/site/backgroundsubtraction/test-sequences/human-activities?authuser=0)  
@@ -95,7 +95,38 @@ Specifically for the case of static camera, the background is going to remain sa
 
 - A custom data pipeline in PyTorch. This [blog](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html) is a great resource to start with. 
 
+### Data folders comment : CDNET
 
+- 'abandonedBox', 
+
+- 'backdoor',
+
+- 'bridgeEntry', - lighting too bad, object too small
+
+- 'bungalows', 
+
+- 'busStation', 
+- 'busyBoulvard', ' - lightning not good, ROI small, objects small
+- copyMachine', 
+-  'cubicle', 
+- 'fluidHighway', 
+- 'highway', 
+- 'office', 
+- 'parking', - ROI too small 
+-  'pedestrians', 
+- 'peopleInShade', 
+- 'PETS2006', '
+- port_0_17fps', 
+- 'sofa', 
+- 'streetCornerAtNight', 
+- 'streetLight', 
+- 'tramCrossroad_1fps', 
+- 'tramStation', 
+- 'tramstop', - ROI small 
+- 'tunnelExit_0_35fps', 
+- 'turnpike_0_5fps', '
+- winterDriveway', 
+- 'winterStreet'
 
 
 
