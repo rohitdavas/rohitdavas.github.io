@@ -42,7 +42,9 @@ Paper 1: Smart data agent for preserving location privacy published in IEEE-SSCI
 - Introduction to mobile robots from University of freiburg course by Prof. Dr. Wolfram Burgard. [Link](http://ais.informatik.uni-freiburg.de/teaching/ss20/robotics/)
 - Robot Mapping course i.e mainly SLAM from University of Freiburg. [Link](http://ais.informatik.uni-freiburg.de/teaching/ws20/mapping/)
 
-**Machine Learning**  Deeplearning.ai  Deep Learning Specialization : [certificate](https://github.com/rohitdavas/Certificates/blob/master/Deeplearning%20Specilisation%20Certificate.pdf) ; Neural Networks & Deep Learning; Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization; Structuring Machine Learning Projects; Convolutional Neural Networks; Sequence Models; Audited [cs230 - Deep Learning](https://cs230.stanford.edu/) online taught by Kian Katanforoosh and Andrew Ng; Audited cs229 - Machine Learning taught by Andrew Ng 
+**Machine Learning**
+Deeplearning.ai  Deep Learning Specialization : [certificate](https://github.com/rohitdavas/Certificates/blob/master/Deeplearning%20Specilisation%20Certificate.pdf) ; Neural Networks & Deep Learning; Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization; Structuring Machine Learning Projects; Convolutional Neural Networks; Sequence Models; Audited [cs230 - Deep Learning](https://cs230.stanford.edu/) online taught by Kian Katanforoosh and Andrew Ng; Audited cs229 - Machine Learning taught by Andrew Ng 
 
-**Self-Improvement** : Learning how to learn, UC SanDiego : [certificate](https://github.com/rohitdavas/Certificates/blob/master/Certificate_Learning_How_To_Learn.pdf)
+**Self-Improvement**
+Learning how to learn, UC SanDiego : [certificate](https://github.com/rohitdavas/Certificates/blob/master/Certificate_Learning_How_To_Learn.pdf)
 
