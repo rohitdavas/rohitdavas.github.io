@@ -5,7 +5,7 @@ title: Rohit Davas
 ---
 <!-- ## Introduction -->
 I am a Final year student of BTech in Computer Science And Engineering ( 2017-21 ) at [IIT Jammu](https://iitjammu.ac.in/).
-Most of my work is centered around the AI and it's applications in Computer Vision, Natural Language Processing, applications in medicine. With time, I am getting more and more interested in Neuroscience, but haven't done much in this yet. 
+Most of my work is centered around the AI and it's applications in Computer Vision, Natural Language Processing, applications in medicine, Robotics. With time, I am getting more and more interested in Neuroscience, but haven't done much in this yet. 
 
 ## Experience
 
@@ -14,10 +14,10 @@ Most of my work is centered around the AI and it's applications in Computer Visi
 
 ## Research Paper
 
-Paper 1: Smart data agent for preserving location privacy accepted for publication in IEEE SSCI'20
+Paper 1: Smart data agent for preserving location privacy published in IEEE-SSCI'20. [Paper Link](https://ieeexplore.ieee.org/document/9308396)
 
 ## Major Projects
-
+- Developing a sofware for **home security using webcam at home.**
 - Working on developing a deep learning model for Fast Background Subtraction. 
 - Developed Automatic 3D human face landmarks annotation pipeline for [The Captury](https://captury.com/)
 - Developed a deep learning model for Face Expression Transfer via shape key/ morph key prediction  for [The Captury](https://captury.com/)
@@ -38,6 +38,9 @@ Paper 1: Smart data agent for preserving location privacy accepted for publicati
 ( major courses ) AI; NLP; Computer Vision; Parallel & distributed programming; Engineering; Adaptive Software; Operating Systems; Databases; Data structures & Algorithms; Programming Languages; Comp. Architecture; Comp. Networks
 
 ### Self-learning
+**Robotics** (Ongoing)
+- Introduction to mobile robots from University of freiburg course by Prof. Dr. Wolfram Burgard. [Link](http://ais.informatik.uni-freiburg.de/teaching/ss20/robotics/)
+- Robot Mapping course i.e mainly SLAM from University of Freiburg. [Link](http://ais.informatik.uni-freiburg.de/teaching/ws20/mapping/)
 
 **Machine Learning**  Deeplearning.ai  Deep Learning Specialization : [certificate](https://github.com/rohitdavas/Certificates/blob/master/Deeplearning%20Specilisation%20Certificate.pdf) ; Neural Networks & Deep Learning; Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization; Structuring Machine Learning Projects; Convolutional Neural Networks; Sequence Models; Audited [cs230 - Deep Learning](https://cs230.stanford.edu/) online taught by Kian Katanforoosh and Andrew Ng; Audited cs229 - Machine Learning taught by Andrew Ng 
 
