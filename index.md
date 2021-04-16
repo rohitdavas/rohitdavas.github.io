@@ -22,7 +22,7 @@ in AINA’21 (Advanced Information Networking and Applications)
 
 ## Projects
 
-###Projects supervised by Dr. Harkeerat Kaur, Dpt. of Computer Science, IIT Jammu
+### Projects supervised by Dr. Harkeerat Kaur, Dpt. of Computer Science, IIT Jammu
 - Mobile Robot Arm(Simulation) [ Ongoing ]
 - Neural Style Transfer [Github](https://github.com/rohitdavas/Neural-Style-Transfer)
 
@@ -51,10 +51,10 @@ team : Vaidehi Som, Shivang Vijay, Rohit Kumar\
 1st in Mazex- maze solving bot during Technunctus’19, IIT Jammu.
   
 team : Shivang Vijay, Keshav Vyas, Rohit Kumar\
-9th among 23 IIT's in PlutoX hackathon in Inter-IIT Tech Meet’18
+9th among 23 IIT's in PlutoX hackathon in Inter-IIT Tech Meet’18\
 
-- I have also worked with Neural Style Transfer; object detection; GANs; segmentation; visual odometry; depth maps; Text generation; Music generation; etc.
+I have also worked with Neural Style Transfer; object detection; GANs; segmentation; visual odometry; depth maps; Text generation; Music generation; etc.
 
 ## Education
-Actively pursuing online education. More in my resume. 
+Actively pursuing online education. More in resume. 
 
