@@ -16,8 +16,7 @@ Research Intern at [IIT Bombay](http://www.iitb.ac.in/) under [Prof. Virendra Si
 
 Reinforcement Learning based Smart Data Agent for Location Privacy Harkeerat Kaur;**Rohit Kumar**;Isao Echizen
 in AINA’21 (Advanced Information Networking and Applications)\
-  
-Smart Data Agent for Preserving Location Privacy Harkeerat Kaur;Isao Echizen;**Rohit Kumar** in IEEE-SSCI'20. [Paper](https://ieeexplore.ieee.org/document/9308396)\
+Smart Data Agent for Preserving Location Privacy Harkeerat Kaur;Isao Echizen;**Rohit Kumar** in IEEE-SSCI'20. [Paper](https://ieeexplore.ieee.org/document/9308396)
 
 ## Projects
 
