@@ -18,7 +18,7 @@ With time, I am getting more and more interested in Neuroscience, but haven't do
 - Reinforcement Learning based Smart Data Agent for Location Privacy Harkeerat Kaur;**Rohit Kumar**;Isao Echizen
 in AINA’21 (Advanced Information Networking and Applications)
   
-- Smart Data Agent for Preserving Location Privacy Harkeerat Kaur;Isao Echizen;**Rohit Kumar** in IEEE-SSCI'20. [Paper Link](https://ieeexplore.ieee.org/document/9308396)
+- Smart Data Agent for Preserving Location Privacy Harkeerat Kaur;Isao Echizen;**Rohit Kumar** in IEEE-SSCI'20. [Paper](https://ieeexplore.ieee.org/document/9308396)
 
 ## Projects
 
