@@ -59,5 +59,5 @@ team : Shivang Vijay, Keshav Vyas, Rohit Kumar\
 I have also worked with Neural Style Transfer; object detection; GANs; segmentation; visual odometry; depth maps; Text generation; Music generation; etc.
 
 ## Education
-Actively pursuing online education. More in resume. 
+Actively pursuing online education. More in [resume](https://rohitdavas.github.io/resume/Kumar_Rohit_Resume.pdf)
 
