@@ -25,10 +25,9 @@
 # Research 
 
 ## publications 
-1. Reinforcement Learning based Smart Data Agent for Location Privacy Harkeerat Kaur;**Rohit Kumar**;Isao Echizen
-in AINA’21 (Advanced Information Networking and Applications)
+1. Reinforcement Learning based Smart Data Agent for Location Privacy.\\AINA'21 (Advanced Information Networking and Applications) Page(s): 657-671 [Publication](https://www.springer.com/gp/book/9783030750749?wt_mc=Internal.Event.1.SEM.ChapterAuthorCongrat)
 
-2. Smart Data Agent for Preserving Location Privacy Harkeerat Kaur;Isao Echizen;**Rohit Kumar** in IEEE-SSCI'20. [Paper](https://ieeexplore.ieee.org/document/9308396)
+2. Smart Data Agent for Preserving Location Privacy. \\IEEE-SSCI'20 (Symposium Series on Computational Intelligence) Page(s):2567 - 2575 [Publication](\href{https://ieeexplore.ieee.org/document/9308396)
 
 ## others
 1. Term paper on Adaptation in Cloud Computing guided by [Prof. Naveen Sharma](https://www.rit.edu/directory/nxsvse-naveen-sharma), Rochester Institute of Technology, NY. [Github Repository](https://github.com/rohitdavas/Adaptation-in-Cloud-Computing) ( January-May'2021 ) 
