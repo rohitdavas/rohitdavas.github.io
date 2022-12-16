@@ -6,11 +6,15 @@
 
 - ( Oct'20 - December'20) I am working as Deep Learning and Computer vision intern with Captury GmbH. I am working on Fast Background subtraction using neural networks. 
 
-
 - ( May'20 - May'21 ) I am working on location privacy and reinforcement learning methods for it in colaboration with Prof. Isao Echizen, NII Japan and Dr. Harkeerat Kaur, IIT Jammu. This colaboration led to successful publication of two papers mentioned below. [publications section](#publications)
 
 - ( May'20 - July'20 ) I am working as summer intern with Captury GmbH. I successfuly built the "End to End 3D face landmarks annotation". My work on "Facial expression transfer via morph-key prediction" led to another long term project in company.  
 
+- ( September'19 - December'19 ) I am the Cultural Secretary of IIT Jammu. A major contribution from me was the start of Student Mentorship Program for the incoming batches. 
+
+- ( July 22 - July 31, 2019 ) : led a team of 30 members to organize a 10 day long foundation programme at IIT Jammu. [news and report](https://iitjammu.ac.in/post/foundation-program) 
+
+- ( May' - July'19) : Summer research at IIT Bombay, working with Prof. Virendra Singh, on the topic of object detection and deep learning methods for it. 
 
 
 # Research 
