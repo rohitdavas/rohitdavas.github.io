@@ -1,4 +1,4 @@
-# A list of Open-Source learning from Beginner to advanced
+# Resources
 
 [TOC]
 
