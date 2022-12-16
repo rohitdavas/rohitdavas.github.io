@@ -2,8 +2,6 @@
 title: Projects
 --- 
 
-# Projects 
-
 - Neural Style Transfer [Github](https://github.com/rohitdavas/Neural-Style-Transfer) guided by Dr. Harkeerat Kaur. 
 - Facial expression transfer via shape-key/morph-key prediction with Dr. Nils Hasler, Captury GmbH
 - Human 3D face Annotation [Report](https://rohitdavas.github.io/projects/Human-3D-face-annotation/Human-3D-face-annotation.pdf) with Dr. Nils Hasler, Captury GmbH
