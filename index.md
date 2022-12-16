@@ -5,6 +5,8 @@
 
 - (January, 2022 - Ongoing ) AI Software developer at Captury GmbH where i contribute on dataset preparations, handpose tracking, CPython bindings, build process, plugin management for unreal and unity, building prototypes using unreal engine, unity and oculus quest etc. My role mostly involves developing things from scratch. 
 
+- ( May, 2021 ) - I graduated in 4 year long undegraduate in Computer Science and Engineering from IIT Jammu. 
+
 - (July - December, 2021) I am working as freelancer for Captury GmbH after my completion of graduation. This is the time I started building handpose tracking support for Captury.
 
 - ( October - December, 2020) I am working as Deep Learning and Computer vision intern with Captury GmbH. I am working on Fast Background subtraction using neural networks. 
