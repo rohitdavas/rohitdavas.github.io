@@ -1,4 +1,6 @@
-# Main Page
+---
+title : About
+---
 
 * 
 {:toc}
