@@ -1,3 +1,7 @@
+---
+title: Online Education
+---
+
 # Online Education 
 
 I pursue my interests benefiting from the open source education from MIT OCW, standford etc. and Coursera. A list of courses with certifications can be found on [linkedin/certificates](https://www.linkedin.com/in/rohitdavas/details/certifications/). The course ranges in Neurosciences, Deep learning, Reinforcement learning, computer vision and the courses on the methods of learning. 

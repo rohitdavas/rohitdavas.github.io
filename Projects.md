@@ -1,3 +1,7 @@
+---
+title: Projects
+--- 
+
 # Projects 
 
 - Neural Style Transfer [Github](https://github.com/rohitdavas/Neural-Style-Transfer) guided by Dr. Harkeerat Kaur. 
