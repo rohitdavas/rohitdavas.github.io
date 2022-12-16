@@ -48,4 +48,4 @@ I have been working on and off with Captury since summer of 2020 and joined them
 ### Undergradaute 2017 - 2021 
 I pursued my bachelors in Computer Science and engineering from Indian Institute of Technology ( IIT ), Jammu, India. It is one of the presitigious insitute in India. During my time there, I participated in various inter IIT tech meets, and held leadership position multiple time, the most significant of which was as Cultural secretaory. 
 
-I collaborated with Professors for work in AI. A result of which led to successful publications, term papers and various semester projects. I am immensly grateful to professors there for their teaching. To Dr. Harkeerat Kaur for her guidance in research and for Prof. Sumit Kumar Pandey for his guidance during hard times and for carrer. 
+I collaborated with Professors for work in AI. A result of which led to successful publications, term papers and various semester projects. I am immensly grateful to professors there for their teaching. To Dr. Harkeerat Kaur for her guidance in research and for Prof. Sumit Kumar Pandey for his guidance during hard times and for career. 
