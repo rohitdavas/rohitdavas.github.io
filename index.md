@@ -1,6 +1,6 @@
 # Main Page
 
-[TOC]
+* TOC {:toc}
 
 ## Timeline
 
