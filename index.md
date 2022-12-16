@@ -1,7 +1,7 @@
 
 ## Rohit Kumar
 
-## Timeline
+### Timeline
 
 - (January, 2022 - Ongoing ) AI Software developer at Captury GmbH where i contribute on dataset preparations, handpose tracking, CPython bindings, build process, plugin management for unreal and unity, building prototypes using unreal engine, unity and oculus quest etc. My role mostly involves developing things from scratch. 
 
@@ -22,57 +22,53 @@
 - ( May - July, (Summer) 2019) : Summer research at IIT Bombay, working with Prof. Virendra Singh, on the topic of object detection and deep learning methods for it. 
 
 
-# Research 
+## Research 
 
-## publications 
+### publications 
 1. Reinforcement Learning based Smart Data Agent for Location Privacy.\\AINA'21 (Advanced Information Networking and Applications) Page(s): 657-671 [Publication](https://www.springer.com/gp/book/9783030750749?wt_mc=Internal.Event.1.SEM.ChapterAuthorCongrat)
 
 2. Smart Data Agent for Preserving Location Privacy. \\IEEE-SSCI'20 (Symposium Series on Computational Intelligence) Page(s):2567 - 2575 [Publication](\href{https://ieeexplore.ieee.org/document/9308396)
 
-## others
-1. Term paper on Adaptation in Cloud Computing guided by [Prof. Naveen Sharma](https://www.rit.edu/directory/nxsvse-naveen-sharma), Rochester Institute of Technology, NY. [Github Repository](https://github.com/rohitdavas/Adaptation-in-Cloud-Computing) ( January-May'2021 ) 
+### others
+1. ( January - May, 2021 ) Term paper on Adaptation in Cloud Computing guided by [Prof. Naveen Sharma](https://www.rit.edu/directory/nxsvse-naveen-sharma), Rochester Institute of Technology, NY. [Github Repository](https://github.com/rohitdavas/Adaptation-in-Cloud-Computing) 
 
-2. Machine Learning Research Intern, under guidance of Prof. Virendra Singh, IIT Bombay, where i worked on object detection and deep learning methods for it. ( Summer'19) 
+2. (Summer, 2019) Machine Learning Research Intern, under guidance of Prof. Virendra Singh, IIT Bombay, where i worked on object detection and deep learning methods for it. 
 
-## Projects
+## Experiences 
 
-### Projects supervised by Dr. Harkeerat Kaur, Dpt. of Computer Science, IIT Jammu
-Mobile Robot Arm(Simulation) [ Ongoing ]
+###  Captury Summer 2020 - . 
+I work as AI software developer. Major part of my job role involes developing neural network as well as the data needed for it. The other part of my job involes developing prototypes on the AI technology we develop at Captury. Captury works in realtime markerless motion capture system - [read more](https://captury.com). I develop various prototypes in unreal, unity and for oculus quest. I contribute in C++, C and Python towards the core software also and the plugins needed for the 3D simulation software. I extensively work with blender and it's python API to generate the synthetic datasets. I developed the python library for Captury using C-API's of CPython, that provides user access to internal implementation of captury. This enabled captury for the first time to scale the Shot processing on server farms. I also developed the hand tracking technology. 
 
-Neural Style Transfer [Github](https://github.com/rohitdavas/Neural-Style-Transfer)
+I have been working on and off with Captury since summer of 2020 and joined them as full time in January 2022. 
 
-### Project supervised by Prof. Naveen Sharma, Rochester Institute of Technology, New York
-Term Paper on Adaptation in Cloud Computing [Report](https://rohitdavas.github.io/projects/Adaptation-in-cloud-computing/Adaptation-in-cloud-computing.pdf)
+### Undergradaute 2017 - 2021 
+I pursued my bachelors in Computer Science and engineering from Indian Institute of Technology ( IIT ), Jammu, India. It is one of the presitigious insitute in India. During my time there, I participated in various inter IIT tech meets, and held leadership position multiple time, the most significant of which was as Cultural secretaory. 
 
-### Projects supervised by Dr. Nils Hasler, The Captury, Germany
-Facial expression transfer via shape-key/morph-key prediction [ Report to be uploaded.]
+I collaborated with Professors for work in AI. A result of which led to successful publications, term papers and various semester projects. I am immensly grateful to professors there for their teaching. To Dr. Harkeerat Kaur for her guidance in research and for Prof. Sumit Kumar Pandey for his guidance during hard times and for carrer. 
 
-Human 3D face Annotation [Report](https://rohitdavas.github.io/projects/Human-3D-face-annotation/Human-3D-face-annotation.pdf) 
-
-Fast Background Subtraction [Github](https://rohitdavas.github.io/Fast-Background-Subtraction/) [Report](https://rohitdavas.github.io/projects/Fast-Background-Subtraction/Fast-Background-Subtraction.pdf)
-  
-### Some independant projects
-Home Security using webcam [Github](https://github.com/rohitdavas/Home-Camera-Security/)
-
-Image Editor Software [Github](https://github.com/rohitdavas/ImageEditor/)
-
-GANs On Atari [Github](https://github.com/rohitdavas/GANs-On-Atari)
+## Projects 
+- Neural Style Transfer [Github](https://github.com/rohitdavas/Neural-Style-Transfer) guided by Dr. Harkeerat Kaur. 
+- Facial expression transfer via shape-key/morph-key prediction with Dr. Nils Hasler, Captury GmbH
+- Human 3D face Annotation [Report](https://rohitdavas.github.io/projects/Human-3D-face-annotation/Human-3D-face-annotation.pdf) with Dr. Nils Hasler, Captury GmbH
+- Fast Background Subtraction [Github](https://rohitdavas.github.io/Fast-Background-Subtraction/) [Report](https://rohitdavas.github.io/projects/Fast-Background-Subtraction/Fast-Background-Subtraction.pdf) with Dr. Nils Hasler, Captury GmbH
+- Home Security using webcam [Github](https://github.com/rohitdavas/Home-Camera-Security/) using Qt
+- Image Editor Software [Github](https://github.com/rohitdavas/ImageEditor/) using Qt
+- GANs On Atari [Github](https://github.com/rohitdavas/GANs-On-Atari)
 
 ## Competitions
+1. 
 team : Pranav Reddy, Vaidehi Som, Rajat Kumar Varshney, Hardik Sharma, Rohit Kumar\
 Silver in Bosch’s Route Optimization problem in Inter-IIT Tech Meet’19
 
-team : Sadan Zahid, Mayank Singhal, Rohit Kumar\
+2. team : Sadan Zahid, Mayank Singhal, Rohit Kumar\
 3rd among 20 teams in Innovate for IIT Hackathon organized by PRITHVI.AI : Nov’19
   
-team : Vaidehi Som, Shivang Vijay, Rohit Kumar\
+3. team : Vaidehi Som, Shivang Vijay, Rohit Kumar\
 1st in Mazex- maze solving bot during Technunctus’19, IIT Jammu.
   
-team : Shivang Vijay, Keshav Vyas, Rohit Kumar\
+4. team : Shivang Vijay, Keshav Vyas, Rohit Kumar\
 9th among 23 IIT's in PlutoX hackathon in Inter-IIT Tech Meet’18\
 
-I have also worked with Neural Style Transfer; object detection; GANs; segmentation; visual odometry; depth maps; Text generation; Music generation; etc.
 
 ## Education
-Actively pursuing online education. More in [resume](https://rohitdavas.github.io/resume/Kumar_Rohit_Resume.pdf)
 
