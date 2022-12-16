@@ -1,3 +1,18 @@
+# About 
+
+- (Jan'22 - Ongoing ) AI Software developer at Captury GmbH where i contribute on dataset preparations, handpose tracking, CPython bindings, build process, plugin management for unreal and unity, building prototypes using unreal engine, unity and oculus quest etc. My role mostly involves developing things from scratch. 
+
+- (July'21 - December'21) I am working as freelancer for Captury GmbH after my completion of graduation. This is the time I started building handpose tracking support for Captury.
+
+- ( Oct'20 - December'20) I am working as Deep Learning and Computer vision intern with Captury GmbH. I am working on Fast Background subtraction using neural networks. 
+
+
+- ( May'20 - May'21 ) I am working on location privacy and reinforcement learning methods for it in colaboration with Prof. Isao Echizen, NII Japan and Dr. Harkeerat Kaur, IIT Jammu. This colaboration led to successful publication of two papers mentioned below. [publications section](#publications)
+
+- ( May'20 - July'20 ) I am working as summer intern with Captury GmbH. I successfuly built the "End to End 3D face landmarks annotation". My work on "Facial expression transfer via morph-key prediction" led to another long term project in company.  
+
+
+
 # Research 
 
 ## publications 
@@ -7,7 +22,9 @@ in AINA’21 (Advanced Information Networking and Applications)
 2. Smart Data Agent for Preserving Location Privacy Harkeerat Kaur;Isao Echizen;**Rohit Kumar** in IEEE-SSCI'20. [Paper](https://ieeexplore.ieee.org/document/9308396)
 
 ## others
-1. term paper on Adaptation in Cloud Computing guided by [Prof. Naveen Sharma](https://www.rit.edu/directory/nxsvse-naveen-sharma), Rochester Institute of Technology, NY. [Github Repository](https://github.com/rohitdavas/Adaptation-in-Cloud-Computing)
+1. Term paper on Adaptation in Cloud Computing guided by [Prof. Naveen Sharma](https://www.rit.edu/directory/nxsvse-naveen-sharma), Rochester Institute of Technology, NY. [Github Repository](https://github.com/rohitdavas/Adaptation-in-Cloud-Computing) ( January-May'2021 ) 
+
+2. Machine Learning Research Intern, under guidance of Prof. Virendra Singh, IIT Bombay, where i worked on object detection and deep learning methods for it. ( Summer'19) 
 
 ## Projects
 
