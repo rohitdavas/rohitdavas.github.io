@@ -1,6 +1,3 @@
-## Experience
-
-
 # Research 
 
 ## publications 
@@ -8,6 +5,9 @@
 in AINA’21 (Advanced Information Networking and Applications)
 
 2. Smart Data Agent for Preserving Location Privacy Harkeerat Kaur;Isao Echizen;**Rohit Kumar** in IEEE-SSCI'20. [Paper](https://ieeexplore.ieee.org/document/9308396)
+
+## others
+1. term paper on Adaptation in Cloud Computing guided by [Prof. Naveen Sharma](https://www.rit.edu/directory/nxsvse-naveen-sharma), Rochester Institute of Technology, NY. [Github Repository](https://github.com/rohitdavas/Adaptation-in-Cloud-Computing)
 
 ## Projects
 
