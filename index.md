@@ -13,7 +13,7 @@
 
 - ( May'20 - July'20 ) I am working as summer intern with Captury GmbH. I successfuly built the "End to End 3D face landmarks annotation". My work on "Facial expression transfer via morph-key prediction" led to another long term project in company.  
 
-- ( September'19 - December'19 ) I am the Cultural Secretary of IIT Jammu. A major contribution from me was the start of Student Mentorship Program for the incoming batches. 
+- ( September'19 - December'19 ) I am the Cultural Secretary of IIT Jammu. A major contribution from me was the start of Student Mentorship Program for the incoming batches and passing of significant budgets for cultural clubs and fest. 
 
 - ( July 22 - July 31, 2019 ) : led a team of 30 members to organize a 10 day long foundation programme at IIT Jammu. [news and report](https://iitjammu.ac.in/post/foundation-program) 
 
