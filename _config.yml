@@ -17,5 +17,17 @@ minima:
 markdown: kramdown
 
 
+# If you want to link only specific pages in your header, uncomment this and add the path to the pages in
+# order as they should show up.
+header_pages:
+  - Competitions.md                 
+  - Education and Interests.md                         
+  - Contact.md                      
+  - Projects.md
+  - index.md
+# Set to `true` to show excerpts on the homepage.
+#
+show_excerpts: true
+
 # Path: _includes/head.html
 
