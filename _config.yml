@@ -1,8 +1,8 @@
 title: Rohit Kumar
-author:
-  name: rohitdavas
-  email: xyz@gmail.com 
-
+author: Rohit Kumar
+email: xyz@gmail.com
+# The `>` after `description:` means to ignore line-breaks until next key.
+# If you want to omit the line-break after the end of text, use `>-` instead.
 description: >
   This is my personal, simple webpage which serves as my portfolio and blog page.
 
