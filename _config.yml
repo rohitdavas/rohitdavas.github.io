@@ -25,6 +25,7 @@ header_pages:
   - Contact.md                      
   - Projects.md
   - index.md
+  - blogs.md
 # Set to `true` to show excerpts on the homepage.
 #
 show_excerpts: true
