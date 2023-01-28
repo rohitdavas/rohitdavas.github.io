@@ -1,8 +1,22 @@
 title: Rohit Kumar
+author:
+  name: Rohit Kumar
+
+description: >
+  This is my personal, simple webpage which serves as my portfolio and blog page.
+
 theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
 minima:
   skin: dark 
-markdown: kramdown
-social_links:
+  social_links:
     - { platform: linkedin,  user_url: "https://www.linkedin.com/in/rohitdavas/" }
     - { platform: github, user_url: "https://github.com/rohitdavas" }
+markdown: kramdown
+
+
+# Path: _includes/head.html
+
