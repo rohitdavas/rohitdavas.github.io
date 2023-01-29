@@ -25,6 +25,7 @@ Now, the question is how to avoid such a scenario, my advice would be to :
 - preparing till last minute is a result of feeling of unpreparedness and not having time. having a routine, and allocating time for preparation would help you in these too factors. 
 
 2. embrace the boredom !
-- often than not, and the new age of our, if we are bored, we just switch to escape mode and infinite scrolling. so more often than not over time we feel we don't have time. Having boredom is kind of a feeling where you can feel how much time you have, and scope of improvisation, and stuff. ( you can't change something, if you can't feel. most of you know all the things i am saying, it's about confirmity and the feeling.)
+- Feeling bored is a new thing I guess, with all the facilities and mode to escape available.
+- Distilling my thoughts for better view on it. ... 
 
 
