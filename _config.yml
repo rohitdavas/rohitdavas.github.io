@@ -1,6 +1,6 @@
 title: Rohit Kumar
 author: Rohit Kumar
-email: not-shared-to-public
+email: email-not-shared-to-public
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
 description: >
@@ -22,8 +22,7 @@ header_pages:
   - index.md
   - blogs.md
   - Competitions.md                 
-  - Education and Interests.md                         
-  - Contact.md                      
+  - Education and Interests.md                                              
   - Projects.md
 # Set to `true` to show excerpts on the homepage.
 #
