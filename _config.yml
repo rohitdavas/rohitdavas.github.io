@@ -14,6 +14,7 @@ plugins:
 linkedin_username: rohitdavas
 github_username:  rohitdavas
 instagram_username: rohit_davas
+github_discussions: true
 markdown: kramdown
 
 # If you want to link only specific pages in your header, uncomment this and add the path to the pages in
