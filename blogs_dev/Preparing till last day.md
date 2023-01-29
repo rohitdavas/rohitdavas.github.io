@@ -25,6 +25,3 @@ Now, the question is how to avoid such a scenario, my advice would be to :
 - often than not, and the new age of our, if we are bored, we just switch to escape mode and infinite scrolling. so more often than not over time we feel we don't have time. Having boredom is kind of a feeling where you can feel how much time you have, and scope of improvisation, and stuff. ( you can't change something, if you can't feel. most of you know all the things i am saying, it's about confirmity and the feeling.)
 
 
-# Notes 
-1. This is my first blog.
-2. I am very open to your views on what i think are my distilled thoughts.
