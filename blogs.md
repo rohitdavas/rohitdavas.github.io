@@ -9,5 +9,4 @@ title : Blogs
 
 # Your Thoughts & Insights 
 1. I would love to hear your perspective on my carefully curated thoughts.
-2. Let's have a discussion either through the social links listed in footer or in person.
-3. There is github discussion page available for the blogs : [link](https://github.com/rohitdavas/rohitdavas.github.io/discussions)
+2. Let's have a discussion either through the social links listed in footer, github discussion on repo [link](https://github.com/rohitdavas/rohitdavas.github.io/discussions) or in person.
