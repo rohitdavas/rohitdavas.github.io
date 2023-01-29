@@ -1,5 +1,5 @@
 ---
-title : Preparing till last day ? 
+title : Preparing till last day? 
 date : 2023-01-28
 tags : [interview, preparation, confidence]
 version : 0.1 
@@ -9,11 +9,11 @@ Date : 28th Jan 2023
 
 > It's not just about knowing, we all have access to so much information yet indecision and unclarity still plagues us. The question is, why do we suffer from this paradox of knowledge?
 
-When it comes to interview preparation, last-minute cramming is not the way to go. In my experience and observation of those around me, this approach has resulted in a negative impact on confidence, as interviews require you to showcase your best abilities.
+When it comes to interview preparations, last-minute cramming is not the way to go. In my experience and observation of those around me, this approach has resulted in a negative impact on confidence, as interviews require you to showcase your best abilities.
 
 While preparation right before the interview can be useful in certain circumstances where the interviewer is going to ask questions that you've been studying, this isn't usually the case. With your mind focused solely on a few topics, it takes time to think more creatively and this can result in unclear answers.
 
-From my experiences, it's not necessarily a bad thing if you don't know something during an interview (after all, you can't know everything). What's more important is how you respond to those questions. If you don't remember the exact equation, for instance, you should at least be able to explain the general concept it represents, and clearly state that you don't remember the specific equation. (More often than not, the specific equation is not as important as the abstraction, the concept and idea, and clarity in your understanding of it.)
+From my experience, it's not necessarily a bad thing if you don't know something during an interview (after all, you can't know everything). What's more important is how you respond to those questions. If you don't remember the exact equation, for instance, you should at least be able to explain the general concept it represents, and clearly state that you don't remember the specific equation. (More often than not, the specific equation is not as important as the abstraction, the concept and idea, and clarity in your understanding of it.)
 
 Does last-minute preparation enhance your confidence? I don't think so. Completing your preparation a day or two before the interview and refreshing your memory on the day of the interview is a better approach. This way, you'll have a clear mind and be better able to grasp the abstract concepts and ideas that will likely be discussed in the interview.
 
@@ -21,11 +21,8 @@ Note that I'm not advocating for a lack of preparation. On the contrary, prepara
 
 Now, the question is how to avoid such a scenario, my advice would be to : 
 
-1. build a routine of doing things. 
-- preparing till last minute is a result of feeling of unpreparedness and not having time. having a routine, and allocating time for preparation would help you in these too factors. 
+1. build a routine of doing things. preparing till the last minute is a result of a feeling of unpreparedness and not having time. having a routine, and allocating time for preparation would help you with these two factors. 
 
-2. embrace the boredom !
-- Feeling bored is a new thing I guess, with all the facilities and mode to escape available.
-- Distilling my thoughts for better view on it. ... 
+2. embrace the boredom! Feeling bored is a new thing I guess, with all the facilities and modes to escape available. Distilling my thoughts for a better view of it. ... 
 
 
