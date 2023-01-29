@@ -3,7 +3,7 @@ author: Rohit Kumar
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
 description: >
-  This is my personal, simple webpage which serves as my portfolio and blog page.
+  Gain a deeper understanding of my skills, accomplishments, and thoughts through my personal portfolio and blog website.
 
 theme: minima
 plugins:
