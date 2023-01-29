@@ -5,6 +5,8 @@ tags : [interview, preparation, confidence]
 version : 0.1 
 ---
 
+Date : 28th Jan 2023
+
 > It's not just about knowing, we all have access to so much information yet indecision and unclarity still plagues us. The question is, why do we suffer from this paradox of knowledge?
 
 When it comes to interview preparation, last-minute cramming is not the way to go. In my experience and observation of those around me, this approach has resulted in a negative impact on confidence, as interviews require you to showcase your best abilities.
