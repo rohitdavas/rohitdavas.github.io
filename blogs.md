@@ -9,4 +9,4 @@ title : Blogs
 
 # Your Thoughts & Insights 
 1. I would love to hear your perspective on my carefully curated thoughts.
-2. Let's have a discussion either through the social links listed on our website or in person.
+2. Let's have a discussion either through the social links listed in footer or in person.
