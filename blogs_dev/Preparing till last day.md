@@ -1,5 +1,8 @@
 ---
 title : Preparing till last day ? 
+date : 2023-01-28
+tags : [interview, preparation, confidence]
+version : 0.1 
 ---
 
 > It's not just about knowing, we all have access to so much information yet indecision and unclarity still plagues us. The question is, why do we suffer from this paradox of knowledge?
