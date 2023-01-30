@@ -4,7 +4,7 @@ title : Blogs
 
 # List of blogs 
 
-1. Preparing till last day ? [read](blogs_dev/Preparing till last day.md)
+1. Preparing till last day ? [web read](blogs_dev/Preparing till last day.md), [linkedin-artice](https://www.linkedin.com/pulse/preparing-till-last-day-rohit-kumar-2f/?trackingId=PwYLzXjoSMVriYuGnkII%2FA%3D%3D)
 
 
 # Your Thoughts & Insights 
