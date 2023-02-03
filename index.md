@@ -7,6 +7,8 @@ title : About
 
 ## Timeline
 
+**Download Chronological Resume** : [link](assets/resumes/RohitKumar-chronological-order-resume.pdf)
+
 - (January, 2022 - Ongoing ) AI Software developer at Captury GmbH where i contribute on dataset preparations, handpose tracking, CPython bindings, build process, plugin management for unreal and unity, building prototypes using unreal engine, unity and oculus quest etc. My role mostly involves developing things from scratch. 
 
 - ( May, 2021 ) - I graduated in 4 year long undegraduate in Computer Science and Engineering from IIT Jammu. 
