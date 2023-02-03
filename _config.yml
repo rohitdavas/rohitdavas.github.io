@@ -1,6 +1,6 @@
 title: Rohit Kumar
 author: Rohit Kumar
-email: email-not-shared-to-public
+email: davasrohit[AT]gmail[DOT]com
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
 description: >
@@ -15,7 +15,7 @@ linkedin_username: rohitdavas
 github_username:  rohitdavas
 instagram_username: rohit_davas
 markdown: kramdown
-
+resume: assets/resumes/RohitKumar-chronological-order-resume.pdf
 # If you want to link only specific pages in your header, uncomment this and add the path to the pages in
 # order as they should show up.
 header_pages:
