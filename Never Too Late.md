@@ -1,5 +1,5 @@
 ---
-title : Never too Late : A compilation
+title : Never too Late
 ---
 
 
