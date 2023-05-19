@@ -21,11 +21,12 @@ resume: assets/resumes/RohitKumar-chronological-order-resume.pdf
 header_pages:
   - index.md
   - blogs.md
-  - Competitions.md                 
+  - Competitions.md
+  - Never Too Late.md      
   - Education and Interests.md                                              
   - Projects.md
   - assets/resumes/RohitKumar-chronological-order-resume.pdf
-  - Never Too Late.md
+  
 # Set to `true` to show excerpts on the homepage.
 #
 show_excerpts: true
