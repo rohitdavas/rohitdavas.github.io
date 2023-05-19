@@ -1,0 +1,5 @@
+1. the title in the markdown should be the same as the filename.
+
+adding a new header file : 
+1. write your markdown.
+2. add the file to the _config.yml file. 
