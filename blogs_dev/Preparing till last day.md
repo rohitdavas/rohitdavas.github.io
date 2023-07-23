@@ -23,6 +23,7 @@ Now, the question is how to avoid such a scenario, my advice would be to :
 
 1. build a routine of doing things. preparing till the last minute is a result of a feeling of unpreparedness and not having time. having a routine, and allocating time for preparation would help you with these two factors. 
 
-2. embrace the boredom! Feeling bored is a new thing I guess, with all the facilities and modes to escape available. Distilling my thoughts for a better view of it. ... 
+2. embrace the boredom! Feeling bored is a new thing I guess, with all the facilities and modes to escape available. Distilling my thoughts for a better view of it. ...
+2.1 Yuval Noah Harari on boredom with Lex fridman. [timestamped clip](https://youtu.be/Mde2q7GFCrw?t=8543)
 
 
