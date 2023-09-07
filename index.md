@@ -9,26 +9,20 @@ title : About
 
 **Download Chronological Resume** : [link](assets/resumes/RohitKumar-chronological-order-resume.pdf)
 
-- August 2023 - November 2023 : [KaggleX](https://www.kaggle.com/kagglex) Mentee, 3rd cohort.Pursuing my interest on reinforcement learning and Open-Source contributions
+| Date                           | Description                                                                                                          |
+|--------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| August 2023 - November 2023    | [KaggleX](https://www.kaggle.com/kagglex) Mentee, 3rd cohort. Pursuing my interest in reinforcement learning and Open-Source contributions.                                     |
+| Summer 2023                    | Contributed as a reviewer for multiple papers at the 8th International Conference on Computer Vision and Image Processing (CVIP) 2023 held at IIT Jammu. [More about CVIP](https://iitjammu.ac.in/cvip2023/)  |
+| January 2022 - Ongoing         | AI Software developer at Captury GmbH,based in Germany contributing to dataset preparations, handpose tracking, CPython bindings, build process, plugin management for Unreal and Unity, building prototypes using Unreal Engine, Unity, and Oculus Quest, etc. My role mostly involves developing things from scratch. |
+| May 2021                       | Graduated with a 4-year undergraduate degree in Computer Science and Engineering from IIT Jammu.                  |
+| July - December 2021           | Worked as a freelancer for Captury GmbH after completing my graduation. Started building handpose tracking support for Captury.                                       |
+| October - December 2020        | Worked as a Deep Learning and Computer Vision intern with Captury GmbH, focusing on Fast Background subtraction using neural networks.                                        |
+| May 2020 - May 2021            | Worked on location privacy and reinforcement learning methods in collaboration with Prof. Isao Echizen, NII Japan, and Dr. Harkeerat Kaur, IIT Jammu. This collaboration led to the successful publication of two papers mentioned below. [Publications section](#publications) |
+| May - July 2020 (Summer)       | Worked as a summer intern with Captury GmbH. Successfully built "End to End 3D face landmarks annotation," which led to another long-term project in the company, "Facial expression transfer via morph-key prediction."  |
+| September - December 2019      | Served as the Cultural Secretary of IIT Jammu. Major contributions included starting the Student Mentorship Program for incoming batches and securing significant budgets for cultural clubs and fest. |
+| July 22 - July 31, 2019        | Led a team of 30 members to organize a 10-day long foundation program at IIT Jammu. [News and report](https://iitjammu.ac.in/post/foundation-program)                                   |
+| May - July 2019 (Summer)       | Conducted summer research at IIT Bombay, working with Prof. Virendra Singh on the topic of object detection and deep learning methods.                                                |
 
-- Summer 2023 - contributed as reviewer of multiple papers at 8th internation conference on Computer Vision and Image Processing (CVIP) 2023 held at IIT Jammu. [more about CVIP](https://iitjammu.ac.in/cvip2023/) 
-- (January, 2022 - Ongoing ) AI Software developer at Captury GmbH where i contribute on dataset preparations, handpose tracking, CPython bindings, build process, plugin management for unreal and unity, building prototypes using unreal engine, unity and oculus quest etc. My role mostly involves developing things from scratch. 
-
-- ( May, 2021 ) - I graduated in 4 year long undegraduate in Computer Science and Engineering from IIT Jammu. 
-
-- (July - December, 2021) I am working as freelancer for Captury GmbH after my completion of graduation. This is the time I started building handpose tracking support for Captury.
-
-- ( October - December, 2020) I am working as Deep Learning and Computer vision intern with Captury GmbH. I am working on Fast Background subtraction using neural networks. 
-
-- ( May 2020 - May, 2021 ) I am working on location privacy and reinforcement learning methods for it in colaboration with Prof. Isao Echizen, NII Japan and Dr. Harkeerat Kaur, IIT Jammu. This colaboration led to successful publication of two papers mentioned below. [publications section](#publications)
-
-- ( May - July, (Summer) 2020 ) I am working as summer intern with Captury GmbH. I successfuly built the "End to End 3D face landmarks annotation". My work on "Facial expression transfer via morph-key prediction" led to another long term project in company.  
-
-- ( September - December, 2019 ) I am the Cultural Secretary of IIT Jammu. A major contribution from me was the start of Student Mentorship Program for the incoming batches and passing of significant budgets for cultural clubs and fest. 
-
-- ( July 22 - July 31, 2019 ) : led a team of 30 members to organize a 10 day long foundation programme at IIT Jammu. [news and report](https://iitjammu.ac.in/post/foundation-program) 
-
-- ( May - July, (Summer) 2019) : Summer research at IIT Bombay, working with Prof. Virendra Singh, on the topic of object detection and deep learning methods for it. 
 
 
 ## Research 
