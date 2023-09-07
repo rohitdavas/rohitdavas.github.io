@@ -7,7 +7,7 @@ title : About
 
 ## Timeline
 
-**Download Chronological Resume** : [link](assets/resumes/RohitKumar-chronological-order-resume.pdf)
+**Download Chronological Resume** : [pdf](assets/resumes/RohitKumar-chronological-order-resume.pdf); [overleaf](https://www.overleaf.com/read/qfvrhsnjrwzj)
 
 | Date                           | Description                                                                                                          |
 |--------------------------------|----------------------------------------------------------------------------------------------------------------------|
