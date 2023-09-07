@@ -9,6 +9,8 @@ title : About
 
 **Download Chronological Resume** : [link](assets/resumes/RohitKumar-chronological-order-resume.pdf)
 
+- August 2023 - November 2023 : [KaggleX](https://www.kaggle.com/kagglex) Mentee, 3rd cohort.Pursuing my interest on reinforcement learning and Open-Source contributions
+
 - Summer 2023 - contributed as reviewer of multiple papers at 8th internation conference on Computer Vision and Image Processing (CVIP) 2023 held at IIT Jammu. [more about CVIP](https://iitjammu.ac.in/cvip2023/) 
 - (January, 2022 - Ongoing ) AI Software developer at Captury GmbH where i contribute on dataset preparations, handpose tracking, CPython bindings, build process, plugin management for unreal and unity, building prototypes using unreal engine, unity and oculus quest etc. My role mostly involves developing things from scratch. 
 
