@@ -54,9 +54,9 @@ I work as an AI software developer. Major parts of my job role involve developin
 
 **Python wrappers in C**: I contribute in C++, C, and Python towards the core software also and the plugins needed for the 3D simulation software.  I developed the Python library for Captury using C-API's of CPython, that provides user access to internal implementation of Captury. This enabled Captury for the first time to scale the Shot processing on server farms. 
 
-**Deep Learning**: i have successfully completed two projects which are in production. I developed the hand tracking technology, which is the core of the captury's hand tracking capability. I developed the guitar and violin tracking technology, which was one of the biggest project we had at captury. 
+**Deep Learning**: i have successfully completed two projects which are in production. I developed the hand tracking technology, which is the core of the captury's hand tracking capability. I developed the guitar and violin tracking technology, which was one of the biggest project we had at captury.  You can check the public release of hand tracking on youtube : [youtube](https://youtu.be/p_7iE6UsSLM?si=zTriQORUaUmNs9OH)
 
-**Synthetic Data Generation** : I extensively work with Blender and its Python API to generate the synthetic datasets. We had our in-house synthetic data generation capability developed by me. 
+**Synthetic Data Generation** : I extensively work with Blender and its Python API to generate the synthetic datasets. The projects developed uses the inhouse data generation.
 
 The unique workspace of captury enabled me to work on the full projects by myself, developing and planning the scope, solution, data generation and the experiments.
 
