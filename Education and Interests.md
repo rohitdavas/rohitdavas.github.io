@@ -6,12 +6,7 @@ title: Education and Interests
 ## Interests
 In sports, i like to go for long runs ( currently training myself for half-marathon and after that for full), swimming, and volleyball. I do enjoy cycling too. 
 
-I have a deep interest in philosphy and most of my reading books are around it. I listen to podcasts whenever i find time on the topics ranging from philosphy, spirituality and health. A favorite and regular of mine are : 
-
-1. Huberman lab podcast #health #neuroscience 
-2. Lex Fridman podcast #AI #philosphy #spirituality 
-3. secular buddhism #buddhism #spirituality 
-4. Jordan peterson podcast #pyschology #philosphy 
+I have a deep interest in philosphy and most of my reading books are around it. I listen to podcasts whenever i find time on the topics ranging from philosphy, spirituality and health.
 
 ## Online Education 
 I pursue my interests benefiting from the open source education from MIT OCW, standford etc. and Coursera. A list of courses with certifications can be found on [linkedin/certificates](https://www.linkedin.com/in/rohitdavas/details/certifications/). The course ranges in Neurosciences, Deep learning, Reinforcement learning, computer vision and the courses on the methods of learning. 
