@@ -48,9 +48,19 @@ title: About
 - Captury GmbH
 - Germany
 
-I work as an AI software developer. Major parts of my job role involve developing neural networks as well as the data needed for it. The other part of my job involves developing prototypes on the AI technology we develop at Captury. Captury works in real-time markerless motion capture systems - [read more](https://captury.com). I develop various prototypes in Unreal, Unity, and for Oculus Quest. I contribute in C++, C, and Python towards the core software also and the plugins needed for the 3D simulation software. I extensively work with Blender and its Python API to generate the synthetic datasets. I developed the Python library for Captury using C-API's of CPython, that provides user access to internal implementation of Captury. This enabled Captury for the first time to scale the Shot processing on server farms. I also developed the hand tracking technology.
+I work as an AI software developer. Major parts of my job role involve developing neural networks as well as the data needed for it. The other part of my job involves developing prototypes on the AI technology we develop at Captury. Captury works in real-time markerless motion capture systems - [read more](https://captury.com). 
 
-I have been working on and off with Captury since the summer of 2020 and joined them as full-time in January 2022.
+**3D simulations** : I develop various prototypes in Unreal, Unity, and for Oculus Quest. They have been used in our client demo. 
+
+**Python wrappers in C**: I contribute in C++, C, and Python towards the core software also and the plugins needed for the 3D simulation software.  I developed the Python library for Captury using C-API's of CPython, that provides user access to internal implementation of Captury. This enabled Captury for the first time to scale the Shot processing on server farms. 
+
+**Deep Learning**: i have successfully completed two projects which are in production. I developed the hand tracking technology, which is the core of the captury's hand tracking capability. I developed the guitar and violin tracking technology, which was one of the biggest project we had at captury. 
+
+**Synthetic Data Generation** : I extensively work with Blender and its Python API to generate the synthetic datasets. We had our in-house synthetic data generation capability developed by me. 
+
+The unique workspace of captury enabled me to work on the full projects by myself, developing and planning the scope, solution, data generation and the experiments.
+
+I have been working on and off with Captury since the summer of 2020 and joined them as full-time in august 2021. Please visit my linkedin for the timeline.
 
 ### Undergraduate 2017 - 2021 
 - Bachelors in Computer Science and Engineering
