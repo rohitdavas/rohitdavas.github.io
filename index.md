@@ -9,7 +9,6 @@ title: About
 
 **Download Chronological Resume**:
 - [PDF](assets/resumes/RohitKumar-chronological-order-resume.pdf)
-- [Overleaf](https://www.overleaf.com/read/qfvrhsnjrwzj)
 
 | Date                           | Description                                                                                                          |
 |--------------------------------|----------------------------------------------------------------------------------------------------------------------|
