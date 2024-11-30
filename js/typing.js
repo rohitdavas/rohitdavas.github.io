@@ -1,47 +1,64 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     const container = document.querySelector('.typing-container');
-    const lines = document.querySelectorAll('.code-line');
     
-    // Create cursor element
-    const cursor = document.createElement('div');
-    cursor.className = 'typing-cursor';
-    container.appendChild(cursor);
-    
-    let currentLine = 0;
-    
-    function updateCursorPosition() {
-        const activeLine = lines[currentLine];
-        if (activeLine) {
-            const lineRect = activeLine.getBoundingClientRect();
-            const containerRect = container.getBoundingClientRect();
-            cursor.style.left = `${activeLine.offsetWidth}px`;
-            cursor.style.top = `${lineRect.top - containerRect.top}px`;
-            
-            // Change cursor color for output line
-            if (activeLine.classList.contains('code-output')) {
-                cursor.classList.add('at-output');
-            } else {
-                cursor.classList.remove('at-output');
+    try {
+        // Fetch and parse the JSON file
+        const response = await fetch('/js/typing-sequence.json');
+        const data = await response.json();
+        
+        if (!data || !data.sequences || data.sequences.length === 0) {
+            console.error('No valid sequences found:', data);
+            return;
+        }
+        
+        // Clear existing content and create lines from sequence
+        container.innerHTML = '';
+        
+        // Create all lines first
+        data.sequences.forEach(sequence => {
+            const line = document.createElement('div');
+            line.className = `code-line${sequence.type === 'output' ? ' code-output' : ''}`;
+            line.textContent = sequence.content;
+            container.appendChild(line);
+        });
+
+        const lines = document.querySelectorAll('.code-line');
+        let currentLine = 0;
+
+        async function typeLine() {
+            if (currentLine < lines.length) {
+                const line = lines[currentLine];
+                const sequence = data.sequences[currentLine];
+                
+                // Start typing animation
+                line.classList.add('visible');
+                
+                // Simulate typing by incrementing visible length
+                let visibleLength = 0;
+                const typingInterval = setInterval(() => {
+                    visibleLength += 1;
+                    line.style.setProperty('--visible-length', visibleLength);
+                    if (visibleLength >= line.textContent.length) {
+                        clearInterval(typingInterval);
+                    }
+                }, data.settings.typingSpeed / line.textContent.length); // Adjust for smoother typing
+                
+                // Wait for typing to complete
+                await new Promise(resolve => setTimeout(resolve, data.settings.typingSpeed));
+                
+                currentLine++;
+                
+                if (currentLine < lines.length) {
+                    await new Promise(resolve => setTimeout(resolve, sequence.delay));
+                    await typeLine();
+                }
             }
         }
-    }
 
-    function typeLine() {
-        if (currentLine < lines.length) {
-            // Start cursor animation for current line
-            const cursorInterval = setInterval(updateCursorPosition, 50);
-            
-            // After typing animation completes
-            setTimeout(() => {
-                clearInterval(cursorInterval);
-                currentLine++;
-                if (currentLine < lines.length) {
-                    setTimeout(typeLine, 500); // Delay before next line
-                }
-            }, 2000); // Match with CSS animation duration
-        }
+        // Start typing after initial delay
+        setTimeout(() => typeLine(), 500);
+        
+    } catch (error) {
+        console.error('Error in typing animation:', error);
     }
-
-    // Start typing after a short delay
-    setTimeout(typeLine, 500);
 });

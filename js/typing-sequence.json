@@ -1,0 +1,42 @@
+{
+    "sequences": [
+        {
+            "type": "code",
+            "content": "import me",
+            "delay": 500
+        },
+        {
+            "type": "code",
+            "content": "me.whoIam()",
+            "delay": 500
+        },
+        {
+            "type": "output",
+            "content": ">>> \"Rohit\"",
+            "delay": 500
+        },
+        {
+            "type": "output",
+            "content": ">>> \"2021 IIT Jammu CS Gradaute\"",
+            "delay": 500
+        },
+        {
+            "type": "output",
+            "content": ">>> \"AI Enginner at Captury GmbH since 2021 building computer vision solutions\"",
+            "delay": 500
+        },
+        {
+            "type": "code",
+            "content": "me.hobby()",
+            "delay": 500
+        }
+
+    ],
+    "settings": {
+        "typingSpeed": 1,
+        "cursorColor": {
+            "code": "#00ff9d",
+            "output": "#ff9d00"
+        }
+    }
+}
