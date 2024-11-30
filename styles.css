@@ -63,9 +63,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    background: #2b2b2b;  /* Slightly lighter dark background */
-    padding: 2rem;
+    background: #2b2b2b;
     position: relative;
     overflow: hidden;
 }
@@ -76,63 +74,42 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.3;
-    font-family: 'Consolas', 'Monaco', monospace;
-    color: #00ff9d;
-    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 5%;  /* Just a small padding from the left edge */
-}
-
-.code-line {
-    width: auto;
-    text-align: left;
-    white-space: pre;
-    opacity: 0;
-}
-
-.code-line:nth-child(1) {
-    padding-left: 1rem;  /* Indent for class */
-    opacity: 1;
-}
-
-.code-line:nth-child(2) {
-    padding-left: 1rem;  /* Indent for method */
-    opacity: 1;
-}
-
-.code-line:nth-child(3) {
-    padding-left: 1rem;  /* Indent for output */
-    color: #ff9d00;
-    opacity: 1;
-}
-
-.code-output {
-    color: #00a2ff;
+    padding-left: 5%;
+    font-family: 'Consolas', 'Monaco', monospace;
+    color: #00ff9d;
+    font-size: 1.5rem;
+    z-index: 1;
 }
 
 .typing-container {
     position: relative;
     width: fit-content;
-    padding: 1rem;
-    font-family: 'Consolas', 'Monaco', monospace;
 }
 
 .code-line {
-    width: auto;
-    text-align: left;
-    white-space: pre;
     color: #00ff9d;
-    overflow: hidden;
+    white-space: pre;
+    margin-bottom: 0.5rem;
     position: relative;
-    display: none;
+    width: 0;
+    overflow: hidden;
+    animation: typing 2s steps(20, end) forwards;
 }
 
-.code-line.typing {
-    display: block;
-    animation: typing 2s steps(30, end);
+.code-line:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.code-line:nth-child(2) {
+    animation-delay: 2.5s;
+}
+
+.code-line:nth-child(3) {
+    animation-delay: 4.5s;
+    color: #ff9d00;
 }
 
 .typing-cursor {
@@ -140,16 +117,10 @@ body {
     width: 2px;
     height: 1.2em;
     background-color: #00ff9d;
-    left: 1rem;
-    top: 1rem;
     animation: blink 0.7s infinite;
 }
 
-.code-line.code-output {
-    color: #ff9d00;
-}
-
-.code-line.code-output + .typing-cursor {
+.typing-cursor.at-output {
     background-color: #ff9d00;
 }
 
@@ -159,8 +130,7 @@ body {
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+    50% { opacity: 0 }
 }
 
 .hero-content {
