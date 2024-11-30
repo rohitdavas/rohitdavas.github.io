@@ -113,6 +113,56 @@ body {
     color: #00a2ff;
 }
 
+.typing-container {
+    position: relative;
+    width: fit-content;
+    padding: 1rem;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.code-line {
+    width: auto;
+    text-align: left;
+    white-space: pre;
+    color: #00ff9d;
+    overflow: hidden;
+    position: relative;
+    display: none;
+}
+
+.code-line.typing {
+    display: block;
+    animation: typing 2s steps(30, end);
+}
+
+.typing-cursor {
+    position: absolute;
+    width: 2px;
+    height: 1.2em;
+    background-color: #00ff9d;
+    left: 1rem;
+    top: 1rem;
+    animation: blink 0.7s infinite;
+}
+
+.code-line.code-output {
+    color: #ff9d00;
+}
+
+.code-line.code-output + .typing-cursor {
+    background-color: #ff9d00;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 .hero-content {
     position: relative;
     max-width: 800px;
@@ -190,48 +240,83 @@ body {
     background: #fff;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    width: 100%;
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    padding-right: 2rem;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.skills {
     margin-top: 2rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.about h2 {
+.skills h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skills li {
+    background: #f0f2f5;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.profile-section {
     text-align: center;
+    padding: 2rem;
+}
+
+.profile-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.profile-section p {
+    color: #666;
     margin-bottom: 2rem;
-    font-size: 2.2rem;
-    color: #2c3e50;
 }
 
-.about-text {
-    font-size: 1.1rem;
-    line-height: 1.7;
-}
+/* Responsive */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
 
-.about-text p {
-    margin-bottom: 1.2rem;
-}
+    .about-content {
+        padding-right: 0;
+    }
 
-.about-text ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-    list-style-type: disc;
-}
-
-.about-text li {
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
+    .profile-section {
+        padding: 1rem;
+    }
 }
 
 /* Timeline Section */
