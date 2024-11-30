@@ -1,0 +1,9 @@
+{
+    "grammarly.selectors": [
+        {
+            "language": "markdown",
+            "scheme": "file",
+            "pattern": "blogs_dev/Preparing till last day.md"
+        }
+    ]
+}
