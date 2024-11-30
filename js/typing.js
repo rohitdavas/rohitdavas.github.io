@@ -88,7 +88,7 @@ class TypingAnimation {
      */
     createLineElement(type) {
         const line = document.createElement('div');
-        line.className = `${type}-line`;
+        line.className = type === 'output' ? 'output-line' : 'code-line';
         line.style.width = '100%';  // Set full width immediately
         this.container.appendChild(line);
         return line;
