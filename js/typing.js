@@ -1,64 +1,143 @@
-document.addEventListener('DOMContentLoaded', async function() {
-    const container = document.querySelector('.typing-container');
-    
-    try {
-        // Fetch and parse the JSON file
-        const response = await fetch('/js/typing-sequence.json');
-        const data = await response.json();
-        
-        if (!data || !data.sequences || data.sequences.length === 0) {
-            console.error('No valid sequences found:', data);
-            return;
-        }
-        
-        // Clear existing content and create lines from sequence
-        container.innerHTML = '';
-        
-        // Create all lines first
-        data.sequences.forEach(sequence => {
-            const line = document.createElement('div');
-            line.className = `code-line${sequence.type === 'output' ? ' code-output' : ''}`;
-            line.textContent = sequence.content;
-            container.appendChild(line);
-        });
+/**
+ * Typing Animation Module
+ * This module handles the typing animation effect for code snippets
+ * It loads sequences from a JSON file and types them out character by character
+ */
 
-        const lines = document.querySelectorAll('.code-line');
-        let currentLine = 0;
-
-        async function typeLine() {
-            if (currentLine < lines.length) {
-                const line = lines[currentLine];
-                const sequence = data.sequences[currentLine];
-                
-                // Start typing animation
-                line.classList.add('visible');
-                
-                // Simulate typing by incrementing visible length
-                let visibleLength = 0;
-                const typingInterval = setInterval(() => {
-                    visibleLength += 1;
-                    line.style.setProperty('--visible-length', visibleLength);
-                    if (visibleLength >= line.textContent.length) {
-                        clearInterval(typingInterval);
-                    }
-                }, data.settings.typingSpeed / line.textContent.length); // Adjust for smoother typing
-                
-                // Wait for typing to complete
-                await new Promise(resolve => setTimeout(resolve, data.settings.typingSpeed));
-                
-                currentLine++;
-                
-                if (currentLine < lines.length) {
-                    await new Promise(resolve => setTimeout(resolve, sequence.delay));
-                    await typeLine();
-                }
-            }
-        }
-
-        // Start typing after initial delay
-        setTimeout(() => typeLine(), 500);
-        
-    } catch (error) {
-        console.error('Error in typing animation:', error);
+class TypingAnimation {
+    /**
+     * Initialize the typing animation
+     * @param {string} containerSelector - CSS selector for the container element
+     */
+    constructor(containerSelector = '.typing-container') {
+        this.container = document.querySelector(containerSelector);
+        this.sequences = [];
+        this.currentLine = 0;
+        this.settings = {
+            typingSpeed: 1000,
+            initialDelay: 500
+        };
     }
+
+    /**
+     * Load sequence data from JSON file
+     * @returns {Promise} Resolves when data is loaded
+     */
+    async loadSequences() {
+        try {
+            const response = await fetch('/js/typing-sequence.json');
+            const data = await response.json();
+
+            // let's log the data
+            // console.log(data);
+            
+            if (!data || !data.sequences || data.sequences.length === 0) {
+                throw new Error('No valid sequences found');
+            }
+
+            this.sequences = data.sequences;
+            this.settings = { ...this.settings, ...data.settings };
+            return true;
+        } catch (error) {
+            console.error('Error loading sequences:', error);
+            return false;
+        }
+    }
+
+    /**
+     * Create and prepare all line elements
+     */
+    prepareDOMElements() {
+        if (!this.container) return;
+        
+        // Clear existing content
+        this.container.innerHTML = '';
+        
+        // Create all lines
+        this.sequences.forEach(sequence => {
+            const line = this.createLineElement(sequence.type === 'output' ? 'output' : 'code');
+            line.textContent = '';
+        });
+    }
+
+    /**
+     * Type a single line character by character
+     * @param {HTMLElement} lineElement - The line element to type into
+     * @param {string} text - The text to type
+     * @returns {Promise} Resolves when typing is complete
+     */
+    async typeLine(lineElement, text) {
+        return new Promise(resolve => {
+            let i = 0;
+            const typing = setInterval(() => {
+                if (i < text.length) {
+                    lineElement.textContent = text.substring(0, i + 1);
+                    i++;
+                } else {
+                    clearInterval(typing);
+                    resolve();
+                }
+            }, this.settings.typingSpeed / text.length);
+        });
+    }
+
+    /**
+     * Create a new line element
+     * @param {string} type - Type of line (code/output)
+     * @returns {HTMLElement} The created line element
+     */
+    createLineElement(type) {
+        const line = document.createElement('div');
+        line.className = `${type}-line`;
+        line.style.width = '100%';  // Set full width immediately
+        this.container.appendChild(line);
+        return line;
+    }
+
+    /**
+     * Start the typing animation sequence
+     */
+    async startTyping() {
+        if (!this.container || this.sequences.length === 0) return;
+
+        const lines = this.container.querySelectorAll('.code-line, .output-line');
+        
+        // Type each line in sequence
+        for (let i = 0; i < this.sequences.length; i++) {
+            const line = lines[i];
+            const sequence = this.sequences[i];
+            await this.typeLine(line, sequence.content);
+        }
+    }
+
+    /**
+     * Initialize and start the typing animation
+     */
+    async init() {
+        const success = await this.loadSequences();
+        if (!success) return;
+
+        this.prepareDOMElements();
+        setTimeout(() => this.startTyping(), this.settings.initialDelay);
+    }
+}
+
+// Initialize when DOM is ready and components are loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Wait for components to load before initializing typing animation
+    const checkInterval = setInterval(() => {
+        const container = document.querySelector('.typing-container');
+        if (container) {
+            clearInterval(checkInterval);
+            console.log('Found typing container, initializing animation...');
+            const typingAnimation = new TypingAnimation();
+            typingAnimation.init();
+        }
+    }, 100); // Check every 100ms
+
+    // Stop checking after 5 seconds to prevent infinite loop
+    setTimeout(() => {
+        clearInterval(checkInterval);
+        console.warn('Typing container not found after 5 seconds');
+    }, 5000);
 });

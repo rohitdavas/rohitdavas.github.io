@@ -3,7 +3,12 @@ async function loadComponent(id, path) {
     try {
         const response = await fetch(`components/${path}`);
         const html = await response.text();
-        document.getElementById(id).innerHTML = html;
+        const element = document.getElementById(id);
+        if (!element) {
+            console.warn(`Element with id '${id}' not found, skipping ${path}`);
+            return;
+        }
+        element.innerHTML = html;
     } catch (error) {
         console.error(`Error loading ${path}:`, error);
     }
@@ -13,7 +18,6 @@ async function loadComponent(id, path) {
 document.addEventListener('DOMContentLoaded', async () => {
     await Promise.all([
         loadComponent('navbar-placeholder', 'navbar.html'),
-        loadComponent('hero-placeholder', 'hero.html'),
         loadComponent('about-placeholder', 'about.html'),
         loadComponent('timeline-placeholder', 'timeline.html'),
         loadComponent('interests-placeholder', 'interests.html'),
@@ -31,34 +35,14 @@ function initializeNavigation() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetElement = document.querySelector(this.getAttribute('href'));
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
-
-    // Navigation bar color change on scroll
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = 'none';
-        }
-    });
-
-    // Mobile menu functionality
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-    }
 
     // Add animation to elements when they come into view
     const observerOptions = {
@@ -75,5 +59,30 @@ function initializeNavigation() {
 
     document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
+    });
+
+    // Mobile menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    }
+
+    // Navigation bar color change on scroll
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (!navbar) return;
+
+        if (window.scrollY > 50) {
+            navbar.style.backgroundColor = '#fff';
+            navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        } else {
+            navbar.style.backgroundColor = 'transparent';
+            navbar.style.boxShadow = 'none';
+        }
     });
 }
