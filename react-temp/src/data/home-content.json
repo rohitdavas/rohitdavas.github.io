@@ -38,7 +38,8 @@
       "PyTorch",
       "TensorFlow",
       "Python",
-      "C++"
+      "C++",
+      "C"
     ],
     "Development": [
       "Git",
@@ -52,9 +53,9 @@
     ]
   },
   "establishedWork": [
-    "Developed real-time hand tracking system at Captury GmbH",
-    "Created medical instrument tracking solutions",
-    "Implemented full-body tracking algorithms",
-    "Published research papers in computer vision"
+    "Hand tracking AI solution",
+    "Instrument Tracking AI solution",
+    "Full body tracking",
+    "Publications"
   ]
 }
