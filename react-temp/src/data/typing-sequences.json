@@ -2,38 +2,33 @@
   "sequences": [
     {
       "type": "code",
-      "content": "import me",
-      "delay": 500
+      "content": "from me import *",
+      "delay": 100
+    },
+    {
+      "type": "output",
+      "content": "Motto: Code & spend sleepless night over the 🐞",
+      "delay": 100
     },
     {
       "type": "code",
-      "content": "me.whoIam()",
-      "delay": 500
+      "content": "what_can_i_do_for_you()",
+      "delay": 100
     },
     {
       "type": "output",
-      "content": "\"Rohit\"",
-      "delay": 500
-    },
-    {
-      "type": "output",
-      "content": "\"2021 IIT Jammu CS Graduate\"",
-      "delay": 500
-    },
-    {
-      "type": "output",
-      "content": "\"AI Engineer at Captury GmbH since 2021 building computer vision solutions \"",
-      "delay": 500
+      "content": "Build AI solutions",
+      "delay": 100
     },
     {
       "type": "code",
-      "content": "me.skills()",
-      "delay": 500
+      "content": "why_me()",
+      "delay": 100
     },
     {
       "type": "output",
-      "content": "[\"Deep Learning\", \"Computer Vision\"]",
-      "delay": 500
+      "content": "Check my portfolio 😉",
+      "delay": 100
     }
   ],
   "settings": {
