@@ -48,16 +48,20 @@ const Container = styled.div`
 
   /* VSCode-like title bar */
   &::before {
-    content: '🔵 terminal';
+    content: '⚡ terminal';
     display: block;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     margin: -1rem -1rem 1rem -1rem;
-    background: ${({ theme }) => theme.background === '#ffffff' ? '#f3f3f3' : '#2d2d2d'};
+    background: ${({ theme }) => theme.background === '#ffffff' ? '#e4e4e4' : '#1e1e1e'};
     border-bottom: 1px solid ${({ theme }) => theme.border};
     border-radius: 8px 8px 0 0;
-    font-size: 0.8rem;
-    color: ${({ theme }) => theme.text};
-    opacity: 0.8;
+    font-size: 0.85rem;
+    color: ${({ theme }) => theme.background === '#ffffff' ? '#424242' : '#cccccc'};
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     z-index: 1;
   }
 `;
