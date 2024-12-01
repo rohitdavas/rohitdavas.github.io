@@ -135,20 +135,20 @@ const Skills = styled.div`
 `;
 
 const SkillsGroup = styled.div`
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 
   h4 {
     color: ${({ theme }) => theme.heading};
-    margin-bottom: 0.6rem;
-    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
   }
 
   ul {
-    list-style: none;
-    padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
   }
 `;
 
@@ -201,26 +201,15 @@ const EstablishedWork = styled.div`
     color: ${({ theme }) => theme.heading};
     margin-bottom: 1rem;
     font-size: 1.5rem;
-    position: relative;
-    display: inline-block;
-    
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: ${({ theme }) => theme.link};
-    }
   }
 
   ul {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   li {
@@ -231,10 +220,9 @@ const EstablishedWork = styled.div`
     font-size: 0.95rem;
     transition: all 0.3s ease;
     border: 1px solid transparent;
-    cursor: pointer;
-    text-align: center;
-    flex: 1 1 calc(50% - 1rem);
-    min-width: 200px;
+    margin-bottom: 0.75rem;
+    text-align: left;
+    display: inline-block;
     box-shadow: 0 2px 4px ${({ theme }) => theme.shadow};
 
     &:hover {
@@ -290,14 +278,6 @@ const WorkItem = styled.li`
   }
 `;
 
-const HobbyTags = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-top: 1rem;
-`;
-
 const TagContainer = styled.span`
   position: relative;
   display: inline-block;
@@ -306,10 +286,10 @@ const TagContainer = styled.span`
 const TagContent = styled.span`
   background: ${({ theme }) => theme.secondary};
   color: ${({ theme }) => theme.text};
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.9rem;
-  margin: 0.25rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  margin: 0.125rem;
   display: inline-block;
   transition: all 0.3s ease;
   transform: ${({ isPopping }) => isPopping ? 'scale(1.1)' : 'scale(1)'};
@@ -476,11 +456,6 @@ const Home = () => {
                 <p key={index}>{paragraph}</p>
               ))}
             </AboutContent>
-            <HobbyTags>
-              {homeContent.profile.hobbies.map((hobby, index) => (
-                <Tag key={index}>{hobby}</Tag>
-              ))}
-            </HobbyTags>
           </Column>
 
           <Column>
@@ -501,8 +476,24 @@ const Home = () => {
                   </ul>
                 </SkillsGroup>
               ))}
+              <SkillsGroup>
+                <h4>Hobbies</h4>
+                <ul>
+                  {homeContent.profile.hobbies.map((hobby, index) => (
+                    <Tag
+                      key={hobby}
+                      isPopping={poppingSkills.has(hobby)}
+                    >
+                      {hobby}
+                    </Tag>
+                  ))}
+                </ul>
+              </SkillsGroup>
             </Skills>
+          </Column>
 
+          <Column>
+            <TypingAnimation />
             <EstablishedWork>
               <h3>Established Work</h3>
               <ul>
@@ -511,10 +502,6 @@ const Home = () => {
                 ))}
               </ul>
             </EstablishedWork>
-          </Column>
-
-          <Column>
-            <TypingAnimation />
           </Column>
         </HomeGrid>
       </Container>
