@@ -48,13 +48,31 @@ const ProfileInfo = styled.div`
   p {
     color: ${({ theme }) => theme.text};
     margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background: linear-gradient(120deg, ${({ theme }) => theme.link}20 0%, ${({ theme }) => theme.link}20 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.4em;
+    background-position: 0 88%;
+    transition: all 0.3s ease;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    
+    &:hover {
+      background-size: 100% 100%;
+      color: ${({ theme }) => theme.heading};
+    }
   }
 `;
 
 const ProfileCardContainer = styled.div`
-  width: 100%;
   display: flex;
   justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  perspective: 1000px;
 `;
 
 const ProfileCard = styled.div`
@@ -301,25 +319,84 @@ const SocialIcon = styled.a`
 
 const ResumeLinks = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 0.8rem;
   margin: 1rem 0;
   justify-content: center;
+  position: relative;
+`;
+
+const ResumeTooltip = styled.span`
+  position: absolute;
+  background: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.text};
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border: 1px solid ${({ theme }) => theme.border};
+  pointer-events: none;
+  z-index: 10;
+`;
+
+const ResumeLinkWrapper = styled.div`
+  position: relative;
+  
+  &:hover ${ResumeTooltip} {
+    opacity: 1;
+    visibility: visible;
+  }
 `;
 
 const ResumeLink = styled.a`
   background: ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.text};
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   border-radius: 4px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid ${({ theme }) => theme.border};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  overflow: hidden;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: ${({ theme }) => theme.link};
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 0;
+  }
   
   &:hover {
-    background: ${({ theme }) => theme.link};
     color: ${({ theme }) => theme.primary};
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px ${({ theme }) => theme.shadow};
+    box-shadow: 0 2px 4px ${({ theme }) => theme.shadow};
+    border-color: ${({ theme }) => theme.link};
+    
+    &:before {
+      transform: translateX(0);
+    }
+  }
+  
+  i {
+    font-size: 1rem;
+    z-index: 1;
   }
 `;
 
@@ -591,12 +668,26 @@ const Home = () => {
               </ProfileInfo>
 
               <ResumeLinks>
-                <ResumeLink href={homeContent.profile.resumes["1-page"]} target="_blank" rel="noopener noreferrer">
-                  1-Page Resume
-                </ResumeLink>
-                <ResumeLink href={homeContent.profile.resumes["2-page"]} target="_blank" rel="noopener noreferrer">
-                  2-Page Resume
-                </ResumeLink>
+                <ResumeLinkWrapper>
+                  <ResumeLink 
+                    href={homeContent.profile.resumes["1-page"]} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fas fa-file-pdf"></i>
+                  </ResumeLink>
+                  <ResumeTooltip>1-Page Resume</ResumeTooltip>
+                </ResumeLinkWrapper>
+                <ResumeLinkWrapper>
+                  <ResumeLink 
+                    href={homeContent.profile.resumes["2-page"]} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fas fa-file-pdf"></i>
+                  </ResumeLink>
+                  <ResumeTooltip>2-Page Resume</ResumeTooltip>
+                </ResumeLinkWrapper>
               </ResumeLinks>
             </ProfileSection>
 
