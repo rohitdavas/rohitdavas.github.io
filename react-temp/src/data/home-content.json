@@ -1,0 +1,60 @@
+{
+  "profile": {
+    "name": "Rohit Kumar",
+    "title": "AI Engineer",
+    "images": {
+      "front": "/images/rohit-in-berlin.jpg",
+      "back": "/images/coder.png"
+    },
+    "about": [
+      "A human being amazed everyday with computers !"
+    ],
+    "hobbies": [
+      "Running",
+      "Cycling",
+      "Reading",
+      "Writing",
+      "Podcasts",
+      "hiking", 
+      "Workouts",
+      "Programming"
+    ],
+    "socialLinks": {
+      "github": "https://github.com/rohitdavas",
+      "linkedin": "https://www.linkedin.com/in/rohit-davas/",
+      "email": "davasrohit@gmail.com"
+    }
+  },
+  "skills": {
+    "Core AI & ML": [
+      "Deep Learning",
+      "Computer Vision",
+      "NLP",
+      "Research",
+      "Data pipelines",
+      "Synthetic data generation ( vision ) "
+    ],
+    "Frameworks & Tools": [
+      "PyTorch",
+      "TensorFlow",
+      "Python",
+      "C++"
+    ],
+    "Development": [
+      "Git",
+      "Docker",
+      "Linux"
+    ], 
+    "Simulation": [
+      "Blender",
+      "Unreal Engine",
+      "Unity"
+    ]
+  },
+  "establishedWork": [
+    "Developed real-time hand tracking system at Captury GmbH",
+    "Created medical instrument tracking solutions",
+    "Implemented full-body tracking algorithms",
+    "Published research papers in computer vision"
+  ]
+}

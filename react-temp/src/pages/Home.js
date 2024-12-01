@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 import TypingAnimation from '../components/TypingAnimation';
+import homeContent from '../data/home-content.json';
 
 const HomeSection = styled.section`
   padding: 2rem 0;
@@ -253,18 +254,65 @@ const AboutContent = styled.div`
   }
 `;
 
-const skillsData = {
-  'Core AI & ML': ['Deep Learning', 'Computer Vision', 'NLP', 'Research'],
-  'Frameworks & Tools': ['PyTorch', 'TensorFlow', 'Python', 'C++'],
-  'Development': ['Git', 'Docker', 'Linux', 'AWS']
-};
+const SocialLinks = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
 
-const establishedWork = [
-  'Developed real-time hand tracking system at Captury GmbH',
-  'Created medical instrument tracking solutions',
-  'Implemented full-body tracking algorithms',
-  'Published research papers in computer vision'
-];
+  a {
+    color: ${({ theme }) => theme.text};
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: ${({ theme }) => theme.link};
+    }
+  }
+`;
+
+const WorkItem = styled.li`
+  margin-bottom: 1rem;
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.text};
+
+    &:hover {
+      color: ${({ theme }) => theme.link};
+    }
+  }
+
+  h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+`;
+
+const HobbyTags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+`;
+
+const HobbyTag = styled.span`
+  background: ${({ theme }) => theme.backgroundAlt || '#f5f5f5'};
+  color: ${({ theme }) => theme.text};
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: ${({ theme }) => theme.link};
+    background: ${({ theme }) => theme.background};
+  }
+`;
 
 const createParticle = (width) => {
   const colors = ['#FFD700', '#FF69B4', '#00CED1', '#98FB98', '#DDA0DD'];
@@ -332,7 +380,7 @@ const Home = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const allSkills = Object.values(skillsData).flat();
+      const allSkills = Object.values(homeContent.skills).flat();
       const randomSkill = allSkills[Math.floor(Math.random() * allSkills.length)];
       setPoppingSkills(new Set([randomSkill]));
       
@@ -351,16 +399,16 @@ const Home = () => {
           <Column>
             <ProfileSection>
               <ProfileInfo>
-                <h1>Rohit Kumar</h1>
-                <p>AI Engineer | Deep Learning Engineer | Computer Vision</p>
+                <h1>{homeContent.profile.name}</h1>
+                <p>{homeContent.profile.title}</p>
                 <ProfileCardContainer>
                   <ProfileCard>
                     <ProfileCardInner>
                       <CardFront>
-                        <img src="/images/rohit-in-berlin.jpg" alt="Rohit Kumar" />
+                        <img src={homeContent.profile.images.front} alt={homeContent.profile.name} />
                       </CardFront>
                       <CardBack>
-                        <img src="/images/coder.png" alt="Code Sample" />
+                        <img src={homeContent.profile.images.back} alt="Code Sample" />
                       </CardBack>
                     </ProfileCardInner>
                   </ProfileCard>
@@ -368,15 +416,23 @@ const Home = () => {
               </ProfileInfo>
             </ProfileSection>
             <AboutContent>
-              <p>I am a passionate AI Engineer with expertise in Deep Learning and Computer Vision. Currently working at Captury GmbH, I specialize in developing cutting-edge AI solutions.</p>
-              <p>My journey began at IIT Jammu, where I honed my skills in computer science and developed a strong foundation in machine learning.</p>
+              {homeContent.profile.about.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </AboutContent>
+            <HobbyTags>
+              {homeContent.profile.hobbies.map((hobby, index) => (
+                <HobbyTag key={index}>
+                  {hobby}
+                </HobbyTag>
+              ))}
+            </HobbyTags>
           </Column>
 
           <Column>
             <Skills>
               <h3>Skills</h3>
-              {Object.entries(skillsData).map(([category, skills]) => (
+              {Object.entries(homeContent.skills).map(([category, skills]) => (
                 <SkillsGroup key={category}>
                   <h4>{category}</h4>
                   <ul>
@@ -391,11 +447,12 @@ const Home = () => {
                 </SkillsGroup>
               ))}
             </Skills>
+
             <EstablishedWork>
               <h3>Established Work</h3>
               <ul>
-                {establishedWork.map(work => (
-                  <li key={work}>{work}</li>
+                {homeContent.establishedWork.map((work, index) => (
+                  <li key={index}>{work}</li>
                 ))}
               </ul>
             </EstablishedWork>
