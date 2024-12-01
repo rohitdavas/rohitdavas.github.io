@@ -4,7 +4,7 @@ import TypingAnimation from '../components/TypingAnimation';
 import homeContent from '../data/home-content.json';
 
 const HomeSection = styled.section`
-  padding: 2rem 0;
+  padding: 0;
 `;
 
 const Container = styled.div`
@@ -423,23 +423,62 @@ const SkillWithParticles = ({ skill, isPopping }) => {
   );
 };
 
+const popupAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 const FullScreenImage = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   cursor: pointer;
+  animation: ${fadeIn} 0.3s ease-out;
 
   img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 80%;
+    max-height: 80%;
     object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: ${popupAnimation} 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  &:before {
+    content: '×';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 `;
 
@@ -463,7 +502,7 @@ const Home = () => {
   }, []);
 
   const handleImageClick = (e, imageSrc) => {
-    e.stopPropagation(); // Prevent the card flip when opening fullscreen
+    e.stopPropagation();
     setFullScreenImage(imageSrc);
   };
 
