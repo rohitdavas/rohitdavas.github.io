@@ -225,7 +225,7 @@ const EstablishedWork = styled.div`
 
   li {
     color: ${({ theme }) => theme.text};
-    background: ${({ theme }) => theme.backgroundAlt || '#f5f5f5'};
+    background: ${({ theme }) => theme.secondary};
     padding: 0.8rem 1.2rem;
     border-radius: 20px;
     font-size: 0.95rem;
@@ -235,13 +235,13 @@ const EstablishedWork = styled.div`
     text-align: center;
     flex: 1 1 calc(50% - 1rem);
     min-width: 200px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px ${({ theme }) => theme.shadow};
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 12px ${({ theme }) => theme.shadow};
       border-color: ${({ theme }) => theme.link};
-      background: ${({ theme }) => theme.background};
+      background: ${({ theme }) => theme.cardHover};
     }
   }
 `;
@@ -298,19 +298,19 @@ const HobbyTags = styled.div`
   margin-top: 1rem;
 `;
 
-const HobbyTag = styled.span`
-  background: ${({ theme }) => theme.backgroundAlt || '#f5f5f5'};
+const Tag = styled.span`
+  background: ${({ theme }) => theme.secondary};
   color: ${({ theme }) => theme.text};
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
-  font-size: 0.85rem;
-  border: 1px solid transparent;
+  font-size: 0.9rem;
+  margin: 0.25rem;
+  display: inline-block;
   transition: all 0.3s ease;
 
   &:hover {
+    background: ${({ theme }) => theme.cardHover};
     transform: translateY(-2px);
-    border-color: ${({ theme }) => theme.link};
-    background: ${({ theme }) => theme.background};
   }
 `;
 
@@ -422,9 +422,9 @@ const Home = () => {
             </AboutContent>
             <HobbyTags>
               {homeContent.profile.hobbies.map((hobby, index) => (
-                <HobbyTag key={index}>
+                <Tag key={index}>
                   {hobby}
-                </HobbyTag>
+                </Tag>
               ))}
             </HobbyTags>
           </Column>
@@ -437,11 +437,11 @@ const Home = () => {
                   <h4>{category}</h4>
                   <ul>
                     {skills.map(skill => (
-                      <SkillWithParticles
+                      <Tag
                         key={skill}
-                        skill={skill}
-                        isPopping={poppingSkills.has(skill)}
-                      />
+                      >
+                        {skill}
+                      </Tag>
                     ))}
                   </ul>
                 </SkillsGroup>
