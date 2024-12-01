@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect, useRef } from 'react';
+import styled, { keyframes } from 'styled-components';
 import TypingAnimation from '../components/TypingAnimation';
 
 const HomeSection = styled.section`
@@ -96,6 +96,23 @@ const CardBack = styled(CardSide)`
   transform: rotateY(180deg);
 `;
 
+const popOut = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+`;
+
+const rain = keyframes`
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px) rotate(360deg);
+    opacity: 0;
+  }
+`;
+
 const Skills = styled.div`
   h3 {
     color: ${({ theme }) => theme.heading};
@@ -132,24 +149,49 @@ const SkillsGroup = styled.div`
     flex-wrap: wrap;
     gap: 0.5rem;
   }
+`;
 
-  li {
-    color: ${({ theme }) => theme.text};
-    background: ${({ theme }) => theme.backgroundAlt || '#f5f5f5'};
-    padding: 0.3rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-    cursor: pointer;
-    white-space: nowrap;
+const ParticleContainer = styled.div`
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+`;
 
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      border-color: ${({ theme }) => theme.link};
-      background: ${({ theme }) => theme.background};
-    }
+const Particle = styled.div`
+  position: absolute;
+  width: 1px;
+  height: 3px;
+  background: ${({ color }) => color};
+  border-radius: 50%;
+  animation: ${rain} 2s linear forwards;
+  opacity: 0.8;
+  box-shadow: 0 0 5px ${({ color }) => color};
+`;
+
+const SkillItemContainer = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+const SkillItem = styled.li`
+  color: ${({ theme }) => theme.text};
+  background: ${({ theme }) => theme.backgroundAlt || '#f5f5f5'};
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  animation: ${({ isPopping }) => isPopping ? popOut : 'none'} 2.0s ease;
+  position: relative;
+  z-index: 2;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-color: ${({ theme }) => theme.link};
+    background: ${({ theme }) => theme.background};
   }
 `;
 
@@ -224,7 +266,84 @@ const establishedWork = [
   'Published research papers in computer vision'
 ];
 
+const createParticle = (width) => {
+  const colors = ['#FFD700', '#FF69B4', '#00CED1', '#98FB98', '#DDA0DD'];
+  return {
+    x: (Math.random() * width) - (width / 2), // spread across skill width
+    color: colors[Math.floor(Math.random() * colors.length)],
+    id: Math.random(),
+    scale: 0.5 + Math.random() * 0.5, // scale between 0.5 and 1
+    speed: 1 + Math.random(),
+  };
+};
+
+const SkillWithParticles = ({ skill, isPopping }) => {
+  const [particles, setParticles] = useState([]);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (isPopping && containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const centerX = rect.left + (rect.width / 2);
+      const centerY = rect.top;
+
+      const newParticles = Array.from({ length: 40 }, () => ({
+        ...createParticle(rect.width),
+        left: centerX,
+        top: centerY,
+      }));
+
+      setParticles(newParticles);
+
+      const timer = setTimeout(() => {
+        setParticles([]);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isPopping]);
+
+  return (
+    <SkillItemContainer ref={containerRef}>
+      <SkillItem isPopping={isPopping}>{skill}</SkillItem>
+      {particles.map(particle => (
+        <ParticleContainer
+          key={particle.id}
+          style={{
+            left: `${particle.left + particle.x}px`,
+            top: particle.top + 'px',
+          }}
+        >
+          <Particle
+            color={particle.color}
+            style={{
+              transform: `scale(${particle.scale})`,
+              animationDuration: `${2 / particle.speed}s`,
+            }}
+          />
+        </ParticleContainer>
+      ))}
+    </SkillItemContainer>
+  );
+};
+
 const Home = () => {
+  const [poppingSkills, setPoppingSkills] = useState(new Set());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const allSkills = Object.values(skillsData).flat();
+      const randomSkill = allSkills[Math.floor(Math.random() * allSkills.length)];
+      setPoppingSkills(new Set([randomSkill]));
+      
+      setTimeout(() => {
+        setPoppingSkills(new Set());
+      }, 2000);
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <HomeSection>
       <Container>
@@ -262,7 +381,11 @@ const Home = () => {
                   <h4>{category}</h4>
                   <ul>
                     {skills.map(skill => (
-                      <li key={skill}>{skill}</li>
+                      <SkillWithParticles
+                        key={skill}
+                        skill={skill}
+                        isPopping={poppingSkills.has(skill)}
+                      />
                     ))}
                   </ul>
                 </SkillsGroup>
