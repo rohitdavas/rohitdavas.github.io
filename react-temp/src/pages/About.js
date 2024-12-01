@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import TypingAnimation from '../components/TypingAnimation';
 
 const AboutSection = styled.section`
   padding: 2rem 0;
@@ -31,6 +32,17 @@ const AboutContent = styled.div`
 `;
 
 const ProfileSection = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const ProfileInfo = styled.div`
   h1 {
     color: ${({ theme }) => theme.heading};
     margin-bottom: 0.5rem;
@@ -40,6 +52,10 @@ const ProfileSection = styled.div`
     color: ${({ theme }) => theme.textSecondary};
     margin-bottom: 1.5rem;
   }
+`;
+
+const ProfileCardContainer = styled.div`
+  width: 100%;
 `;
 
 const ProfileCard = styled.div`
@@ -151,6 +167,11 @@ const EstablishedWork = styled.div`
   }
 `;
 
+const CodeSection = styled.div`
+  grid-column: 1 / -1;
+  margin-top: 2rem;
+`;
+
 const skillsData = {
   'Core AI & ML': ['Deep Learning', 'Computer Vision', 'NLP', 'Research'],
   'Frameworks & Tools': ['PyTorch', 'TensorFlow', 'Python', 'C++'],
@@ -173,40 +194,45 @@ const About = () => {
             <p>My journey began at IIT Jammu, where I honed my skills in computer science and developed a strong foundation in machine learning.</p>
           </AboutContent>
           <ProfileSection>
-            <h1>Rohit Kumar</h1>
-            <p>AI Engineer | Deep Learning Engineer | Computer Vision</p>
-            <ProfileCard>
-              <ProfileCardInner>
-                <CardFront>
-                  <img src="/images/rohit-in-berlin.jpg" alt="Rohit Kumar" />
-                </CardFront>
-                <CardBack>
-                  <img src="/images/coder.png" alt="Code Sample" />
-                </CardBack>
-              </ProfileCardInner>
-            </ProfileCard>
-            <Skills>
-              <h3>Skills</h3>
-              {Object.entries(skillsData).map(([category, skills]) => (
-                <SkillsGroup key={category}>
-                  <h4>{category}</h4>
-                  <ul>
-                    {skills.map(skill => (
-                      <li key={skill}>{skill}</li>
-                    ))}
-                  </ul>
-                </SkillsGroup>
-              ))}
-            </Skills>
-            <EstablishedWork>
-              <h3>Established Work</h3>
-              <ul>
-                {establishedWork.map(work => (
-                  <li key={work}>{work}</li>
-                ))}
-              </ul>
-            </EstablishedWork>
+            <ProfileInfo>
+              <h1>Rohit Kumar</h1>
+              <p>AI Engineer | Deep Learning Engineer | Computer Vision</p>
+              <ProfileCardContainer>
+                <ProfileCard>
+                  <ProfileCardInner>
+                    <CardFront>
+                      <img src="/images/rohit-in-berlin.jpg" alt="Rohit Kumar" />
+                    </CardFront>
+                    <CardBack>
+                      <img src="/images/coder.png" alt="Code Sample" />
+                    </CardBack>
+                  </ProfileCardInner>
+                </ProfileCard>
+              </ProfileCardContainer>
+            </ProfileInfo>
+            <TypingAnimation />
           </ProfileSection>
+          <Skills>
+            <h3>Skills</h3>
+            {Object.entries(skillsData).map(([category, skills]) => (
+              <SkillsGroup key={category}>
+                <h4>{category}</h4>
+                <ul>
+                  {skills.map(skill => (
+                    <li key={skill}>{skill}</li>
+                  ))}
+                </ul>
+              </SkillsGroup>
+            ))}
+          </Skills>
+          <EstablishedWork>
+            <h3>Established Work</h3>
+            <ul>
+              {establishedWork.map(work => (
+                <li key={work}>{work}</li>
+              ))}
+            </ul>
+          </EstablishedWork>
         </AboutGrid>
       </Container>
     </AboutSection>
