@@ -137,11 +137,11 @@ const Navbar = ({ toggleTheme, theme }) => {
             Home
           </NavLink>
           <NavLink 
-            to="/about" 
-            active={location.pathname === '/about'} 
+            to="/timeline" 
+            active={location.pathname === '/timeline'} 
             onClick={closeMenu}
           >
-            About
+            Timeline
           </NavLink>
           <NavLink 
             to="/projects" 

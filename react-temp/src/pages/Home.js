@@ -1,169 +1,289 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import TypingAnimation from '../components/TypingAnimation';
 
-const TimelineContainer = styled.section`
+const HomeSection = styled.section`
   padding: 2rem 0;
 `;
 
-const Content = styled.div`
+const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 `;
 
-const Title = styled.h2`
-  color: ${({ theme }) => theme.heading};
-  margin-bottom: 2rem;
+const HomeGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+const ProfileSection = styled.div`
   text-align: center;
 `;
 
-const TimelineContent = styled.div`
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-`;
-
-const TimelineItem = styled.div`
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const TimelineText = styled.div`
-  flex: 1;
-  background: ${({ theme }) => theme.card};
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px ${({ theme }) => theme.shadow};
-
-  h3 {
+const ProfileInfo = styled.div`
+  h1 {
     color: ${({ theme }) => theme.heading};
-    margin-bottom: 0.5rem;
-  }
-
-  .date {
-    color: ${({ theme }) => theme.textSecondary};
-    font-size: 0.9rem;
     margin-bottom: 0.5rem;
   }
 
   p {
     color: ${({ theme }) => theme.text};
-    line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
 `;
 
-const VideoThumbnail = styled.a`
-  flex: 1;
+const ProfileCardContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const ProfileCard = styled.div`
+  width: 180px;
+  height: 180px;
+  perspective: 1000px;
+  margin-bottom: 2rem;
+`;
+
+const ProfileCardInner = styled.div`
   position: relative;
-  display: block;
-  border-radius: 8px;
-  overflow: hidden;
-  
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-
-  &:hover {
-    img {
-      transform: scale(1.05);
-    }
-    .play-overlay {
-      opacity: 1;
-    }
-  }
-`;
-
-const PlayOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+
+  ${ProfileCard}:hover & {
+    transform: rotateY(180deg);
+  }
 `;
 
-const OverlayContent = styled.div`
-  text-align: center;
-  color: white;
+const CardSide = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  overflow: hidden;
 
-  i {
-    font-size: 3rem;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
+const CardFront = styled(CardSide)``;
+
+const CardBack = styled(CardSide)`
+  transform: rotateY(180deg);
+`;
+
+const Skills = styled.div`
+  h3 {
+    color: ${({ theme }) => theme.heading};
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: ${({ theme }) => theme.link};
+    }
+  }
+`;
+
+const SkillsGroup = styled.div`
+  margin-bottom: 1.2rem;
+
+  h4 {
+    color: ${({ theme }) => theme.heading};
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  li {
+    color: ${({ theme }) => theme.text};
+    background: ${({ theme }) => theme.backgroundAlt || '#f5f5f5'};
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-color: ${({ theme }) => theme.link};
+      background: ${({ theme }) => theme.background};
+    }
+  }
+`;
+
+const EstablishedWork = styled.div`
+  h3 {
+    color: ${({ theme }) => theme.heading};
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: ${({ theme }) => theme.link};
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  li {
+    color: ${({ theme }) => theme.text};
+    background: ${({ theme }) => theme.backgroundAlt || '#f5f5f5'};
+    padding: 0.8rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      border-color: ${({ theme }) => theme.link};
+      background: ${({ theme }) => theme.background};
+    }
+  }
+`;
+
+const AboutContent = styled.div`
+  p {
+    color: ${({ theme }) => theme.text};
+    line-height: 1.6;
     margin-bottom: 1rem;
   }
-
-  p {
-    font-size: 0.9rem;
-  }
 `;
 
-const timelineData = [
-  {
-    title: "AI Software Developer - Captury GmbH",
-    date: "January 2022 - Present",
-    description: "Contributing to dataset preparations, handpose tracking, and developing prototypes using Unreal Engine, Unity, and Oculus Quest.",
-    video: {
-      url: "https://youtu.be/p_7iE6UsSLM?si=i9vZnVBG1XIG_IQ0",
-      thumbnail: "https://img.youtube.com/vi/p_7iE6UsSLM/maxresdefault.jpg",
-      description: "My released work of hand tracking."
-    }
-  },
-  {
-    title: "Freelance Developer - Captury GmbH",
-    date: "July - December 2021",
-    description: "Developed handpose tracking support and various computer vision solutions."
-  },
-  {
-    title: "Deep Learning Intern - Captury GmbH",
-    date: "October - December 2020",
-    description: "Worked on Fast Background subtraction using neural networks."
-  }
+const skillsData = {
+  'Core AI & ML': ['Deep Learning', 'Computer Vision', 'NLP', 'Research'],
+  'Frameworks & Tools': ['PyTorch', 'TensorFlow', 'Python', 'C++'],
+  'Development': ['Git', 'Docker', 'Linux', 'AWS']
+};
+
+const establishedWork = [
+  'Developed real-time hand tracking system at Captury GmbH',
+  'Created medical instrument tracking solutions',
+  'Implemented full-body tracking algorithms',
+  'Published research papers in computer vision'
 ];
 
 const Home = () => {
   return (
-    <TimelineContainer>
-      <Content>
-        <Title>Professional Timeline</Title>
-        <TimelineContent>
-          {timelineData.map((item, index) => (
-            <TimelineItem key={index}>
-              <TimelineText>
-                <h3>{item.title}</h3>
-                <p className="date">{item.date}</p>
-                <p>{item.description}</p>
-              </TimelineText>
-              {item.video && (
-                <VideoThumbnail href={item.video.url} target="_blank" rel="noopener noreferrer">
-                  <img src={item.video.thumbnail} alt="Project Video" />
-                  <PlayOverlay className="play-overlay">
-                    <OverlayContent>
-                      <FontAwesomeIcon icon={faPlay} size="3x" />
-                      <p>{item.video.description}</p>
-                    </OverlayContent>
-                  </PlayOverlay>
-                </VideoThumbnail>
-              )}
-            </TimelineItem>
-          ))}
-        </TimelineContent>
-      </Content>
-    </TimelineContainer>
+    <HomeSection>
+      <Container>
+        <HomeGrid>
+          <Column>
+            <ProfileSection>
+              <ProfileInfo>
+                <h1>Rohit Kumar</h1>
+                <p>AI Engineer | Deep Learning Engineer | Computer Vision</p>
+                <ProfileCardContainer>
+                  <ProfileCard>
+                    <ProfileCardInner>
+                      <CardFront>
+                        <img src="/images/rohit-in-berlin.jpg" alt="Rohit Kumar" />
+                      </CardFront>
+                      <CardBack>
+                        <img src="/images/coder.png" alt="Code Sample" />
+                      </CardBack>
+                    </ProfileCardInner>
+                  </ProfileCard>
+                </ProfileCardContainer>
+              </ProfileInfo>
+            </ProfileSection>
+            <AboutContent>
+              <p>I am a passionate AI Engineer with expertise in Deep Learning and Computer Vision. Currently working at Captury GmbH, I specialize in developing cutting-edge AI solutions.</p>
+              <p>My journey began at IIT Jammu, where I honed my skills in computer science and developed a strong foundation in machine learning.</p>
+            </AboutContent>
+          </Column>
+
+          <Column>
+            <Skills>
+              <h3>Skills</h3>
+              {Object.entries(skillsData).map(([category, skills]) => (
+                <SkillsGroup key={category}>
+                  <h4>{category}</h4>
+                  <ul>
+                    {skills.map(skill => (
+                      <li key={skill}>{skill}</li>
+                    ))}
+                  </ul>
+                </SkillsGroup>
+              ))}
+            </Skills>
+            <EstablishedWork>
+              <h3>Established Work</h3>
+              <ul>
+                {establishedWork.map(work => (
+                  <li key={work}>{work}</li>
+                ))}
+              </ul>
+            </EstablishedWork>
+          </Column>
+
+          <Column>
+            <TypingAnimation />
+          </Column>
+        </HomeGrid>
+      </Container>
+    </HomeSection>
   );
 };
 

@@ -5,7 +5,7 @@ import useTheme from './hooks/useTheme';
 import GlobalStyles from './styles/GlobalStyles';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import About from './pages/About';
+import Timeline from './pages/Timeline';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
@@ -20,7 +20,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/timeline" element={<Timeline />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
