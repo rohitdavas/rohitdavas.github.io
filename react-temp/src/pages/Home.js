@@ -298,7 +298,12 @@ const HobbyTags = styled.div`
   margin-top: 1rem;
 `;
 
-const Tag = styled.span`
+const TagContainer = styled.span`
+  position: relative;
+  display: inline-block;
+`;
+
+const TagContent = styled.span`
   background: ${({ theme }) => theme.secondary};
   color: ${({ theme }) => theme.text};
   padding: 0.3rem 0.8rem;
@@ -307,12 +312,63 @@ const Tag = styled.span`
   margin: 0.25rem;
   display: inline-block;
   transition: all 0.3s ease;
+  transform: ${({ isPopping }) => isPopping ? 'scale(1.1)' : 'scale(1)'};
 
   &:hover {
     background: ${({ theme }) => theme.cardHover};
     transform: translateY(-2px);
   }
 `;
+
+const Tag = ({ children, isPopping }) => {
+  const [particles, setParticles] = useState([]);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (isPopping && containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const centerX = rect.left + (rect.width / 2);
+      const centerY = rect.top;
+
+      const newParticles = Array.from({ length: 40 }, () => ({
+        ...createParticle(rect.width),
+        left: centerX,
+        top: centerY,
+      }));
+
+      setParticles(newParticles);
+
+      const timer = setTimeout(() => {
+        setParticles([]);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isPopping]);
+
+  return (
+    <TagContainer ref={containerRef}>
+      <TagContent isPopping={isPopping}>{children}</TagContent>
+      {particles.map(particle => (
+        <ParticleContainer
+          key={particle.id}
+          style={{
+            left: `${particle.left + particle.x}px`,
+            top: particle.top + 'px',
+          }}
+        >
+          <Particle
+            color={particle.color}
+            style={{
+              transform: `scale(${particle.scale})`,
+              animationDuration: `${2 / particle.speed}s`,
+            }}
+          />
+        </ParticleContainer>
+      ))}
+    </TagContainer>
+  );
+};
 
 const createParticle = (width) => {
   const colors = ['#FFD700', '#FF69B4', '#00CED1', '#98FB98', '#DDA0DD'];
@@ -422,9 +478,7 @@ const Home = () => {
             </AboutContent>
             <HobbyTags>
               {homeContent.profile.hobbies.map((hobby, index) => (
-                <Tag key={index}>
-                  {hobby}
-                </Tag>
+                <Tag key={index}>{hobby}</Tag>
               ))}
             </HobbyTags>
           </Column>
@@ -439,6 +493,7 @@ const Home = () => {
                     {skills.map(skill => (
                       <Tag
                         key={skill}
+                        isPopping={poppingSkills.has(skill)}
                       >
                         {skill}
                       </Tag>
