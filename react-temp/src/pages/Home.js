@@ -73,6 +73,7 @@ const ProfileCardContainer = styled.div`
   max-width: 320px;
   margin: 0 auto;
   perspective: 1000px;
+  position: relative;
 `;
 
 const ProfileCard = styled.div`
@@ -283,37 +284,36 @@ const SocialLinks = styled.div`
   top: 50%;
   transform: translateY(-50%);
 
-  @media (max-width: 1024px) {
-    position: relative;
-    left: 0;
-    transform: none;
+  @media (max-width: 768px) {
+    position: static;
     flex-direction: row;
     justify-content: center;
     margin: 1rem 0;
   }
 `;
 
-const SocialIcon = styled.a`
+const SocialLink = styled.a`
   color: ${({ theme }) => theme.text};
   font-size: 1.5rem;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: ${({ theme }) => theme.primary};
+  border: 1px solid ${({ theme }) => theme.border};
 
   &:hover {
-    color: ${({ theme }) => theme.link};
-    transform: translateY(-2px);
+    color: ${({ theme }) => theme.primary};
+    background: ${({ theme }) => theme.link};
   }
 
-  span {
-    font-size: 0.9rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &:hover span {
-    opacity: 1;
+  @media (max-width: 767px) {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -626,45 +626,40 @@ const Home = () => {
         <HomeGrid>
           <Column>
             <ProfileSection>
-              <SocialLinks>
-                <SocialIcon href={homeContent.profile.socialLinks.github} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-github"></i>
-                  <span>GitHub</span>
-                </SocialIcon>
-                <SocialIcon href={homeContent.profile.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-linkedin"></i>
-                  <span>LinkedIn</span>
-                </SocialIcon>
-                <SocialIcon href={homeContent.profile.socialLinks.instagram} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-instagram"></i>
-                  <span>Instagram</span>
-                </SocialIcon>
-                <SocialIcon href={`mailto:${homeContent.profile.socialLinks.email}`}>
-                  <i className="fas fa-envelope"></i>
-                  <span>Email</span>
-                </SocialIcon>
-              </SocialLinks>
-              
+              <ProfileCardContainer>
+                <SocialLinks>
+                  <SocialLink href={homeContent.profile.socialLinks.github} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-github"></i>
+                  </SocialLink>
+                  <SocialLink href={homeContent.profile.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-linkedin"></i>
+                  </SocialLink>
+                  <SocialLink href={homeContent.profile.socialLinks.instagram} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-instagram"></i>
+                  </SocialLink>
+                  <SocialLink href={`mailto:${homeContent.profile.socialLinks.email}`}>
+                    <i className="fas fa-envelope"></i>
+                  </SocialLink>
+                </SocialLinks>
+                <ProfileCard isFlipped={isFlipped} onClick={handleCardClick}>
+                  <CardFront>
+                    <img
+                      src={homeContent.profile.images.front}
+                      alt="Rohit in Berlin"
+                      onClick={(e) => handleImageClick(e, homeContent.profile.images.front)}
+                    />
+                  </CardFront>
+                  <CardBack>
+                    <img
+                      src={homeContent.profile.images.back}
+                      alt="Coder"
+                      onClick={(e) => handleImageClick(e, homeContent.profile.images.back)}
+                    />
+                  </CardBack>
+                </ProfileCard>
+              </ProfileCardContainer>
               <ProfileInfo>
                 <p>{homeContent.profile.title}</p>
-                <ProfileCardContainer>
-                  <ProfileCard isFlipped={isFlipped} onClick={handleCardClick}>
-                    <CardFront>
-                      <img
-                        src={homeContent.profile.images.front}
-                        alt="Rohit in Berlin"
-                        onClick={(e) => handleImageClick(e, homeContent.profile.images.front)}
-                      />
-                    </CardFront>
-                    <CardBack>
-                      <img
-                        src={homeContent.profile.images.back}
-                        alt="Coder"
-                        onClick={(e) => handleImageClick(e, homeContent.profile.images.back)}
-                      />
-                    </CardBack>
-                  </ProfileCard>
-                </ProfileCardContainer>
               </ProfileInfo>
 
               <ResumeLinks>
