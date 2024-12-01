@@ -4,7 +4,8 @@ import TypingAnimation from '../components/TypingAnimation';
 import homeContent from '../data/home-content.json';
 
 const HomeSection = styled.section`
-  padding: 0;
+  padding: 2rem 0;
+  margin-top: 2rem;
 `;
 
 const Container = styled.div`
@@ -35,6 +36,7 @@ const Column = styled.div`
 
 const ProfileSection = styled.div`
   text-align: center;
+  position: relative;
 `;
 
 const ProfileInfo = styled.div`
@@ -256,37 +258,68 @@ const AboutContent = styled.div`
 
 const SocialLinks = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 1rem;
-  margin-bottom: 2rem;
+  position: absolute;
+  left: -4rem;
+  top: 50%;
+  transform: translateY(-50%);
 
-  a {
-    color: ${({ theme }) => theme.text};
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: ${({ theme }) => theme.link};
-    }
+  @media (max-width: 1024px) {
+    position: relative;
+    left: 0;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem 0;
   }
 `;
 
-const WorkItem = styled.li`
-  margin-bottom: 1rem;
+const SocialIcon = styled.a`
+  color: ${({ theme }) => theme.text};
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
-  a {
-    text-decoration: none;
-    color: ${({ theme }) => theme.text};
-
-    &:hover {
-      color: ${({ theme }) => theme.link};
-    }
+  &:hover {
+    color: ${({ theme }) => theme.link};
+    transform: translateY(-2px);
   }
 
-  h4 {
-    margin-bottom: 0.5rem;
+  span {
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
-  p {
-    margin-bottom: 1rem;
+  &:hover span {
+    opacity: 1;
+  }
+`;
+
+const ResumeLinks = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  justify-content: center;
+`;
+
+const ResumeLink = styled.a`
+  background: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.text};
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid ${({ theme }) => theme.border};
+  
+  &:hover {
+    background: ${({ theme }) => theme.link};
+    color: ${({ theme }) => theme.primary};
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px ${({ theme }) => theme.shadow};
   }
 `;
 
@@ -516,30 +549,57 @@ const Home = () => {
         <HomeGrid>
           <Column>
             <ProfileSection>
+              <SocialLinks>
+                <SocialIcon href={homeContent.profile.socialLinks.github} target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-github"></i>
+                  <span>GitHub</span>
+                </SocialIcon>
+                <SocialIcon href={homeContent.profile.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-linkedin"></i>
+                  <span>LinkedIn</span>
+                </SocialIcon>
+                <SocialIcon href={homeContent.profile.socialLinks.instagram} target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-instagram"></i>
+                  <span>Instagram</span>
+                </SocialIcon>
+                <SocialIcon href={`mailto:${homeContent.profile.socialLinks.email}`}>
+                  <i className="fas fa-envelope"></i>
+                  <span>Email</span>
+                </SocialIcon>
+              </SocialLinks>
+              
               <ProfileInfo>
                 <p>{homeContent.profile.title}</p>
                 <ProfileCardContainer>
-                  <ProfileCard onClick={handleCardClick}>
-                    <ProfileCardInner style={{ transform: isFlipped ? 'rotateY(180deg)' : 'none' }}>
-                      <CardFront>
-                        <img 
-                          src={homeContent.profile.images.front}
-                          alt={homeContent.profile.name}
-                          onClick={(e) => handleImageClick(e, homeContent.profile.images.front)}
-                        />
-                      </CardFront>
-                      <CardBack>
-                        <img 
-                          src={homeContent.profile.images.back}
-                          alt="Code Sample"
-                          onClick={(e) => handleImageClick(e, homeContent.profile.images.back)}
-                        />
-                      </CardBack>
-                    </ProfileCardInner>
+                  <ProfileCard isFlipped={isFlipped} onClick={handleCardClick}>
+                    <CardFront>
+                      <img
+                        src={homeContent.profile.images.front}
+                        alt="Rohit in Berlin"
+                        onClick={(e) => handleImageClick(e, homeContent.profile.images.front)}
+                      />
+                    </CardFront>
+                    <CardBack>
+                      <img
+                        src={homeContent.profile.images.back}
+                        alt="Coder"
+                        onClick={(e) => handleImageClick(e, homeContent.profile.images.back)}
+                      />
+                    </CardBack>
                   </ProfileCard>
                 </ProfileCardContainer>
               </ProfileInfo>
+
+              <ResumeLinks>
+                <ResumeLink href={homeContent.profile.resumes["1-page"]} target="_blank" rel="noopener noreferrer">
+                  1-Page Resume
+                </ResumeLink>
+                <ResumeLink href={homeContent.profile.resumes["2-page"]} target="_blank" rel="noopener noreferrer">
+                  2-Page Resume
+                </ResumeLink>
+              </ResumeLinks>
             </ProfileSection>
+
             <AboutContent>
               {homeContent.profile.about.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
