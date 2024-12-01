@@ -201,6 +201,18 @@ const EstablishedWork = styled.div`
     color: ${({ theme }) => theme.heading};
     margin-bottom: 1rem;
     font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: ${({ theme }) => theme.link};
+    }
   }
 
   ul {
@@ -411,8 +423,30 @@ const SkillWithParticles = ({ skill, isPopping }) => {
   );
 };
 
+const FullScreenImage = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+
+  img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+  }
+`;
+
 const Home = () => {
   const [poppingSkills, setPoppingSkills] = useState(new Set());
+  const [fullScreenImage, setFullScreenImage] = useState(null);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -428,6 +462,15 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleImageClick = (e, imageSrc) => {
+    e.stopPropagation(); // Prevent the card flip when opening fullscreen
+    setFullScreenImage(imageSrc);
+  };
+
+  const handleCardClick = () => {
+    setIsFlipped(!isFlipped);
+  };
+
   return (
     <HomeSection>
       <Container>
@@ -435,16 +478,23 @@ const Home = () => {
           <Column>
             <ProfileSection>
               <ProfileInfo>
-                <h1>{homeContent.profile.name}</h1>
                 <p>{homeContent.profile.title}</p>
                 <ProfileCardContainer>
-                  <ProfileCard>
-                    <ProfileCardInner>
+                  <ProfileCard onClick={handleCardClick}>
+                    <ProfileCardInner style={{ transform: isFlipped ? 'rotateY(180deg)' : 'none' }}>
                       <CardFront>
-                        <img src={homeContent.profile.images.front} alt={homeContent.profile.name} />
+                        <img 
+                          src={homeContent.profile.images.front}
+                          alt={homeContent.profile.name}
+                          onClick={(e) => handleImageClick(e, homeContent.profile.images.front)}
+                        />
                       </CardFront>
                       <CardBack>
-                        <img src={homeContent.profile.images.back} alt="Code Sample" />
+                        <img 
+                          src={homeContent.profile.images.back}
+                          alt="Code Sample"
+                          onClick={(e) => handleImageClick(e, homeContent.profile.images.back)}
+                        />
                       </CardBack>
                     </ProfileCardInner>
                   </ProfileCard>
@@ -505,6 +555,11 @@ const Home = () => {
           </Column>
         </HomeGrid>
       </Container>
+      {fullScreenImage && (
+        <FullScreenImage onClick={() => setFullScreenImage(null)}>
+          <img src={fullScreenImage} alt="Full screen view" />
+        </FullScreenImage>
+      )}
     </HomeSection>
   );
 };
