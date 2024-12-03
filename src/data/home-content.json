@@ -11,7 +11,10 @@
       "2-page": "/resume/Rohit_Kumar_Resume_2_page_18082024.pdf"
     },
     "about": [
-      "AI Engineer working in a startup , leading the developement of vision based AI Solutions and in my free time, making the tech work for me. I am open to collaborate on cool ideas."
+    "AI Engineer working in a computer vision company, leading the developement of vision based AI Solutions.I am open to collaborate on cool ideas and bussiness opportunities. Let's make a great AI use case!",
+    "My approach of work has been to develop the AI from scratch to the production, leading as single person knowing the whole pipeline. This has allowed me to have well grounded understanding of the pipeline. In my work, i develop the dataset generation and collection strategies, algorithmic design, thorough experiment tracking and anaylsis in production for drifts. ",
+    "Oveall, i have built multiple tracking solutions from scratch. I have developed hand-tracking, instrument tracking, full body tracking on the in-production level being used by our clients on everyday basis.", 
+    "I have worked with wide variety of data generation strategies including extensive work in Synthetic data generation using diffusers and 3D Simulation using Blender. "
     ],
     "hobbies": [
       "Running",
