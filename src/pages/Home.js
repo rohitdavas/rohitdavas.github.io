@@ -1,8 +1,19 @@
+/**
+ * Home.js - Main landing page component
+ * This component renders the home page with profile information, skills, and work experience
+ * Features include:
+ * - Animated profile card with front/back views
+ * - Typing animation for dynamic text
+ * - Responsive grid layout
+ * - Interactive skill tags with particle effects
+ */
+
 import React, { useState, useEffect, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 import TypingAnimation from '../components/TypingAnimation';
 import homeContent from '../data/home-content.json';
 
+// Base layout components
 const HomeSection = styled.section`
   padding: 2rem 0;
   margin-top: 2rem;
@@ -34,6 +45,10 @@ const Column = styled.div`
   gap: 2rem;
 `;
 
+/**
+ * ProfileSection - Contains the user's profile information and card
+ * Displays name, title, and animated profile card
+ */
 const ProfileSection = styled.div`
   text-align: center;
   position: relative;
@@ -66,6 +81,10 @@ const ProfileInfo = styled.div`
   }
 `;
 
+/**
+ * ProfileCard components - Creates a 3D flip card effect
+ * Card flips on hover to show additional information
+ */
 const ProfileCardContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -422,6 +441,12 @@ const TagContent = styled.span`
   }
 `;
 
+/**
+ * Tag Component - Renders interactive skill tags
+ * @param {Object} props
+ * @param {React.ReactNode} props.children - Tag content
+ * @param {boolean} props.isPopping - Controls animation state
+ */
 const Tag = ({ children, isPopping }) => {
   const [particles, setParticles] = useState([]);
   const containerRef = useRef(null);
@@ -472,6 +497,11 @@ const Tag = ({ children, isPopping }) => {
   );
 };
 
+/**
+ * Creates particle effects for skill tag animations
+ * @param {number} width - Width of the container
+ * @returns {Object} Particle configuration
+ */
 const createParticle = (width) => {
   const colors = ['#FFD700', '#FF69B4', '#00CED1', '#98FB98', '#DDA0DD'];
   return {
@@ -483,6 +513,12 @@ const createParticle = (width) => {
   };
 };
 
+/**
+ * SkillWithParticles - Wrapper component for skill tags with particle effects
+ * @param {Object} props
+ * @param {string} props.skill - Skill name to display
+ * @param {boolean} props.isPopping - Controls particle animation
+ */
 const SkillWithParticles = ({ skill, isPopping }) => {
   const [particles, setParticles] = useState([]);
   const containerRef = useRef(null);
@@ -592,6 +628,14 @@ const FullScreenImage = styled.div`
   }
 `;
 
+/**
+ * Home Component - Main page component
+ * Manages state for:
+ * - Typing animation
+ * - Skill tag interactions
+ * - Profile card animations
+ * @returns {React.ReactElement} Rendered home page
+ */
 const Home = () => {
   const [poppingSkills, setPoppingSkills] = useState(new Set());
   const [fullScreenImage, setFullScreenImage] = useState(null);
