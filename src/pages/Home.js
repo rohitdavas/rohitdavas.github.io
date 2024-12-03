@@ -9,7 +9,8 @@ import homeContent from '../data/home-content.json';
 import {
   ANIMATION_DURATION,
   PARTICLE_COLORS,
-  PARTICLE_CONFIG
+  PARTICLE_CONFIG,
+  TRIGGER_ANIMATION_INTERVAL
 } from '../constants/animations';
 import {
   HomeSection,
@@ -75,23 +76,18 @@ const Tag = memo(({ children, isPopping }) => {
   return (
     <div ref={containerRef} style={{ position: 'relative' }}>
       <TagContent>{children}</TagContent>
-      {particles.map((particle, index) => (
-        <ParticleContainer
-          key={index}
-        >
-          <Particle
-            style={{ 
-              left: `${particle.left}px`,
-              top: `${particle.top}px`
-            }}
-            color={particle.color}
-            size={particle.size}
-          />
-        </ParticleContainer>
-      ))}
+      {
+        particles.map((particle, index) => (
+          <ParticleContainer key={index}>
+            <Particle style={{left: `${particle.left}px`, top: `${particle.top}px`}} color={particle.color} size={particle.size}/>
+          </ParticleContainer>
+          )
+        )
+      } 
     </div>
   );
-});
+}
+);
 
 Tag.propTypes = {
   children: PropTypes.node.isRequired,
@@ -164,17 +160,13 @@ const Home = () => {
   const [fullScreenImage, setFullScreenImage] = useState(null);
   
   const allSkills = useMemo(() => {
-    return [
-      ...(homeContent.skills['Core AI & ML'] || []),
-      ...(homeContent.skills['Frameworks & Tools'] || [])
-    ];
+    return Object.values(homeContent.skills || {}).flat();
   }, []);
 
   // Randomly trigger animations
   useEffect(() => {
     const triggerRandomAnimation = () => {
       const randomSkill = allSkills[Math.floor(Math.random() * allSkills.length)];
-      console.log('Triggering animation for:', randomSkill);
       
       setPoppingSkills(prev => {
         const newSet = new Set(prev);
@@ -191,8 +183,8 @@ const Home = () => {
       }, ANIMATION_DURATION);
     };
 
-    // Trigger animation every 2 seconds
-    const interval = setInterval(triggerRandomAnimation, 2000);
+    // Trigger animation every interval 
+    const interval = setInterval(triggerRandomAnimation, TRIGGER_ANIMATION_INTERVAL);
     return () => clearInterval(interval);
   }, [allSkills]);
 

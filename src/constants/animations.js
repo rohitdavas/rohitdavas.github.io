@@ -1,4 +1,5 @@
-export const ANIMATION_DURATION = 4000; // Duration in milliseconds
+export const TRIGGER_ANIMATION_INTERVAL = 100; // Interval in milliseconds TO TRIGGER ANIMATIONS
+export const ANIMATION_DURATION = 100; // Duration in milliseconds
 
 export const PARTICLE_COLORS = [
   '#FFD700',  // Gold
