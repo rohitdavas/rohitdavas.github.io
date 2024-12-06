@@ -43,14 +43,12 @@ const fadeOutOnParentHover = css`
   transition: all 0.5s ease;
   .timeline-content:hover & {
     opacity: 1.0;
-    filter: blur(2px);
     transform: scale(0.98);
     
     &:hover {
       opacity: 1;
-      filter: blur(0);
-      transform: scale(1.02);
-      z-index: 2;
+      filter: none;
+      transform: scale(1);
     }
   }
 `;
@@ -58,15 +56,13 @@ const fadeOutOnParentHover = css`
 const subItemFadeOut = css`
   transition: all 0.4s ease;
   .subtimeline-container:hover & {
-    opacity: 0.5;
-    filter: blur(1px);
+    opacity: 1.0;
     transform: translateX(0);
     
     &:hover {
       opacity: 1;
-      filter: blur(0);
-      transform: translateX(10px) scale(1.02);
-      z-index: 2;
+      filter: none;
+      transform: translateX(0) scale(1.02);
     }
   }
 `;
@@ -201,7 +197,6 @@ export const TimelineText = styled.div`
   transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(5px);
 
   &::before {
     content: '';
