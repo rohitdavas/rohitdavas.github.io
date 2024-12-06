@@ -27,8 +27,49 @@ import {
 
 const Timeline = () => {
   const [activeSection, setActiveSection] = useState(0);
+  const [canScrollRight, setCanScrollRight] = useState({});
   const timelineRefs = useRef([]);
   const scrollContainerRefs = useRef([]);
+
+  useEffect(() => {
+    const checkScrollability = () => {
+      const newCanScrollRight = {};
+      scrollContainerRefs.current.forEach((container, index) => {
+        if (container) {
+          const canScroll = container.scrollLeft < (container.scrollWidth - container.clientWidth);
+          newCanScrollRight[index] = canScroll;
+        }
+      });
+      setCanScrollRight(newCanScrollRight);
+    };
+
+    // Initial check
+    checkScrollability();
+
+    // Add scroll event listeners to each container
+    scrollContainerRefs.current.forEach((container, index) => {
+      if (container) {
+        container.addEventListener('scroll', () => {
+          const canScroll = container.scrollLeft < (container.scrollWidth - container.clientWidth);
+          setCanScrollRight(prev => ({...prev, [index]: canScroll}));
+        });
+      }
+    });
+
+    // Check on window resize
+    window.addEventListener('resize', checkScrollability);
+    return () => {
+      window.removeEventListener('resize', checkScrollability);
+      scrollContainerRefs.current.forEach((container, index) => {
+        if (container) {
+          container.removeEventListener('scroll', () => {
+            const canScroll = container.scrollLeft < (container.scrollWidth - container.clientWidth);
+            setCanScrollRight(prev => ({...prev, [index]: canScroll}));
+          });
+        }
+      });
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +101,7 @@ const Timeline = () => {
     const container = scrollContainerRefs.current[index];
     if (!container) return;
     
-    const scrollAmount = 350; // Adjust this value to control scroll distance
+    const scrollAmount = 350;
     const currentScroll = container.scrollLeft;
     const targetScroll = direction === 'left' 
       ? currentScroll - scrollAmount 
@@ -105,20 +146,25 @@ const Timeline = () => {
                 <div className="date">{item.date}</div>
                 <p>{item.description}</p>
                 {item.subtimeline && (
-                  <SubTimelineContainer>
-                    <SubTimelineControls>
-                      <ScrollButton 
-                        onClick={() => handleScroll(index, 'left')}
-                      >
-                        <FontAwesomeIcon icon={faChevronLeft} />
-                      </ScrollButton>
-                      <ScrollButton 
-                        onClick={() => handleScroll(index, 'right')}
-                      >
-                        <FontAwesomeIcon icon={faChevronRight} />
-                      </ScrollButton>
-                    </SubTimelineControls>
-                    <SubTimelineScroll ref={el => scrollContainerRefs.current[index] = el}>
+                  <SubTimelineContainer className={canScrollRight[index] ? 'canScrollRight' : ''}>
+                    <div className="timeline-dots" />
+                    {canScrollRight[index] && (
+                      <SubTimelineControls>
+                        <ScrollButton 
+                          onClick={() => handleScroll(index, 'left')}
+                        >
+                          <FontAwesomeIcon icon={faChevronLeft} />
+                        </ScrollButton>
+                        <ScrollButton 
+                          onClick={() => handleScroll(index, 'right')}
+                        >
+                          <FontAwesomeIcon icon={faChevronRight} />
+                        </ScrollButton>
+                      </SubTimelineControls>
+                    )}
+                    <SubTimelineScroll 
+                      ref={el => scrollContainerRefs.current[index] = el}
+                    >
                       {item.subtimeline.map((subItem, subIndex) => (
                         <SubTimelineItem key={subIndex}>
                           <h4>{subItem.title}</h4>

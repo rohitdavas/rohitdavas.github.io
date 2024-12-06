@@ -23,11 +23,26 @@ const glowPulse = keyframes`
   }
 `;
 
+const arrowPulse = keyframes`
+  0% {
+    transform: translateX(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateX(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0.3;
+  }
+`;
+
 // Shared styles
 const fadeOutOnParentHover = css`
   transition: all 0.5s ease;
   .timeline-content:hover & {
-    opacity: 0.3;
+    opacity: 1.0;
     filter: blur(2px);
     transform: scale(0.98);
     
@@ -56,32 +71,26 @@ const subItemFadeOut = css`
   }
 `;
 
-export const TimelineContainer = styled.section`
-  padding: 4rem 0;
-  background: ${({ theme }) => theme.background};
+export const TimelineContainer = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
   position: relative;
-  overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 200px;
-    background: linear-gradient(180deg, 
-      ${({ theme }) => theme.background}00 0%,
-      ${({ theme }) => theme.background} 100%
-    );
-    pointer-events: none;
+  overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
   }
 `;
 
 export const Content = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
-  position: relative;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export const TitleContainer = styled.div`
@@ -248,41 +257,30 @@ export const SubTimelineContainer = styled.div.attrs({ className: 'subtimeline-c
   position: relative;
   width: 100%;
   overflow: hidden;
+  background: ${({ theme }) => theme.cardSecondary || theme.card};
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid ${({ theme }) => theme.border};
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
-  &::before {
-    content: '';
+  /* Only show arrow when can scroll right */
+  &.canScrollRight::after {
+    content: '→';
     position: absolute;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: ${({ theme }) => theme.border}80;
+    right: 2rem;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 0;
-  }
-
-  /* Gradient fade effect on edges */
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 100%;
-    background: linear-gradient(
-      to right,
-      transparent,
-      ${({ theme }) => theme.background}
-    );
-    pointer-events: none;
-    z-index: 2;
+    color: ${({ theme }) => theme.link};
+    font-size: 1.2rem;
+    opacity: 0.8;
+    animation: ${arrowPulse} 2s infinite ease-in-out;
   }
 `;
 
 export const SubTimelineScroll = styled.div`
   display: flex;
   gap: 2rem;
-  padding: 1rem 0;
+  padding: 1rem;
   overflow-x: auto;
   position: relative;
   scroll-behavior: smooth;
@@ -294,9 +292,6 @@ export const SubTimelineScroll = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-
-  /* Add some padding for the fade effect */
-  padding-right: 50px;
 `;
 
 export const SubTimelineItem = styled.div`
@@ -306,44 +301,11 @@ export const SubTimelineItem = styled.div`
   background: ${({ theme }) => theme.cardSecondary || theme.card}90;
   border-radius: 12px;
   position: relative;
-  backdrop-filter: blur(5px);
-  ${subItemFadeOut}
-  transition: all 0.4s ease;
-
-  /* Connecting line to the horizontal timeline */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 20px;
-    background: ${({ theme }) => theme.link}60;
-    transform: translateX(-50%);
-  }
-
-  /* Timeline dot */
-  &::after {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    background: ${({ theme }) => theme.link};
-    border-radius: 50%;
-    transform: translateX(-50%);
-    transition: all 0.3s ease;
-  }
+  transition: all 0.3s ease;
 
   &:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 4px 20px ${({ theme }) => theme.shadow}40;
-
-    &::after {
-      transform: translateX(-50%) scale(1.5);
-      box-shadow: 0 0 10px ${({ theme }) => theme.link}60;
-    }
   }
 
   h4 {
