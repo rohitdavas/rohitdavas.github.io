@@ -244,50 +244,105 @@ export const TimelineText = styled.div`
 `;
 
 export const SubTimelineContainer = styled.div.attrs({ className: 'subtimeline-container' })`
-  margin: 1.5rem 0 0 1rem;
-  padding-left: 1.5rem;
-  border-left: 2px dashed ${({ theme }) => theme.border}80;
+  margin: 2rem 0 0 0;
   position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: -5px;
-    top: -5px;
-    width: 8px;
-    height: 8px;
-    background: ${({ theme }) => theme.border};
-    border-radius: 50%;
-  }
-`;
-
-export const SubTimelineItem = styled.div`
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  background: ${({ theme }) => theme.cardSecondary || theme.card}90;
-  border-radius: 12px;
-  position: relative;
+  width: 100%;
   overflow: hidden;
-  backdrop-filter: blur(5px);
-  ${subItemFadeOut}
 
   &::before {
     content: '';
     position: absolute;
     left: 0;
+    right: 0;
+    height: 2px;
+    background: ${({ theme }) => theme.border}80;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+
+  /* Gradient fade effect on edges */
+  &::after {
+    content: '';
+    position: absolute;
     top: 0;
-    width: 4px;
+    right: 0;
+    width: 50px;
     height: 100%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      ${({ theme }) => theme.background}
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+`;
+
+export const SubTimelineScroll = styled.div`
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+  overflow-x: auto;
+  position: relative;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Add some padding for the fade effect */
+  padding-right: 50px;
+`;
+
+export const SubTimelineItem = styled.div`
+  min-width: 300px;
+  max-width: 300px;
+  padding: 1.5rem;
+  background: ${({ theme }) => theme.cardSecondary || theme.card}90;
+  border-radius: 12px;
+  position: relative;
+  backdrop-filter: blur(5px);
+  ${subItemFadeOut}
+  transition: all 0.4s ease;
+
+  /* Connecting line to the horizontal timeline */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 20px;
     background: ${({ theme }) => theme.link}60;
-    transition: width 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  /* Timeline dot */
+  &::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: ${({ theme }) => theme.link};
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
   }
 
   &:hover {
+    transform: translateY(-10px);
     box-shadow: 0 4px 20px ${({ theme }) => theme.shadow}40;
 
-    &::before {
-      width: 100%;
-      opacity: 0.1;
+    &::after {
+      transform: translateX(-50%) scale(1.5);
+      box-shadow: 0 0 10px ${({ theme }) => theme.link}60;
     }
   }
 
@@ -301,6 +356,58 @@ export const SubTimelineItem = styled.div`
     font-size: 0.8rem;
     opacity: 0.8;
     margin-bottom: 0.5rem;
+    color: ${({ theme }) => theme.link};
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    background: ${({ theme }) => theme.link}20;
+    border-radius: 12px;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: ${({ theme }) => theme.text};
+    margin-bottom: 1rem;
+  }
+`;
+
+export const SubTimelineControls = styled.div`
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  right: 1rem;
+  top: -2rem;
+  z-index: 3;
+`;
+
+export const ScrollButton = styled.button`
+  background: ${({ theme }) => theme.card};
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: ${({ theme }) => theme.text};
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px ${({ theme }) => theme.shadow}40;
+
+  &:hover {
+    background: ${({ theme }) => theme.link};
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    &:hover {
+      background: ${({ theme }) => theme.card};
+      color: ${({ theme }) => theme.text};
+      transform: none;
+    }
   }
 `;
 
@@ -399,5 +506,60 @@ export const OverlayContent = styled.div`
     max-width: 80%;
     margin: 0.5rem auto 0;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+`;
+
+export const OutlineContainer = styled.div`
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  max-width: 200px;
+  background: ${({ theme }) => theme.card}CC;
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 20px ${({ theme }) => theme.shadow}20;
+  z-index: 100;
+  transition: all 0.3s ease;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`;
+
+export const OutlineTitle = styled.h3`
+  color: ${({ theme }) => theme.heading};
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid ${({ theme }) => theme.border}40;
+`;
+
+export const OutlineList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`;
+
+export const OutlineItem = styled.li`
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  color: ${({ theme, active }) => active ? theme.link : theme.text};
+  background: ${({ active, theme }) => active ? theme.link + '20' : 'transparent'};
+  transform-origin: left;
+  
+  &:hover {
+    color: ${({ theme }) => theme.link};
+    transform: translateX(5px);
+  }
+
+  .date {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-left: 0.5rem;
   }
 `;
