@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const fadeIn = keyframes`
   from {
@@ -20,6 +20,39 @@ const glowPulse = keyframes`
   }
   100% {
     box-shadow: 0 0 5px ${({ theme }) => theme.link}40;
+  }
+`;
+
+// Shared styles
+const fadeOutOnParentHover = css`
+  transition: all 0.5s ease;
+  .timeline-content:hover & {
+    opacity: 0.3;
+    filter: blur(2px);
+    transform: scale(0.98);
+    
+    &:hover {
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1.02);
+      z-index: 2;
+    }
+  }
+`;
+
+const subItemFadeOut = css`
+  transition: all 0.4s ease;
+  .subtimeline-container:hover & {
+    opacity: 0.5;
+    filter: blur(1px);
+    transform: translateX(0);
+    
+    &:hover {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateX(10px) scale(1.02);
+      z-index: 2;
+    }
   }
 `;
 
@@ -80,7 +113,7 @@ export const Title = styled.h2`
   }
 `;
 
-export const TimelineContent = styled.div`
+export const TimelineContent = styled.div.attrs({ className: 'timeline-content' })`
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
@@ -111,6 +144,7 @@ export const TimelineItem = styled.div`
   align-items: flex-start;
   gap: 2rem;
   animation: ${fadeIn} 0.5s ease-out;
+  ${fadeOutOnParentHover}
 
   &:nth-child(even) {
     flex-direction: row-reverse;
@@ -127,10 +161,16 @@ export const TimelineItem = styled.div`
     margin-top: 1.5rem;
     animation: ${glowPulse} 2s infinite;
     z-index: 1;
+    transition: all 0.3s ease;
 
     @media (max-width: 768px) {
       left: 23px;
     }
+  }
+
+  &:hover::before {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px ${({ theme }) => theme.link}90;
   }
 
   @media (max-width: 768px) {
@@ -149,9 +189,10 @@ export const TimelineText = styled.div`
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 20px ${({ theme }) => theme.shadow}40;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(5px);
 
   &::before {
     content: '';
@@ -202,7 +243,7 @@ export const TimelineText = styled.div`
   }
 `;
 
-export const SubTimelineContainer = styled.div`
+export const SubTimelineContainer = styled.div.attrs({ className: 'subtimeline-container' })`
   margin: 1.5rem 0 0 1rem;
   padding-left: 1.5rem;
   border-left: 2px dashed ${({ theme }) => theme.border}80;
@@ -225,9 +266,10 @@ export const SubTimelineItem = styled.div`
   padding: 1.5rem;
   background: ${({ theme }) => theme.cardSecondary || theme.card}90;
   border-radius: 12px;
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(5px);
+  ${subItemFadeOut}
 
   &::before {
     content: '';
@@ -241,8 +283,7 @@ export const SubTimelineItem = styled.div`
   }
 
   &:hover {
-    transform: translateX(10px);
-    background: ${({ theme }) => theme.cardSecondary || theme.card};
+    box-shadow: 0 4px 20px ${({ theme }) => theme.shadow}40;
 
     &::before {
       width: 100%;
@@ -267,6 +308,7 @@ export const AchievementsList = styled.ul`
   margin-top: 1rem;
   padding-left: 1.2rem;
   list-style: none;
+  transition: all 0.3s ease;
 
   li {
     color: ${({ theme }) => theme.text};
@@ -274,6 +316,7 @@ export const AchievementsList = styled.ul`
     font-size: 0.9rem;
     position: relative;
     padding-left: 1.5rem;
+    transition: transform 0.2s ease;
     
     &::before {
       content: '→';
