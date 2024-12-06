@@ -1,5 +1,14 @@
-export const TRIGGER_ANIMATION_INTERVAL = 100; // Interval in milliseconds TO TRIGGER ANIMATIONS
-export const ANIMATION_DURATION = 100; // Duration in milliseconds
+/*
+let's make this trigger_animation_interval to be dependant on what time you see this website.
+
+if you open it in the daytime, it should have lower interval of the 100 ms 
+and linearly increase the interval to 500 ms when it goes to later part of day. 
+
+- suggest here 
+
+*/
+export const TRIGGER_ANIMATION_INTERVAL = 2000; // Interval in milliseconds TO TRIGGER ANIMATIONS
+export const ANIMATION_DURATION = 2000; // Duration in milliseconds
 
 export const PARTICLE_COLORS = [
   '#FFD700',  // Gold

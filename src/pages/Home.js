@@ -157,13 +157,18 @@ SkillWithParticles.propTypes = {
  */
 const Home = () => {
   const [poppingSkills, setPoppingSkills] = useState(new Set());
+  const [poppingHobbies, setPoppingHobbies] = useState(new Set());
   const [fullScreenImage, setFullScreenImage] = useState(null);
   
   const allSkills = useMemo(() => {
     return Object.values(homeContent.skills || {}).flat();
   }, []);
 
-  // Randomly trigger animations
+  const allHobbies = useMemo(() => {
+    return homeContent.profile.hobbies || [];
+  }, []);
+
+  // Randomly trigger animations for skills
   useEffect(() => {
     const triggerRandomAnimation = () => {
       const randomSkill = allSkills[Math.floor(Math.random() * allSkills.length)];
@@ -183,10 +188,32 @@ const Home = () => {
       }, ANIMATION_DURATION);
     };
 
-    // Trigger animation every interval 
     const interval = setInterval(triggerRandomAnimation, TRIGGER_ANIMATION_INTERVAL);
     return () => clearInterval(interval);
   }, [allSkills]);
+
+  // Randomly trigger animations for hobbies
+  useEffect(() => {
+    const triggerRandomAnimation = () => {
+      const randomHobby = allHobbies[Math.floor(Math.random() * allHobbies.length)];
+      setPoppingHobbies(prev => {
+        const newSet = new Set(prev);
+        newSet.add(randomHobby);
+        return newSet;
+      });
+
+      setTimeout(() => {
+        setPoppingHobbies(prev => {
+          const newSet = new Set(prev);
+          newSet.delete(randomHobby);
+          return newSet;
+        });
+      }, ANIMATION_DURATION);
+    };
+
+    const interval = setInterval(triggerRandomAnimation, TRIGGER_ANIMATION_INTERVAL);
+    return () => clearInterval(interval);
+  }, [allHobbies]);
 
   const handleSkillClick = useCallback((skill) => {
     console.log('Skill clicked:', skill);
@@ -219,7 +246,6 @@ const Home = () => {
                 <h1>{homeContent.profile.name}</h1>
                 <p>{homeContent.profile.title}</p>
               </ProfileInfo>
-              
               <ProfileCardContainer>
                 <SocialLinks>
                   <SocialLink href={homeContent.profile.socialLinks.github} target="_blank" rel="noopener noreferrer">
@@ -306,13 +332,8 @@ const Home = () => {
               <SkillsGroup>
                 <h4>Hobbies</h4>
                 <ul>
-                  {homeContent.profile.hobbies.map((hobby, index) => (
-                    <Tag
-                      key={hobby}
-                      isPopping={poppingSkills.has(hobby)}
-                    >
-                      {hobby}
-                    </Tag>
+                  {allHobbies.map(hobby => (
+                    <SkillWithParticles key={hobby} skill={hobby} isPopping={poppingHobbies.has(hobby)} />
                   ))}
                 </ul>
               </SkillsGroup>
