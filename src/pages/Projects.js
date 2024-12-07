@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { timelineData } from '../constants/timelineData';
 
 const ProjectsContainer = styled.section`
   padding: 2rem 0;
@@ -45,6 +46,7 @@ const ProjectImage = styled.div`
   height: 200px;
   overflow: hidden;
   position: relative;
+  background: ${({ theme }) => theme.cardSecondary};
 
   img {
     width: 100%;
@@ -83,11 +85,18 @@ const Tags = styled.div`
 `;
 
 const Tag = styled.span`
-  background: ${({ theme }) => theme.secondary};
-  color: ${({ theme }) => theme.text};
+  background: ${({ theme }) => theme.link}15;
+  color: ${({ theme }) => theme.link};
   padding: 0.2rem 0.6rem;
   border-radius: 15px;
   font-size: 0.8rem;
+  border: 1px solid ${({ theme }) => theme.link}30;
+`;
+
+const StatusTag = styled(Tag)`
+  background: ${({ theme }) => theme.success}15;
+  color: ${({ theme }) => theme.success};
+  border-color: ${({ theme }) => theme.success}30;
 `;
 
 const Links = styled.div`
@@ -106,34 +115,28 @@ const Link = styled.a`
   }
 `;
 
-const projects = [
-  {
-    title: "Hand Tracking System",
-    description: "Real-time hand tracking system with unprecedented accuracy. Developed at Captury GmbH, this system provides robust tracking in challenging conditions.",
-    image: "https://img.youtube.com/vi/p_7iE6UsSLM/maxresdefault.jpg",
-    tags: ["Computer Vision", "Deep Learning", "PyTorch", "C++"],
-    demoUrl: "https://youtu.be/p_7iE6UsSLM?si=i9vZnVBG1XIG_IQ0",
-    githubUrl: null
-  },
-  {
-    title: "Medical Instrument Tracking",
-    description: "Precise tracking solution for medical instruments, enabling accurate real-time position tracking in medical environments.",
-    image: "https://img.youtube.com/vi/p_7iE6UsSLM/maxresdefault.jpg",
-    tags: ["Computer Vision", "Healthcare", "Python", "Deep Learning"],
-    demoUrl: null,
-    githubUrl: null
-  },
-  {
-    title: "Full Body Tracking",
-    description: "Advanced full-body tracking solution using deep learning and computer vision techniques.",
-    image: "https://img.youtube.com/vi/p_7iE6UsSLM/maxresdefault.jpg",
-    tags: ["Computer Vision", "Deep Learning", "PyTorch", "Real-time"],
-    demoUrl: null,
-    githubUrl: null
-  }
-];
-
 const Projects = () => {
+  // Extract projects from timelineData
+  const projects = timelineData.reduce((acc, timelineItem) => {
+    if (timelineItem.subtimeline) {
+      const projectsFromTimeline = timelineItem.subtimeline.map(subItem => ({
+        title: subItem.title,
+        description: subItem.description,
+        image: subItem.video?.thumbnail || null,
+        tags: [
+          subItem.type || 'Project',
+          ...((subItem.links || []).map(link => 'Documentation')),
+          timelineItem.title.includes('Captury') ? 'Captury' : 'Research'
+        ],
+        status: subItem.status,
+        demoUrl: subItem.video?.url || null,
+        docsUrl: subItem.links?.[0]?.url || null
+      }));
+      return [...acc, ...projectsFromTimeline];
+    }
+    return acc;
+  }, []);
+
   return (
     <ProjectsContainer>
       <Content>
@@ -141,9 +144,11 @@ const Projects = () => {
         <ProjectGrid>
           {projects.map((project, index) => (
             <ProjectCard key={index}>
-              <ProjectImage>
-                <img src={project.image} alt={project.title} />
-              </ProjectImage>
+              {project.image && (
+                <ProjectImage>
+                  <img src={project.image} alt={project.title} />
+                </ProjectImage>
+              )}
               <ProjectContent>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
@@ -151,16 +156,19 @@ const Projects = () => {
                   {project.tags.map((tag, i) => (
                     <Tag key={i}>{tag}</Tag>
                   ))}
+                  {project.status && (
+                    <StatusTag>{project.status}</StatusTag>
+                  )}
                 </Tags>
                 <Links>
-                  {project.githubUrl && (
-                    <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={faGithub} />
+                  {project.docsUrl && (
+                    <Link href={project.docsUrl} target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faExternalLinkAlt} />
                     </Link>
                   )}
                   {project.demoUrl && (
                     <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={faExternalLinkAlt} />
+                      <FontAwesomeIcon icon={faPlay} />
                     </Link>
                   )}
                 </Links>
