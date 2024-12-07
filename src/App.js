@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import useTheme from './hooks/useTheme';
 import GlobalStyles from './styles/GlobalStyles';
@@ -9,13 +9,29 @@ import Timeline from './pages/Timeline';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
+// Redirect component to handle GitHub Pages redirect
+const RedirectHandler = () => {
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    const redirect = sessionStorage.getItem('redirect');
+    if (redirect) {
+      sessionStorage.removeItem('redirect');
+      navigate(redirect);
+    }
+  }, [navigate]);
+  
+  return null;
+};
+
 function App() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Router basename={process.env.PUBLIC_URL}>
+    <Router basename={process.env.PUBLIC_URL}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <RedirectHandler />
         <Navbar toggleTheme={toggleTheme} />
         <main>
           <Routes>
@@ -25,8 +41,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
-      </Router>
-    </ThemeProvider>
+      </ThemeProvider>
+    </Router>
   );
 }
 
