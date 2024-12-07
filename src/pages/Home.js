@@ -247,20 +247,6 @@ const Home = () => {
                 <p>{homeContent.profile.title}</p>
               </ProfileInfo>
               <ProfileCardContainer>
-                <SocialLinks>
-                  <SocialLink href={homeContent.profile.socialLinks.github} target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-github"></i>
-                  </SocialLink>
-                  <SocialLink href={homeContent.profile.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-linkedin"></i>
-                  </SocialLink>
-                  <SocialLink href={homeContent.profile.socialLinks.instagram} target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-instagram"></i>
-                  </SocialLink>
-                  <SocialLink href={`mailto:${homeContent.profile.socialLinks.email}`}>
-                    <i className="fas fa-envelope"></i>
-                  </SocialLink>
-                </SocialLinks>
                 <ProfileCard>
                   <ProfileCardInner>
                     <CardFront>
@@ -280,6 +266,20 @@ const Home = () => {
                   </ProfileCardInner>
                 </ProfileCard>
               </ProfileCardContainer>
+              <SocialLinks>
+                <SocialLink href={homeContent.profile.socialLinks.github} target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-github"></i>
+                </SocialLink>
+                <SocialLink href={homeContent.profile.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-linkedin"></i>
+                </SocialLink>
+                <SocialLink href={homeContent.profile.socialLinks.instagram} target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-instagram"></i>
+                </SocialLink>
+                <SocialLink href={`mailto:${homeContent.profile.socialLinks.email}`}>
+                  <i className="fas fa-envelope"></i>
+                </SocialLink>
+              </SocialLinks>
               <ResumeLinks>
                 <ResumeLinkWrapper>
                   <ResumeLink 

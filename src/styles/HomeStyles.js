@@ -42,12 +42,21 @@ export const popupAnimation = keyframes`
 export const HomeSection = styled.section`
   padding: 2rem 0;
   margin-top: 2rem;
+
+  @media (max-width: 480px) {
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
 `;
 
 export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+
+  @media (max-width: 480px) {
+    padding: 0 0.75rem;
+  }
 `;
 
 export const HomeGrid = styled.div`
@@ -74,19 +83,45 @@ export const Column = styled.div`
 export const ProfileSection = styled.div`
   text-align: center;
   position: relative;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  @media (max-width: 480px) {
+    padding: 0.5rem 0;
+    gap: 1rem;
+  }
 `;
 
 export const ProfileInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 600px;
+
   h1 {
     color: ${({ theme }) => theme.heading};
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.75rem;
+    }
   }
 
   p {
     color: ${({ theme }) => theme.text};
-    margin-bottom: 1.5rem;
     font-size: 1.2rem;
     font-weight: 500;
+    margin: 0;
     background: linear-gradient(120deg, ${({ theme }) => theme.link}20 0%, ${({ theme }) => theme.link}20 100%);
     background-repeat: no-repeat;
     background-size: 100% 0.4em;
@@ -94,7 +129,15 @@ export const ProfileInfo = styled.div`
     transition: all 0.3s ease;
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
-    display: inline-block;
+    
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+      padding: 0.15rem 0.4rem;
+    }
     
     &:hover {
       background-size: 100% 100%;
@@ -103,50 +146,74 @@ export const ProfileInfo = styled.div`
   }
 `;
 
-// Social Media Components
 export const SocialLinks = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  position: absolute;
-  left: -4rem;
-  top: 50%;
-  transform: translateY(-50%);
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 400px;
 
   @media (max-width: 768px) {
-    position: static;
-    flex-direction: row;
-    justify-content: center;
-    margin: 1rem 0;
+    gap: 1.25rem;
+    margin-top: 0;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1rem;
+    max-width: 300px;
   }
 `;
 
 export const SocialLink = styled.a`
   color: ${({ theme }) => theme.text};
   font-size: 1.5rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: ${({ theme }) => theme.cardSecondary || theme.card};
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 50%;
-  background: ${({ theme }) => theme.primary};
-  border: 1px solid ${({ theme }) => theme.border};
 
-  &:hover {
-    color: ${({ theme }) => theme.primary};
-    background: ${({ theme }) => theme.link};
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+    width: 2.25rem;
+    height: 2.25rem;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
     width: 2rem;
     height: 2rem;
-    font-size: 1.2rem;
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.link};
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 `;
 
-// Resume Components
+export const ProfileCardContainer = styled.div`
+  width: 100%;
+  max-width: 180px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 160px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 140px;
+  }
+`;
+
 export const ResumeTooltip = styled.span`
   position: absolute;
   background: ${({ theme }) => theme.primary};
@@ -231,21 +298,23 @@ export const ResumeLink = styled.a`
 `;
 
 // Card Components
-export const ProfileCardContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-  perspective: 1000px;
-  position: relative;
-`;
-
 export const ProfileCard = styled.div`
   width: 180px;
   height: 180px;
   perspective: 1000px;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const ProfileCardInner = styled.div`
