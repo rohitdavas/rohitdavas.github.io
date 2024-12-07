@@ -22,7 +22,11 @@ import {
   OutlineContainer,
   OutlineTitle,
   OutlineList,
-  OutlineItem
+  OutlineItem,
+  LinksContainer,
+  LinkItem,
+  VideoContainer,
+  VideoItem
 } from '../styles/TimelineStyles';
 
 const Timeline = () => {
@@ -136,7 +140,7 @@ const Timeline = () => {
 
       <Content>
         <TitleContainer>
-          <Title>My Journey ( data needs to be corrected )</Title>
+          <Title>My Journey</Title>
         </TitleContainer>
         <TimelineContent>
           {timelineData.map((item, index) => (
@@ -148,31 +152,61 @@ const Timeline = () => {
                 <h3>{item.title}</h3>
                 <div className="date">{item.date}</div>
                 <p>{item.description}</p>
+                {item.links && item.links.length > 0 && (
+                  <LinksContainer>
+                    {item.links.map((link, linkIndex) => (
+                      <LinkItem 
+                        key={linkIndex}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        
+                      >
+                        {link.text}
+                      </LinkItem>
+                    ))}
+                  </LinksContainer>
+                )}
                 {item.subtimeline && (
                   <SubTimelineContainer className={canScrollRight[index] ? 'canScrollRight' : ''}>
                     <div className="timeline-dots" />
                     {canScrollRight[index] && (
                       <SubTimelineControls>
-                        <ScrollButton 
-                          onClick={() => handleScroll(index, 'left')}
-                        >
+                        <ScrollButton onClick={() => handleScroll(index, 'left')}>
                           <FontAwesomeIcon icon={faChevronLeft} />
                         </ScrollButton>
-                        <ScrollButton 
-                          onClick={() => handleScroll(index, 'right')}
-                        >
+                        <ScrollButton onClick={() => handleScroll(index, 'right')}>
                           <FontAwesomeIcon icon={faChevronRight} />
                         </ScrollButton>
                       </SubTimelineControls>
                     )}
-                    <SubTimelineScroll 
-                      ref={el => scrollContainerRefs.current[index] = el}
-                    >
+                    <SubTimelineScroll ref={el => scrollContainerRefs.current[index] = el}>
                       {item.subtimeline.map((subItem, subIndex) => (
                         <SubTimelineItem key={subIndex}>
                           <h4>{subItem.title}</h4>
-                          <div className="date">{subItem.date}</div>
+                          {subItem.date && <div className="date">{subItem.date}</div>}
                           <p>{subItem.description}</p>
+                          {subItem.status && (
+                            <div className="status">Status: {subItem.status}</div>
+                          )}
+                          {subItem.links && subItem.links.length > 0 && (
+                            <LinksContainer>
+                              {subItem.links.map((link, linkIndex) => (
+                                <LinkItem 
+                                  key={linkIndex}
+                                  href={link.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    window.open(link.url, '_blank', 'noopener,noreferrer');
+                                  }}
+                                >
+                                  {link.text}
+                                </LinkItem>
+                              ))}
+                            </LinksContainer>
+                          )}
                           {subItem.achievements && (
                             <AchievementsList>
                               {subItem.achievements.map((achievement, achIndex) => (
@@ -180,16 +214,43 @@ const Timeline = () => {
                               ))}
                             </AchievementsList>
                           )}
-                          {subItem.video && (
-                            <VideoThumbnail href={subItem.video.url} target="_blank" rel="noopener noreferrer">
-                              <img src={subItem.video.thumbnail} alt={subItem.video.description} />
+                          {subItem.video && Array.isArray(subItem.video) ? (
+                            <VideoContainer>
+                              {subItem.video.map((vid, vidIndex) => (
+                                <VideoItem 
+                                  key={vidIndex}
+                                  href={vid.url} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                >
+                                  {vid.thumbnail && (
+                                    <img src={vid.thumbnail} alt={vid.description || 'Video thumbnail'} />
+                                  )}
+                                  <PlayOverlay className="play-overlay">
+                                    <OverlayContent>
+                                      <FontAwesomeIcon icon={faPlay} size="2x" />
+                                      <p>{vid.description || 'Watch Video'}</p>
+                                    </OverlayContent>
+                                  </PlayOverlay>
+                                </VideoItem>
+                              ))}
+                            </VideoContainer>
+                          ) : subItem.video && (
+                            <VideoItem 
+                              href={subItem.video.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                            >
+                              {subItem.video.thumbnail && (
+                                <img src={subItem.video.thumbnail} alt={subItem.video.description || 'Video thumbnail'} />
+                              )}
                               <PlayOverlay className="play-overlay">
                                 <OverlayContent>
-                                  <FontAwesomeIcon icon={faPlay} size="3x" />
-                                  <p>{subItem.video.description}</p>
+                                  <FontAwesomeIcon icon={faPlay} size="2x" />
+                                  <p>{subItem.video.description || 'Watch Video'}</p>
                                 </OverlayContent>
                               </PlayOverlay>
-                            </VideoThumbnail>
+                            </VideoItem>
                           )}
                         </SubTimelineItem>
                       ))}

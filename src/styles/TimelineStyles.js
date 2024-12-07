@@ -552,3 +552,48 @@ export const OutlineItem = styled.li`
     margin-left: 0.5rem;
   }
 `;
+
+export const LinksContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+`;
+
+export const LinkItem = styled.a`
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  background: ${({ theme }) => theme.link}20;
+  color: ${({ theme }) => theme.link} !important;
+  border-radius: 15px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+
+  &:hover {
+    background: ${({ theme }) => theme.link}40;
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+`;
+
+export const VideoContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+`;
+
+export const VideoItem = styled(VideoThumbnail)`
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+`;
