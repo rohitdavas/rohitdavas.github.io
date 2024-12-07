@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import useTheme from './hooks/useTheme';
 import GlobalStyles from './styles/GlobalStyles';
@@ -28,7 +28,7 @@ function App() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <RedirectHandler />
