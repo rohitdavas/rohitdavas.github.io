@@ -136,7 +136,7 @@ const Timeline = () => {
 
       <Content>
         <TitleContainer>
-          <Title>My Journey</Title>
+          <Title>My Journey ( data needs to be corrected )</Title>
         </TitleContainer>
         <TimelineContent>
           {timelineData.map((item, index) => (
@@ -148,17 +148,6 @@ const Timeline = () => {
                 <h3>{item.title}</h3>
                 <div className="date">{item.date}</div>
                 <p>{item.description}</p>
-                {item.video && (
-                  <VideoThumbnail href={item.video.url} target="_blank" rel="noopener noreferrer">
-                    <img src={item.video.thumbnail} alt={item.video.description} />
-                    <PlayOverlay className="play-overlay">
-                      <OverlayContent>
-                        <FontAwesomeIcon icon={faPlay} size="3x" />
-                        <p>{item.video.description}</p>
-                      </OverlayContent>
-                    </PlayOverlay>
-                  </VideoThumbnail>
-                )}
                 {item.subtimeline && (
                   <SubTimelineContainer className={canScrollRight[index] ? 'canScrollRight' : ''}>
                     <div className="timeline-dots" />
@@ -190,6 +179,17 @@ const Timeline = () => {
                                 <li key={achIndex}>{achievement}</li>
                               ))}
                             </AchievementsList>
+                          )}
+                          {subItem.video && (
+                            <VideoThumbnail href={subItem.video.url} target="_blank" rel="noopener noreferrer">
+                              <img src={subItem.video.thumbnail} alt={subItem.video.description} />
+                              <PlayOverlay className="play-overlay">
+                                <OverlayContent>
+                                  <FontAwesomeIcon icon={faPlay} size="3x" />
+                                  <p>{subItem.video.description}</p>
+                                </OverlayContent>
+                              </PlayOverlay>
+                            </VideoThumbnail>
                           )}
                         </SubTimelineItem>
                       ))}

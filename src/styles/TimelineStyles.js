@@ -272,34 +272,31 @@ export const SubTimelineScroll = styled.div`
 `;
 
 export const SubTimelineItem = styled.div`
-  flex: 0 0 auto;
-  width: calc((100% - 2rem) / 3); /* Show 3 items with gaps */
-  min-width: 300px; /* Minimum width for readability */
-  
-  @media screen and (max-width: 1200px) {
-    width: calc((100% - 1rem) / 2); /* Show 2 items */
-    min-width: 280px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    width: 260px; /* Fixed width for mobile */
-    min-width: unset;
-  }
-  
-  @media screen and (max-width: 480px) {
-    width: 280px;
-  }
-
-  background: ${({ theme }) => theme.cardSecondary || theme.card}90;
+  flex: 0 0 300px;
+  background: ${({ theme }) => theme.card};
   border-radius: 12px;
-  padding: 1.25rem;
-  position: relative;
+  padding: 1.5rem;
+  margin-right: 1.5rem;
+  border: 1px solid ${({ theme }) => theme.border};
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
 
-  @media (max-width: 480px) {
-    padding: 1rem;
-    border-radius: 8px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      ${({ theme }) => theme.card} 0%,
+      ${({ theme }) => theme.card}95 70%,
+      ${({ theme }) => theme.card}90 100%
+    );
+    pointer-events: none;
+    z-index: 0;
   }
 
   &:hover {
@@ -309,43 +306,127 @@ export const SubTimelineItem = styled.div`
 
   h4 {
     color: ${({ theme }) => theme.heading};
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-    overflow-wrap: break-word;
-
-    @media (max-width: 480px) {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
   }
 
   .date {
-    font-size: 0.8rem;
     color: ${({ theme }) => theme.link};
-    display: inline-block;
-    padding: 0.2rem 0.8rem;
-    background: ${({ theme }) => theme.link}15;
-    border-radius: 20px;
-    margin-bottom: 0.75rem;
-
-    @media (max-width: 480px) {
-      font-size: 0.75rem;
-      padding: 0.2rem 0.6rem;
-      margin-bottom: 0.5rem;
-    }
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
   }
 
   p {
+    color: ${({ theme }) => theme.text};
     font-size: 0.9rem;
     line-height: 1.5;
-    color: ${({ theme }) => theme.text};
-    overflow-wrap: break-word;
-    margin: 0;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+`;
 
-    @media (max-width: 480px) {
-      font-size: 0.85rem;
+export const VideoThumbnail = styled.a`
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  margin: 1.5rem auto 0.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px ${({ theme }) => theme.shadow}20;
+  transition: all 0.3s ease;
+  z-index: 1;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(
+      circle at center,
+      ${({ theme }) => theme.link}10 0%,
+      ${({ theme }) => theme.card}00 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px ${({ theme }) => theme.shadow}30;
+    
+    &::before {
+      opacity: 1;
     }
+    
+    img {
+      transform: scale(1.05);
+    }
+    
+    .play-overlay {
+      opacity: 1;
+      backdrop-filter: blur(2px);
+    }
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin: 1rem auto 0;
+  }
+`;
+
+export const PlayOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+`;
+
+export const OverlayContent = styled.div`
+  text-align: center;
+  color: white;
+  padding: 0.5rem;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+
+  ${VideoThumbnail}:hover & {
+    transform: translateY(0);
+  }
+
+  svg {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
+
+  p {
+    font-size: 0.8rem;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    margin: 0 auto;
   }
 `;
 
@@ -414,82 +495,6 @@ export const AchievementsList = styled.ul`
     &:hover::before {
       transform: translateX(5px);
     }
-  }
-`;
-
-export const VideoThumbnail = styled.a`
-  display: block;
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  margin: 1rem 0;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px ${({ theme }) => theme.shadow}40;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 25px ${({ theme }) => theme.shadow}60;
-    
-    img {
-      transform: scale(1.05);
-    }
-    
-    .play-overlay {
-      opacity: 1;
-      backdrop-filter: blur(2px);
-    }
-  }
-  
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.4s ease;
-  }
-
-  @media (max-width: 768px) {
-    max-width: 100%;
-  }
-`;
-
-export const PlayOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: all 0.3s ease;
-`;
-
-export const OverlayContent = styled.div`
-  text-align: center;
-  color: white;
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
-
-  ${VideoThumbnail}:hover & {
-    transform: translateY(0);
-  }
-
-  svg {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-  }
-
-  p {
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    max-width: 80%;
-    margin: 0.5rem auto 0;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   }
 `;
 

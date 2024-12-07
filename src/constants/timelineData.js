@@ -3,11 +3,6 @@ export const timelineData = [
     title: "AI Engineer - Captury GmbH",
     date: "January 2022 - Present",
     description: "Contributing to dataset preparations, handpose tracking, and developing prototypes using Unreal Engine, Unity, and Oculus Quest.",
-    video: {
-      url: "https://youtu.be/p_7iE6UsSLM?si=i9vZnVBG1XIG_IQ0",
-      thumbnail: "https://img.youtube.com/vi/p_7iE6UsSLM/maxresdefault.jpg",
-      description: "My released work of hand tracking."
-    },
     subtimeline: [
       {
         title: "Hand Tracking Project",
@@ -17,7 +12,12 @@ export const timelineData = [
           "Improved tracking accuracy by 40%",
           "Reduced inference time to 15ms",
           "Implemented in Unreal Engine and Unity"
-        ]
+        ],
+        video: {
+          url: "https://youtu.be/p_7iE6UsSLM?si=i9vZnVBG1XIG_IQ0",
+          thumbnail: "https://img.youtube.com/vi/p_7iE6UsSLM/maxresdefault.jpg",
+          description: "My released work of hand tracking."
+        },
       },
       {
         title: "Motion Capture Pipeline",
