@@ -148,6 +148,17 @@ const Timeline = () => {
                 <h3>{item.title}</h3>
                 <div className="date">{item.date}</div>
                 <p>{item.description}</p>
+                {item.video && (
+                  <VideoThumbnail href={item.video.url} target="_blank" rel="noopener noreferrer">
+                    <img src={item.video.thumbnail} alt={item.video.description} />
+                    <PlayOverlay className="play-overlay">
+                      <OverlayContent>
+                        <FontAwesomeIcon icon={faPlay} size="3x" />
+                        <p>{item.video.description}</p>
+                      </OverlayContent>
+                    </PlayOverlay>
+                  </VideoThumbnail>
+                )}
                 {item.subtimeline && (
                   <SubTimelineContainer className={canScrollRight[index] ? 'canScrollRight' : ''}>
                     <div className="timeline-dots" />
@@ -186,17 +197,6 @@ const Timeline = () => {
                   </SubTimelineContainer>
                 )}
               </TimelineText>
-              {item.video && (
-                <VideoThumbnail href={item.video.url} target="_blank" rel="noopener noreferrer">
-                  <img src={item.video.thumbnail} alt={item.video.description} />
-                  <PlayOverlay className="play-overlay">
-                    <OverlayContent>
-                      <FontAwesomeIcon icon={faPlay} size="3x" />
-                      <p>{item.video.description}</p>
-                    </OverlayContent>
-                  </PlayOverlay>
-                </VideoThumbnail>
-              )}
             </TimelineItem>
           ))}
         </TimelineContent>

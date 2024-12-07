@@ -146,8 +146,6 @@ export const TimelineItem = styled.div`
 `;
 
 export const TimelineText = styled.div`
-  flex: 1;
-  background: ${({ theme }) => theme.card};
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 20px ${({ theme }) => theme.shadow}40;
@@ -201,6 +199,11 @@ export const TimelineText = styled.div`
   p {
     color: ${({ theme }) => theme.text};
     line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
   }
 `;
 
@@ -415,25 +418,27 @@ export const AchievementsList = styled.ul`
 `;
 
 export const VideoThumbnail = styled.a`
-  flex: 1;
-  position: relative;
   display: block;
-  border-radius: 16px;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem 0;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px ${({ theme }) => theme.shadow}40;
   transition: all 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 30px ${({ theme }) => theme.shadow}60;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px ${({ theme }) => theme.shadow}60;
     
     img {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
     
     .play-overlay {
       opacity: 1;
-      backdrop-filter: blur(3px);
+      backdrop-filter: blur(2px);
     }
   }
   
@@ -441,7 +446,11 @@ export const VideoThumbnail = styled.a`
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
 `;
 
