@@ -53,20 +53,6 @@ const fadeOutOnParentHover = css`
   }
 `;
 
-const subItemFadeOut = css`
-  transition: all 0.4s ease;
-  .subtimeline-container:hover & {
-    opacity: 1.0;
-    transform: translateX(0);
-    
-    &:hover {
-      opacity: 1;
-      filter: none;
-      transform: translateX(0) scale(1.02);
-    }
-  }
-`;
-
 export const TimelineContainer = styled.div`
   width: 100%;
   min-height: 100vh;

@@ -9,21 +9,6 @@ import Timeline from './pages/Timeline';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
-// Redirect component to handle GitHub Pages redirect
-const RedirectHandler = () => {
-  const navigate = useNavigate();
-  
-  useEffect(() => {
-    const redirect = sessionStorage.getItem('redirect');
-    if (redirect) {
-      sessionStorage.removeItem('redirect');
-      navigate(redirect);
-    }
-  }, [navigate]);
-  
-  return null;
-};
-
 function App() {
   const { theme, toggleTheme } = useTheme();
 
@@ -31,7 +16,6 @@ function App() {
     <Router>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <RedirectHandler />
         <Navbar toggleTheme={toggleTheme} />
         <main>
           <Routes>
