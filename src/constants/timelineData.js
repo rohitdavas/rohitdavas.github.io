@@ -15,6 +15,7 @@ export const timelineData = [
         text: "DARI Motion"
       }
     ],
+    location: "Saarbrucken, Germany",
     subtimeline: [
       {
         title: "Low-Resolution Hand Tracking",
@@ -22,6 +23,7 @@ export const timelineData = [
         description: "Led development of state-of-the-art hand tracking technology optimized for low-resolution inputs. Now in production, contributing significantly to revenue growth.",
         status: "In Production",
         type: "AI",
+        tags: ["vision", "Deep learning", "Python", "Pytorch", "gradio", "tensorboard", "data-synthesis", "data-collection"],
         video: {
           url: "https://youtu.be/p_7iE6UsSLM?si=YCj2bUhqZ6iIkCwl",
           thumbnail: "https://img.youtube.com/vi/p_7iE6UsSLM/maxresdefault.jpg",
@@ -85,6 +87,7 @@ export const timelineData = [
     title: "Deep Learning Intern - Captury GmbH",
     date: "May 2020 - December 2020",
     description: "Internship at Captury GmbH under mentorship of Dr. Nils Hasler (CTO) & Michal Ritcher (Sr. SW Dev.)",
+    location: "Remote",
     subtimeline: [
       {
         title: "Fast Background Subtraction",
@@ -118,6 +121,7 @@ export const timelineData = [
     title: "Research Collaboration - National Institute of Informatics (NII)",
     date: "April 2020 - March 2021",
     description: "Year-long research collaboration resulting in 2 publications, working with Prof. Isao Echizen (NII, Japan) and Dr. Harkeerat Kaur (IIT Jammu)",
+    location: "Remote",
     subtimeline: [
       {
         title: "Published in AINA'21",
@@ -144,12 +148,14 @@ export const timelineData = [
   {
     title: "Machine Learning Research Internship - IIT Bombay",
     date: "May 2019 - July 2019",
-    description: "Research internship focused on Object Detection under Prof. Virendra Singh at IIT Bombay"
+    description: "Research internship focused on Object Detection under Prof. Virendra Singh at IIT Bombay",
+    location: "Mumbai, India",
   },
   {
     title: "BTech in Computer Science and Engineering - IIT Jammu",
     date: "2017 - 2021",
     description: "Graduated with 7.4/10 GPA from Indian Institute of Technology Jammu",
+    location: "Jammu, India",
     subtimeline: [
       {
         title: "Cultural Secretary",

@@ -207,6 +207,13 @@ export const TimelineText = styled.div`
   }
 `;
 
+export const LocationText = styled.div`
+  font-size: 0.9rem;
+  color: ${({ theme }) => theme.text}aa;
+  margin-top: 0.25rem;
+  font-style: italic;
+`;
+
 export const SubTimelineContainer = styled.div.attrs({ className: 'subtimeline-container' })`
   width: 100%;
   margin-top: 1rem;

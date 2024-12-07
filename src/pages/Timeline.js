@@ -27,7 +27,8 @@ import {
   LinkItem,
   VideoContainer,
   VideoItem,
-  TypeTag
+  TypeTag,
+  LocationText
 } from '../styles/TimelineStyles';
 
 const Timeline = () => {
@@ -152,6 +153,7 @@ const Timeline = () => {
               <TimelineText>
                 <h3>{item.title}</h3>
                 <div className="date">{item.date}</div>
+                {item.location && <LocationText>{item.location}</LocationText>}
                 <p>{item.description}</p>
                 {item.links && item.links.length > 0 && (
                   <LinksContainer>
