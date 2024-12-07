@@ -444,10 +444,183 @@ export const TagContent = styled.span`
 
 // Content Components
 export const AboutContent = styled.div`
+  padding: 1.5rem;
+  background: ${({ theme }) => theme.cardSecondary || theme.card};
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid ${({ theme }) => theme.border};
+  position: relative;
+  max-height: 300px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .hover-instructions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0.5rem;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      ${({ theme }) => theme.cardSecondary || theme.card} 70%
+    );
+    color: ${({ theme }) => theme.link};
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
   p {
     color: ${({ theme }) => theme.text};
+    font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
+    text-align: left;
+
+    &.truncate {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      &.truncate {
+        -webkit-line-clamp: 3;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.25rem;
+    max-height: 250px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+    border-radius: 8px;
+    max-height: 200px;
+  }
+`;
+
+export const AboutModal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+
+  .modal-content {
+    background: ${({ theme }) => theme.cardSecondary || theme.card};
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.3s ease 0.1s forwards;
+
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+      width: 95%;
+    }
+
+    @media (max-width: 480px) {
+      padding: 1.25rem;
+      border-radius: 8px;
+    }
+  }
+
+  .close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: ${({ theme }) => theme.text};
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  p {
+    color: ${({ theme }) => theme.text};
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    text-align: left;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 `;
 

@@ -38,7 +38,8 @@ import {
   ResumeTooltip,
   AboutContent,
   EstablishedWork,
-  FullScreenImage
+  FullScreenImage,
+  AboutModal
 } from '../styles/HomeStyles';
 
 /**
@@ -159,7 +160,54 @@ const Home = () => {
   const [poppingSkills, setPoppingSkills] = useState(new Set());
   const [poppingHobbies, setPoppingHobbies] = useState(new Set());
   const [fullScreenImage, setFullScreenImage] = useState(null);
-  
+  const [isAboutExpanded, setIsAboutExpanded] = useState(false);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isAboutExpanded) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isAboutExpanded]);
+
+  // Close expanded about section when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (isAboutExpanded && !e.target.closest('.about-content')) {
+        setIsAboutExpanded(false);
+      }
+    };
+
+    if (isAboutExpanded) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isAboutExpanded]);
+
+  // Close on escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        setIsAboutExpanded(false);
+      }
+    };
+
+    if (isAboutExpanded) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isAboutExpanded]);
+
   const allSkills = useMemo(() => {
     return Object.values(homeContent.skills || {}).flat();
   }, []);
@@ -304,11 +352,28 @@ const Home = () => {
               </ResumeLinks>
             </ProfileSection>
 
-            <AboutContent>
+            <AboutContent 
+              className="about-content"
+              onClick={() => !isAboutExpanded && setIsAboutExpanded(true)}
+            >
               {homeContent.profile.about.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <p key={index} className="truncate">{paragraph}</p>
               ))}
+              <div className="hover-instructions">Click to read more</div>
             </AboutContent>
+
+            {isAboutExpanded && (
+              <AboutModal>
+                <div className="modal-content">
+                  <button className="close-button" onClick={() => setIsAboutExpanded(false)}>
+                    ×
+                  </button>
+                  {homeContent.profile.about.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
+              </AboutModal>
+            )}
           </Column>
 
           <Column>
