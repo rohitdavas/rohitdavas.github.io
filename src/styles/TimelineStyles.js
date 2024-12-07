@@ -597,3 +597,15 @@ export const VideoItem = styled(VideoThumbnail)`
   min-width: 200px;
   max-width: 300px;
 `;
+
+export const TypeTag = styled.span`
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.5rem;
+  background: ${({ theme }) => theme.link}15;
+  color: ${({ theme }) => theme.link};
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  border: 1px solid ${({ theme }) => theme.link}30;
+`;

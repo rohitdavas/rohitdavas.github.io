@@ -1,8 +1,10 @@
+import { type } from "@testing-library/user-event/dist/type";
+
 export const timelineData = [
   {
-    title: "AI Engineer - Captury GmbH",
+    title: "AI Engineer - Captury GmbH | Acquired by DARI Motion",
     date: "July 2021 - Present",
-    description: "4th member to join the startup. Working at Captury GmbH, which was later acquired by DARI Motion, USA.",
+    description: "4th member to join the startup. Leading the developement of the vision based AI solution for markerless tracking. The products / solutions has been developed by me from scratch inclduing the dataset generation strategies, algorithmic design, thorough experiment tracking and monitoring & anaylsis in production for drifts.",
     links: [
       {
         url: "https://captury.com/",
@@ -18,22 +20,50 @@ export const timelineData = [
         title: "Low-Resolution Hand Tracking",
         date: "January 2022 - Present",
         description: "Led development of state-of-the-art hand tracking technology optimized for low-resolution inputs. Now in production, contributing significantly to revenue growth.",
+        status: "In Production",
+        type: "AI",
         video: {
           url: "https://youtu.be/p_7iE6UsSLM?si=YCj2bUhqZ6iIkCwl",
           thumbnail: "https://img.youtube.com/vi/p_7iE6UsSLM/maxresdefault.jpg",
-          description: "Feature Release - Hand Tracking Demo"
+          description: "Captury - Feature Release - Hand Tracking Demo"
+        }
+      },
+      {
+        title: "Full Body Tracking",
+        date: "September 2022 - Now",
+        description: "Improved the existing fully body tracking capability with better AI Model and architecture bug fixes.",
+        status: "In Production",
+        type: "AI",
+        video: {
+          url: "https://www.youtube.com/watch?v=hvf8cn8S0q4",
+          thumbnail: "https://img.youtube.com/vi/hvf8cn8S0q4/maxresdefault.jpg",
+          description: "Captury - Full Body Tracking"
         }
       },
       {
         title: "Instrument Tracking",
         date: "December 2023 - August 2024",
         description: "Spearheaded development of AI-driven tracking systems for guitar and violin using vision-based models. Engineered robust rendering pipeline in Blender.",
-        status: "In Production"
+        status: "In Production",
+        type: "AI",
+      },
+      {
+        title: "Unreal Engine, Unity and Oculus Quest", 
+        date: "from-time-to-time",
+        description: "Contributed to the development of 3D simulation using Unreal Engine, Unity and Oculus Quest. Creating the client demos and use case demonstrations.",
+        status: "In Production",
+        type: "Software",
+        video: {
+          url: "https://youtu.be/5ZpioiUD7Uw?si=uNDJ5QZXvgNZVwaJ",
+          thumbnail: "https://img.youtube.com/vi/5ZpioiUD7Uw/maxresdefault.jpg",
+          description: "Real time game play demo"
+        }
       },
       {
         title: "Python Bindings",
         date: "March 2022 - June 2022",
         description: "Developed Python library using Python-C APIs for batch processing, server farm utilization, and dataset generation. Widely used internally and by clients.",
+        type: "Software",
         links: [
           {
             url: "http://doc.captury.com/python.html",
@@ -43,10 +73,11 @@ export const timelineData = [
         status: "In Production"
       },
       {
-        title: "Ball Tracking",
+        title: "Ball Tracking & Generalised Object Tracking",
         date: "April 2024 - Present",
         description: "Leading the development of sports ball tracking using vision-based AI algorithms.",
-        status: "In Progress"
+        status: "In Progress",
+        type: "AI",
       }
     ]
   },
@@ -87,12 +118,6 @@ export const timelineData = [
     title: "Research Collaboration - National Institute of Informatics (NII)",
     date: "April 2020 - March 2021",
     description: "Year-long research collaboration resulting in 2 publications, working with Prof. Isao Echizen (NII, Japan) and Dr. Harkeerat Kaur (IIT Jammu)",
-    links: [
-      {
-        url: "https://rohitdavas.github.io/#publications",
-        text: "View Publications"
-      }
-    ],
     subtimeline: [
       {
         title: "Published in AINA'21",

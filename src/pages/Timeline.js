@@ -26,7 +26,8 @@ import {
   LinksContainer,
   LinkItem,
   VideoContainer,
-  VideoItem
+  VideoItem,
+  TypeTag
 } from '../styles/TimelineStyles';
 
 const Timeline = () => {
@@ -186,6 +187,7 @@ const Timeline = () => {
                           <h4>{subItem.title}</h4>
                           {subItem.date && <div className="date">{subItem.date}</div>}
                           <p>{subItem.description}</p>
+                          {subItem.type && <TypeTag>{subItem.type}</TypeTag>}
                           {subItem.status && (
                             <div className="status">Status: {subItem.status}</div>
                           )}
