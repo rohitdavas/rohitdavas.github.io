@@ -36,38 +36,41 @@ const Timeline = () => {
       const newCanScrollRight = {};
       scrollContainerRefs.current.forEach((container, index) => {
         if (container) {
-          const canScroll = container.scrollLeft < (container.scrollWidth - container.clientWidth);
+          // Add a small threshold (1px) to account for rounding errors
+          const canScroll = Math.ceil(container.scrollLeft) < (container.scrollWidth - container.clientWidth - 1);
           newCanScrollRight[index] = canScroll;
         }
       });
       setCanScrollRight(newCanScrollRight);
     };
 
-    // Initial check
-    checkScrollability();
+    // Initial check with a slight delay to ensure proper layout
+    setTimeout(checkScrollability, 100);
 
     // Add scroll event listeners to each container
     scrollContainerRefs.current.forEach((container, index) => {
       if (container) {
-        container.addEventListener('scroll', () => {
-          const canScroll = container.scrollLeft < (container.scrollWidth - container.clientWidth);
+        const handleScroll = () => {
+          // Add a small threshold (1px) to account for rounding errors
+          const canScroll = Math.ceil(container.scrollLeft) < (container.scrollWidth - container.clientWidth - 1);
           setCanScrollRight(prev => ({...prev, [index]: canScroll}));
-        });
+        };
+        container.addEventListener('scroll', handleScroll);
+        return () => container.removeEventListener('scroll', handleScroll);
       }
     });
 
-    // Check on window resize
-    window.addEventListener('resize', checkScrollability);
+    // Check on window resize with debounce
+    let resizeTimer;
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(checkScrollability, 100);
+    };
+    window.addEventListener('resize', handleResize);
+    
     return () => {
-      window.removeEventListener('resize', checkScrollability);
-      scrollContainerRefs.current.forEach((container, index) => {
-        if (container) {
-          container.removeEventListener('scroll', () => {
-            const canScroll = container.scrollLeft < (container.scrollWidth - container.clientWidth);
-            setCanScrollRight(prev => ({...prev, [index]: canScroll}));
-          });
-        }
-      });
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(resizeTimer);
     };
   }, []);
 

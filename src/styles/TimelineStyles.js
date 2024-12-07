@@ -55,13 +55,13 @@ const fadeOutOnParentHover = css`
 
 export const TimelineContainer = styled.div`
   width: 100%;
-  min-height: 100vh;
-  padding: 2rem;
-  position: relative;
-  overflow-x: hidden;
-
-  @media (max-width: 768px) {
-    padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  
+  @media (max-width: 480px) {
+    padding: 0.5rem;
   }
 `;
 
@@ -130,47 +130,18 @@ export const TimelineContent = styled.div.attrs({ className: 'timeline-content' 
 `;
 
 export const TimelineItem = styled.div`
-  margin-bottom: 3rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  animation: ${fadeIn} 0.5s ease-out;
-  ${fadeOutOnParentHover}
+  width: 100%;
+  margin-bottom: 2rem;
+  background: ${({ theme }) => theme.card};
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid ${({ theme }) => theme.border};
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
-  &:nth-child(even) {
-    flex-direction: row-reverse;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: calc(50% - 8px);
-    width: 16px;
-    height: 16px;
-    background: ${({ theme }) => theme.link};
-    border-radius: 50%;
-    margin-top: 1.5rem;
-    animation: ${glowPulse} 2s infinite;
-    z-index: 1;
-    transition: all 0.3s ease;
-
-    @media (max-width: 768px) {
-      left: 23px;
-    }
-  }
-
-  &:hover::before {
-    transform: scale(1.2);
-    box-shadow: 0 0 20px ${({ theme }) => theme.link}90;
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    padding-left: 60px;
-    
-    &:nth-child(even) {
-      flex-direction: column;
-    }
+  @media (max-width: 480px) {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
   }
 `;
 
@@ -234,39 +205,61 @@ export const TimelineText = styled.div`
 `;
 
 export const SubTimelineContainer = styled.div.attrs({ className: 'subtimeline-container' })`
-  margin: 2rem 0 0 0;
-  position: relative;
   width: 100%;
-  overflow: hidden;
+  margin-top: 1rem;
   background: ${({ theme }) => theme.cardSecondary || theme.card};
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1rem;
   border: 1px solid ${({ theme }) => theme.border};
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
 
   /* Only show arrow when can scroll right */
   &.canScrollRight::after {
     content: '→';
     position: absolute;
-    right: 2rem;
+    right: 1rem;
     top: 50%;
     transform: translateY(-50%);
     color: ${({ theme }) => theme.link};
     font-size: 1.2rem;
     opacity: 0.8;
     animation: ${arrowPulse} 2s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 10;
+    
+    @media (max-width: 768px) {
+      right: 0.5rem;
+      font-size: 1rem;
+      background: ${({ theme }) => theme.cardSecondary || theme.card}dd;
+      padding: 0.5rem;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+    border-radius: 8px;
   }
 `;
 
 export const SubTimelineScroll = styled.div`
   display: flex;
-  gap: 2rem;
-  padding: 1rem;
+  gap: 1rem;
   overflow-x: auto;
-  position: relative;
+  width: 100%;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  
+  padding: 0.5rem;
+  box-sizing: border-box;
+
+  @media (max-width: 480px) {
+    gap: 0.75rem;
+    padding: 0.25rem;
+  }
+
   /* Hide scrollbar but keep functionality */
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -276,41 +269,80 @@ export const SubTimelineScroll = styled.div`
 `;
 
 export const SubTimelineItem = styled.div`
-  min-width: 300px;
-  max-width: 300px;
-  padding: 1.5rem;
+  flex: 0 0 auto;
+  width: calc((100% - 2rem) / 3); /* Show 3 items with gaps */
+  min-width: 300px; /* Minimum width for readability */
+  
+  @media screen and (max-width: 1200px) {
+    width: calc((100% - 1rem) / 2); /* Show 2 items */
+    min-width: 280px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    width: 260px; /* Fixed width for mobile */
+    min-width: unset;
+  }
+  
+  @media screen and (max-width: 480px) {
+    width: 280px;
+  }
+
   background: ${({ theme }) => theme.cardSecondary || theme.card}90;
   border-radius: 12px;
+  padding: 1.25rem;
   position: relative;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+    border-radius: 8px;
+  }
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 20px ${({ theme }) => theme.shadow}40;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px ${({ theme }) => theme.shadow}30;
   }
 
   h4 {
     color: ${({ theme }) => theme.heading};
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    overflow-wrap: break-word;
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
   }
 
   .date {
     font-size: 0.8rem;
-    opacity: 0.8;
-    margin-bottom: 0.5rem;
     color: ${({ theme }) => theme.link};
     display: inline-block;
     padding: 0.2rem 0.8rem;
-    background: ${({ theme }) => theme.link}20;
-    border-radius: 12px;
+    background: ${({ theme }) => theme.link}15;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+
+    @media (max-width: 480px) {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 0.5rem;
+    }
   }
 
   p {
     font-size: 0.9rem;
     line-height: 1.5;
     color: ${({ theme }) => theme.text};
-    margin-bottom: 1rem;
+    overflow-wrap: break-word;
+    margin: 0;
+
+    @media (max-width: 480px) {
+      font-size: 0.85rem;
+    }
   }
 `;
 
