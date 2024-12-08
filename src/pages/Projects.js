@@ -122,13 +122,9 @@ const Projects = () => {
       const projectsFromTimeline = timelineItem.subtimeline.map(subItem => ({
         title: subItem.title,
         description: subItem.description,
-        image: subItem.video?.thumbnail || null,
-        tags: [
-          subItem.type || 'Project',
-          ...((subItem.links || []).map(link => 'Documentation')),
-          timelineItem.title.includes('Captury') ? 'Captury' : 'Research'
-        ],
-        status: subItem.status,
+        image: subItem.video?.thumbnail || subItem.image|| null,
+        tags: subItem.tags || [],
+        status: subItem.status || null,
         demoUrl: subItem.video?.url || null,
         docsUrl: subItem.links?.[0]?.url || null
       }));

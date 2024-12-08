@@ -48,6 +48,7 @@ export const timelineData = [
         description: "Spearheaded development of AI-driven tracking systems for guitar and violin using vision-based models. Engineered robust rendering pipeline in Blender.",
         status: "In Production",
         type: "AI",
+        image: "images/guitar_picture.png"
       },
       {
         title: "Unreal Engine, Unity and Oculus Quest", 
@@ -66,6 +67,8 @@ export const timelineData = [
         date: "March 2022 - June 2022",
         description: "Developed Python library using Python-C APIs for batch processing, server farm utilization, and dataset generation. Widely used internally and by clients.",
         type: "Software",
+        tags: ["C", "C++", "Python", "CMake"], 
+        image: "images/python_language.png",
         links: [
           {
             url: "http://doc.captury.com/python.html",
@@ -80,6 +83,8 @@ export const timelineData = [
         description: "Leading the development of sports ball tracking using vision-based AI algorithms.",
         status: "In Progress",
         type: "AI",
+        tags: ["deep learning", "python", "pytorch"],
+        image: "images/sports_ball.png",
       }
     ]
   },
@@ -91,11 +96,19 @@ export const timelineData = [
     subtimeline: [
       {
         title: "Fast Background Subtraction",
-        description: "Developed deep learning model with randomization of foreground (Humans) and backgrounds (COCO)"
+        description: "Developed deep learning model with randomization of foreground (Humans) and backgrounds (COCO)",
+        type: "AI",
+        tags: ["deep learning", "python", "pytorch", "COCO",],
+        image: "images/bg_sub.png",
+
       },
       {
         title: "3D Face Landmark Annotation",
         description: "Implemented back-projection using ray cast in multiview geometry instead of point triangulation",
+        type: "Software",
+        tags: ["python", "blender", "Computer Vision"],
+        image: "images/face_3D.png",
+
         video: [
           {
             url: "https://drive.google.com/file/d/1_uv40hLTe29o_fsk1gs2nk-UwPr3QNIS/view?usp=sharing",
@@ -110,6 +123,9 @@ export const timelineData = [
       {
         title: "Facial Expression - Shape Key Prediction",
         description: "Worked on shape key prediction using 3D characters from Reallusion, including data generation and randomization in Blender",
+        type: "Software",
+        tags: ["python", "blender", "Computer Vision"],
+        image: "images/face.png",
         video: {
           url: "https://drive.google.com/file/d/1-uA78oCkMkEz8hkRawuLq6v3ygjMEkBF/view?usp=sharing",
           description: "Shape Key Prediction Demo"
@@ -126,6 +142,9 @@ export const timelineData = [
       {
         title: "Published in AINA'21",
         description: "Reinforcement Learning based Smart Data Agent for Location Privacy",
+        type: "AI Research",
+        tags: ["deep learning", "reinforcement learning", "python", "pytorch", "Research"],
+        image: "images/research.png",
         links: [
           {
             url: "https://www.springer.com/gp/book/9783030750749?wt_mc=Internal.Event.1.SEM.ChapterAuthorCongrat",
@@ -136,6 +155,9 @@ export const timelineData = [
       {
         title: "Published in IEEE-SSCI'20",
         description: "Smart Data Agent for Preserving Location Privacy",
+        type: "AI Research",
+        tags: ["python", "pytorch", "Research"],
+        image: "images/research.png",
         links: [
           {
             url: "https://ieeexplore.ieee.org/document/9308396",
@@ -160,7 +182,9 @@ export const timelineData = [
       {
         title: "Cultural Secretary",
         date: "2019 - 2020",
-        description: "Led a team of 30 for 10-day long Foundation Program and initiated Senior Mentorship Programme",
+        description: "Led a team of 30 for 10-day long Foundation Program and initiated Senior Mentorship Programme. Started student mentorship program initiative. Led financial planning for the cultural clubs.",
+        image: "images/leader.png",
+        tags: ["leadership", "teamwork", "communication"],
         links: [
           {
             url: "https://iitjammu.ac.in/post/foundation-program",
