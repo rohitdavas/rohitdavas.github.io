@@ -27,6 +27,7 @@ import {
   LinkItem,
   VideoContainer,
   VideoItem,
+  YouTubeEmbed,
   TypeTag,
   LocationText
 } from '../styles/TimelineStyles';
@@ -218,43 +219,66 @@ const Timeline = () => {
                               ))}
                             </AchievementsList>
                           )}
-                          {subItem.video && Array.isArray(subItem.video) ? (
+                          {subItem.video && (
                             <VideoContainer>
-                              {subItem.video.map((vid, vidIndex) => (
-                                <VideoItem 
-                                  key={vidIndex}
-                                  href={vid.url} 
-                                  target="_blank" 
-                                  rel="noopener noreferrer"
-                                >
-                                  {vid.thumbnail && (
-                                    <img src={vid.thumbnail} alt={vid.description || 'Video thumbnail'} />
-                                  )}
-                                  <PlayOverlay className="play-overlay">
-                                    <OverlayContent>
-                                      <FontAwesomeIcon icon={faPlay} size="2x" />
-                                      <p>{vid.description || 'Watch Video'}</p>
-                                    </OverlayContent>
-                                  </PlayOverlay>
-                                </VideoItem>
-                              ))}
+                              {Array.isArray(subItem.video) 
+                                ? subItem.video.map((vid, vidIndex) => (
+                                    vid.url.includes('youtube.com') ? (
+                                      <YouTubeEmbed
+                                        key={vidIndex}
+                                        src={vid.url.replace('watch?v=', 'embed/')}
+                                        title={vid.description || 'YouTube Video'}
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                      />
+                                    ) : (
+                                      <VideoItem 
+                                        key={vidIndex}
+                                        href={vid.url} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                      >
+                                        {vid.thumbnail && (
+                                          <img src={vid.thumbnail} alt={vid.description || 'Video thumbnail'} />
+                                        )}
+                                        <PlayOverlay className="play-overlay">
+                                          <OverlayContent>
+                                            <FontAwesomeIcon icon={faPlay} size="2x" />
+                                            <p>{vid.description || 'Watch Video'}</p>
+                                          </OverlayContent>
+                                        </PlayOverlay>
+                                      </VideoItem>
+                                    )
+                                  ))
+                                : (subItem.video.url.includes('youtube.com') ? (
+                                    <YouTubeEmbed
+                                      src={subItem.video.url.replace('watch?v=', 'embed/')}
+                                      title={subItem.video.description || 'YouTube Video'}
+                                      frameBorder="0"
+                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                      allowFullScreen
+                                    />
+                                  ) : (
+                                    <VideoItem 
+                                      href={subItem.video.url} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                    >
+                                      {subItem.video.thumbnail && (
+                                        <img src={subItem.video.thumbnail} alt={subItem.video.description || 'Video thumbnail'} />
+                                      )}
+                                      <PlayOverlay className="play-overlay">
+                                        <OverlayContent>
+                                          <FontAwesomeIcon icon={faPlay} size="2x" />
+                                          <p>{subItem.video.description || 'Watch Video'}</p>
+                                        </OverlayContent>
+                                      </PlayOverlay>
+                                    </VideoItem>
+                                  )
+                                )
+                              }
                             </VideoContainer>
-                          ) : subItem.video && (
-                            <VideoItem 
-                              href={subItem.video.url} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                            >
-                              {subItem.video.thumbnail && (
-                                <img src={subItem.video.thumbnail} alt={subItem.video.description || 'Video thumbnail'} />
-                              )}
-                              <PlayOverlay className="play-overlay">
-                                <OverlayContent>
-                                  <FontAwesomeIcon icon={faPlay} size="2x" />
-                                  <p>{subItem.video.description || 'Watch Video'}</p>
-                                </OverlayContent>
-                              </PlayOverlay>
-                            </VideoItem>
                           )}
                         </SubTimelineItem>
                       ))}

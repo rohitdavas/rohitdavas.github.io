@@ -25,7 +25,7 @@ export const timelineData = [
         type: "AI",
         tags: ["vision", "Deep learning", "Python", "Pytorch", "gradio", "tensorboard", "data-synthesis", "data-collection"],
         video: {
-          url: "https://youtu.be/p_7iE6UsSLM?si=YCj2bUhqZ6iIkCwl",
+          url: "https://www.youtube.com/watch?v=p_7iE6UsSLM",
           thumbnail: "https://img.youtube.com/vi/p_7iE6UsSLM/maxresdefault.jpg",
           description: "Captury - Feature Release - Hand Tracking Demo"
         }
@@ -57,7 +57,7 @@ export const timelineData = [
         status: "In Production",
         type: "Software",
         video: {
-          url: "https://youtu.be/5ZpioiUD7Uw?si=uNDJ5QZXvgNZVwaJ",
+          url: "https://www.youtube.com/watch?v=5ZpioiUD7Uw",
           thumbnail: "https://img.youtube.com/vi/5ZpioiUD7Uw/maxresdefault.jpg",
           description: "Real time game play demo"
         }

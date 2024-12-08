@@ -616,3 +616,12 @@ export const TypeTag = styled.span`
   margin-right: 0.5rem;
   border: 1px solid ${({ theme }) => theme.link}30;
 `;
+
+export const YouTubeEmbed = styled.iframe`
+  width: 100%;
+  max-width: 560px;
+  height: 100%;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+`;
