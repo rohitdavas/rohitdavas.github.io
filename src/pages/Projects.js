@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -115,6 +115,30 @@ const Link = styled.a`
   }
 `;
 
+const FilterContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+`;
+
+const FilterTag = styled.button`
+  background: ${({ theme, active }) => active ? theme.link : theme.link + '15'};
+  color: ${({ theme, active }) => active ? 'white' : theme.link};
+  padding: 0.3rem 0.8rem;
+  border: 1px solid ${({ theme }) => theme.link};
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+
+  &:hover {
+    background: ${({ theme }) => theme.link};
+    color: white;
+  }
+`;
+
 const Projects = () => {
   // Extract projects from timelineData
   const projects = timelineData.reduce((acc, timelineItem) => {
@@ -133,12 +157,57 @@ const Projects = () => {
     return acc;
   }, []);
 
+  // Collect all unique tags
+  const allTags = useMemo(() => {
+    const tagSet = new Set();
+    projects.forEach(project => {
+      project.tags.forEach(tag => tagSet.add(tag.toLowerCase()));
+    });
+    return Array.from(tagSet).sort();
+  }, [projects]);
+
+  // State for selected tags
+  const [selectedTags, setSelectedTags] = useState([]);
+
+  // Filter projects based on selected tags
+  const filteredProjects = useMemo(() => {
+    if (selectedTags.length === 0) return projects;
+    return projects.filter(project => 
+      selectedTags.every(tag => 
+        project.tags.map(t => t.toLowerCase()).includes(tag.toLowerCase())
+      )
+    );
+  }, [projects, selectedTags]);
+
+  // Toggle tag selection
+  const toggleTag = (tag) => {
+    setSelectedTags(prevTags => 
+      prevTags.includes(tag) 
+        ? prevTags.filter(t => t !== tag)
+        : [...prevTags, tag]
+    );
+  };
+
   return (
     <ProjectsContainer>
       <Content>
         <Title>Featured Projects</Title>
+        
+        {/* Tag Filter */}
+        <FilterContainer>
+          {allTags.map(tag => (
+            <FilterTag 
+              key={tag}
+              active={selectedTags.includes(tag)}
+              onClick={() => toggleTag(tag)}
+            >
+              {tag}
+            </FilterTag>
+          ))}
+        </FilterContainer>
+
         <ProjectGrid>
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <ProjectCard key={index}>
               {project.image && (
                 <ProjectImage>
