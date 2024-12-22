@@ -95,3 +95,8 @@ rohitdavas.github.io/
 - [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)
 - [React documentation](https://reactjs.org/)
 - [GitHub Pages documentation](https://docs.github.com/en/pages)
+
+# TODO
+
+- [] add languages 
+- [x] add profile picture
