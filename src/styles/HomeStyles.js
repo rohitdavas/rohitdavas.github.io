@@ -325,10 +325,6 @@ export const ProfileCardInner = styled.div`
   transition: transform 0.8s;
   transform-style: preserve-3d;
   cursor: pointer;
-
-  ${ProfileCard}:hover & {
-    transform: rotateY(180deg);
-  }
 `;
 
 export const CardSide = styled.div`
