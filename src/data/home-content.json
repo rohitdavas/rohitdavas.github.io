@@ -11,10 +11,31 @@
       "2-page": "/resume/Rohit_Kumar_Resume_2_page_18082024.pdf"
     },
     "about": [
-    "AI Engineer working in markerless motion tracking company, leading the developement of vision based AI Solutions. I am open to collaborate on cool ideas and bussiness opportunities. Let's make a great AI use case!",
-    "My approach of work has been to develop the AI from scratch to the production, leading as single person knowing the whole pipeline. This has allowed me to have well grounded understanding of the pipeline. In my work, i develop the dataset generation and collection strategies, algorithmic design, thorough experiment tracking and anaylsis in production for drifts. ",
-    "Oveall, i have built multiple tracking solutions from scratch. I have developed hand-tracking, instrument tracking, full body tracking on the in-production level being used by our clients on everyday basis.", 
-    "I have worked with wide variety of data generation strategies including extensive work in Synthetic data generation using diffusers and 3D Simulation using Blender. "
+      "AI Engineer | Building Vision-Based Solutions for Markerless Motion Tracking",
+
+      "I’m an AI Engineer at a markerless motion tracking company, 
+      where I lead the development of cutting-edge, vision-based AI systems.
+      I specialize in creating AI solutions end-to-end — from ideation to 
+      production deployment — often as a solo contributor managing the full pipeline. 
+      I'm always open to collaborating on innovative ideas and impactful business opportunities. 
+      Let’s build something meaningful with AI."
+      
+      "My work philosophy centers on deep ownership: designing, 
+      developing, and deploying AI solutions from the ground up. 
+      I craft custom data generation and collection pipelines, 
+      architect algorithms, and rigorously track experiments to 
+      ensure robust performance — even in production environments 
+      with drift and real-world noise."
+      
+      "Over the years, I’ve built and shipped multiple tracking 
+      systems from scratch, including hand tracking, instrument 
+      tracking, and full-body tracking. These systems are now in 
+      daily use by our clients, powering real-world applications."
+      
+      "My technical toolkit includes a wide range of algorithmic experties and data strategies,
+      with strong expertise in synthetic data generation using diffusion 
+      models, as well as 3D simulations powered by Blender." 
+      " Looking forward to hear from you !"
     ],
     "hobbies": [
       "Running",
@@ -30,7 +51,7 @@
       "instagram": "https://www.instagram.com/rohit_davas/",
       "linkedin": "https://www.linkedin.com/in/rohitdavas/",
       "github": "https://github.com/rohitdavas",
-      "email": "davasrohit@gmail.com"
+      "email": "write-to-me-in-contact-form"
     }
   },
   "skills": {
